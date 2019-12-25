@@ -5,15 +5,42 @@
     <description>Recent content in Gordon&#39;s Blog on Gordon&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 Mar 2019 11:14:46 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Posts</title>
+      <title>Blog</title>
       <link>https://gordongwb.github.io/posts/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 13 Sep 2018 22:31:21 +0800</pubDate>
       
       <guid>https://gordongwb.github.io/posts/</guid>
+      <description>&lt;p&gt;&lt;code&gt;Blog&lt;/code&gt; is the place to record my life. There are 5 categories in &lt;code&gt;Blog&lt;/code&gt; section:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Thoughts: My thoughts and attitude to everything in my life.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Critique: My reviews, especially to musicals, movies, etc.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Travel: My travel notes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Moment: Some moments that I feel something and eager to write it down. Fragments in my life. Short memos.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Gallery: Pictures I&#39;d like to share. My favourite ones.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Examples</title>
+      <link>https://gordongwb.github.io/example/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://gordongwb.github.io/example/</guid>
       <description></description>
     </item>
     

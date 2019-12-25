@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Gordon&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 Mar 2019 11:14:46 +0800</lastBuildDate>
     
 	<atom:link href="https://gordongwb.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>aria2</title>
+      <link>https://gordongwb.github.io/tags/aria2/</link>
+      <pubDate>Wed, 27 Mar 2019 11:14:46 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/tags/aria2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>apple</title>
+      <link>https://gordongwb.github.io/tags/apple/</link>
+      <pubDate>Sun, 17 Feb 2019 10:15:00 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/tags/apple/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>hugo</title>
