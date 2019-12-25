@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tech on Gordon&#39;s Blog</title>
+    <link>https://gordongwb.github.io/tech/</link>
+    <description>Recent content in Tech on Gordon&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 May 0000 00:00:02 +0800</lastBuildDate>
+    
+	<atom:link href="https://gordongwb.github.io/tech/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>EASY SQL_Injection</title>
+      <link>https://gordongwb.github.io/tech/easy-sql_injection/</link>
+      <pubDate>Wed, 25 Dec 2019 21:33:03 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/tech/easy-sql_injection/</guid>
+      <description>sql_injection  以 mysql 为例， 不同数据库的特殊情况另行整理
+ 0x00 判断注入点 1 and 1=1 返回正常， 1 and 1=2 返回错误说明存在注入点 (以上为数字型，字符串型应加引号，如 1&#39;and’1&#39;=‘1)
+0x01 判断字段数（列数） 使用 order by &amp;lt;num&amp;gt; , 根据返回判断列数，当 &amp;lt;num&amp;gt; 大于最大列数时，将返回错误
+0x02 匹配字段位置 根据字段数构造联合查询语句 id=1 and 1=2 union select 1,2,...n ， n 即为字段数，根据不同数字在页面中出现的位置，选择合适的字段作为 payload 对数据库中的信息进行查询
+0x03 内置函数和系统数据库 version() 版本信息 database() 当前数据库 user() 当前用户
+ and ord(mid(user(),1,1))=114  //即 user() 以字母 ’r‘ 开头  @@global.version_compile_os from mysql.user
+0x04 使用 mysql 的数据库的系统库获取信息 （mysql 5 以上）information_schema select SCHEME_NAME from information_schema.</description>
+    </item>
+    
+    <item>
+      <title>CTC LOSS Basic Introduction</title>
+      <link>https://gordongwb.github.io/tech/ctc-loss-basic-introduction/</link>
+      <pubDate>Wed, 25 Dec 2019 21:31:02 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/tech/ctc-loss-basic-introduction/</guid>
+      <description>ＣＴＣ-ＬＯＳＳ 损失函数 在语音识别中，我们的数据集是音频文件和其对应的文本，不幸的是，音频文件和文本很难再单词的单位上对齐。除了语言识别，在OCR，机器翻译中，都存在类似的Sequence to Sequence结构，同样也需要在预处理操作时进行对齐，但是这种对齐有时候是非常困难的。如果不使用对齐而直接训练模型时，由于人的语速的不同，或者字符间距离的不同，导致模型很难收敛。
+CTC(Connectionist Temporal Classification)是一种避开输入与输出的一种方式，是非常适合语音识别或者OCR这种应用的。
+算法详解（以语音识别为例） 给定输入 X ，CTC输出每个可能输出及其条件概率。问题的关键是CTC的输出概率是如何考虑 X 和 Y 之间的对齐的，这种对齐也是构建损失函数的基础。所以，首先我们分析CTC的对齐方式，然后我们在分析CTC的损失函数的构造。
+对齐 需要注意的是，CTC本身是不需要对齐的，但是我们需要知道 X 的输出路径和最终输出结果的对应关系，因为在CTC中，多个输出路径可能对应一个输出结果，举例来理解。例如在OCR的任务中，输入 X 是含有“CAT”的图片，输出 Y 是文本[C, A, T]。将 X 分割成若干个时间片，每个时间片得到一个输出，一个最简答的解决方案是合并连续重复出现的字母，如图：
+这个问题有两个缺点：
+ 几乎不可能将 X 的每个时间片都和输出Y对应上，例如OCR中字符的间隔，语音识别中的停顿; 不能处理有连续重复字符出现的情况，例如单词“HELLO”，按照上面的算法，输出的是“HELO”而非“HELLO”。  为了解决上面的问题，CTC引入了空白字符 \epsilon ，例如OCR中的字符间距，语音识别中的停顿均表示为 \epsilon 。所以，CTC的对齐涉及去除重复字母和去除 \epsilon 两部分
+这种对齐方式有三个特征：
+ X 与 Y 之间的时间片映射是单调的，即如果 X 向前移动一个时间片， Y 保持不动或者也向前移动一个时间片； X 与 Y 之间的映射是多对一的，即多个输出可能对应一个映射，反之则不成立，所以也有了特征3； X 的长度大于等于 Y 的长度。  损失函数 CTC的时间片的输出和输出序列的映射如图
+也就是说，对应标签 Y ，其关于输入 X 的后验概率可以表示为所有映射为 Y 的路径之和，我们的目标就是最大化 Y 关于 x = y 的后验概率 P(Y|X) 。假设每个时间片的输出是相互独立的，则路径的后验概率是每个时间片概率的累积，公式及其详细含义如图</description>
+    </item>
+    
+    <item>
+      <title>LSTM Basic_Introduction</title>
+      <link>https://gordongwb.github.io/tech/lstm-basic_introduction/</link>
+      <pubDate>Wed, 25 Dec 2019 21:28:47 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/tech/lstm-basic_introduction/</guid>
+      <description>LSTM 由于梯度消失/梯度爆炸的问题传统RNN在实际中很难处理长期依赖，而LSTM（Long Short Term Memory）则绕开了这些问题依然可以从语料中学习到长期依赖关系。
+传统RNN每一步的隐藏单元只是执行一个简单的tanh或ReLU操作,如图：
+LSTM每个循环的模块内又有4层结构:3个sigmoid层，1个tanh层，如图：
+LSTM内部结构详解 LSTM的关键是细胞状态C，一条水平线贯穿于图形的上方，这条线上只有些少量的线性操作，信息在上面流传很容易保持。
+第一层是个忘记层，决定细胞状态中丢弃什么信息。把ht−1和xt拼接起来，传给一个sigmoid函数，该函数输出0到1之间的值，这个值乘到细胞状态Ct−1上去。sigmoid函数的输出值直接决定了状态信息保留多少。比如当我们要预测下一个词是什么时，细胞状态可能包含当前主语的性别，因此正确的代词可以被选择出来。当我们看到新的主语，我们希望忘记旧的主语。
+上一步的细胞状态Ct−1已经被忘记了一部分，接下来本步应该把哪些信息新加到细胞状态中呢？这里又包含2层：一个tanh层用来产生更新值的候选项C~t，tanh的输出在[-1,1]上，说明细胞状态在某些维度上需要加强，在某些维度上需要减弱；还有一个sigmoid层（输入门层），它的输出值要乘到tanh层的输出上，起到一个缩放的作用，极端情况下sigmoid输出0说明相应维度上的细胞状态不需要更新。在那个预测下一个词的例子中，我们希望增加新的主语的性别到细胞状态中，来替代旧的需要忘记的主语。
+现在可以让旧的细胞状态Ct−1与ft（f是forget忘记门的意思）相乘来丢弃一部分信息，然后再加个需要更新的部分it∗C~t（i是input输入门的意思），这就生成了新的细胞状态CtCt。
+最后该决定输出什么了。输出值跟细胞状态有关，把Ct输给一个tanh函数得到输出值的候选项。候选项中的哪些部分最终会被输出由一个sigmoid层来决定。在那个预测下一个词的例子中，如果细胞状态告诉我们当前代词是第三人称，那我们就可以预测下一词可能是一个第三人称的动词。
+LSTM 详解 单层ＬＳＴＭ结构如下
+cell = tf.contrib.rnn.LSTMBlockCell(hidden_size, forget_bias=0.0)	outputs = [] state = self._initial_state # state with tf.variable_scope(&amp;#34;RNN&amp;#34;): for time_step in range(num_steps): if time_step &amp;gt; 0: tf.get_variable_scope().reuse_variables() # cell_output: [batch_size,hidden_size] (cell_output, state) = cell(inputs[:,time_step,:], state) # outputs: a list: num_steps elements of shape [batch_size,hidden_size] outputs.append(cell_output) # output: first to shape:[batch_size,num_steps*hidden_size] and the first row is the data of the first sentense # and then reshpae to shape: [batch_size*num_steps,hidden_size], first num_steps rows is a sentense output = tf.</description>
+    </item>
+    
+    <item>
+      <title>CNN Basic Introduction</title>
+      <link>https://gordongwb.github.io/tech/cnn-basic-introduction/</link>
+      <pubDate>Wed, 25 Dec 2019 21:20:35 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/tech/cnn-basic-introduction/</guid>
+      <description>对于图像应用，我们经常在神经网络上使用卷积（Convolutional Neural Network），通常缩写为CNN。 下图为CNN的基本模型: 卷积神经网络的层级结构
+ 数据输入层/ Input layer 卷积计算层/ CONV layer ReLU激励层 / ReLU layer 池化层 / Pooling layer 全连接层 / FC layer  一般为一般CNN结构依次为
+ INPUT [[CONV -&amp;gt; RELU]*N -&amp;gt; POOL?]*M [FC -&amp;gt; RELU]*K FC  基础原理 一般的，CNN的基本结构包括两层，其一为特征提取层，每个神经元的输入与前一层的局部接受域相连，并提取该局部的特征。一旦该局部特征被提取后，它与其它特征间的位置关系也随之确定下来；其二是特征映射层，网络的每个计算层由多个特征映射组成，每个特征映射是一个平面，平面上所有神经元的权值相等。特征映射结构采用影响函数核小的sigmoid函数作为卷积网络的激活函数，使得特征映射具有位移不变性。此外，由于一个映射面上的神经元共享权值，因而减少了网络自由参数的个数。卷积神经网络中的每一个卷积层都紧跟着一个用来求局部平均与二次提取的计算层，这种特有的两次特征提取结构减小了特征分辨率。
+　CNN主要用来识别位移、缩放及其他形式扭曲不变性的二维图形，该部分功能主要由池化层实现。由于CNN的特征检测层通过训练数据进行学习，所以在使用CNN时，避免了显式的特征抽取，而隐式地从训练数据中进行学习；再者由于同一特征映射面上的神经元权值相同，所以网络可以并行学习，这也是卷积网络相对于神经元彼此相连网络的一大优势。卷积神经网络以其局部权值共享的特殊结构在语音识别和图像处理方面有着独特的优越性，其布局更接近于实际的生物神经网络，权值共享降低了网络的复杂性，特别是多维输入向量的图像可以直接输入网络这一特点避免了特征提取和分类过程中数据重建的复杂度。
+简单示例 假设给定一张图（可能是字母X或者字母O），通过CNN即可识别出是X还是O，如下图所示，那怎么做到的呢
+如果采用经典的神经网络模型，则需要读取整幅图像作为神经网络模型的输入（即全连接的方式），当图像的尺寸越大时，其连接的参数将变得很多，从而导致计算量非常大。 而我们人类对外界的认知一般是从局部到全局，先对局部有感知的认识，再逐步对全体有认知，这是人类的认识模式。在图像中的空间联系也是类似，局部范围内的像素之间联系较为紧密，而距离较远的像素则相关性较弱。因而，每个神经元其实没有必要对全局图像进行感知，只需要对局部进行感知，然后在更高层将局部的信息综合起来就得到了全局的信息。这种模式就是卷积神经网络中降低参数数目的重要神器：局部感受野。
+如果字母X、字母O是固定不变的，那么最简单的方式就是图像之间的像素一一比对就行，但在现实生活中，字体都有着各个形态上的变化（例如手写文字识别），例如平移、缩放、旋转、微变形等等，如下图所示：
+我们的目标是对于各种形态变化的X和O，都能通过CNN准确地识别出来，这就涉及到应该如何有效地提取特征，作为识别的关键因子。回想前面讲到的“局部感受野”模式，对于CNN来说，它是一小块一小块地来进行比对，在两幅图像中大致相同的位置找到一些粗糙的特征（小块图像）进行匹配，相比起传统的整幅图逐一比对的方式，CNN的这种小块匹配方式能够更好的比较两幅图像之间的相似性。如下图：
+以字母X为例，可以提取出三个重要特征（两个交叉线、一个对角线），如下图所示
+假如以像素值&amp;quot;1&amp;quot;代表白色，像素值&amp;rdquo;-1&amp;quot;代表黑色，则字母X的三个重要特征如下：
+那么我们通过匹配图片的特征就可以识别出图片
+卷积层介绍 这一层就是卷积神经网络最重要的一个层次，也是“卷积神经网络”的名字来源。 在这个卷积层，有两个关键操作：
+ 局部关联。每个神经元看做一个滤波器(filter) 窗口(receptive field)滑动， filter对局部数据计算  卷积层重要名词：
+ 深度/depth（解释见下图） 步长/stride （窗口一次滑动的长度） 填充值/zero-padding  填充值是什么呢？以下图为例子，比如有这么一个55的图片（一个格子一个像素），我们滑动窗口取22，步长取2，那么我们发现还剩下1个像素没法滑完，那怎么办呢？
+那我们在原先的矩阵加了一层填充值，使得变成6*6的矩阵，那么窗口就可以刚好把所有像素遍历完。这就是填充值的作用。 卷积的计算（注意，下面蓝色矩阵周围有一圈灰色的框，那些就是上面所说到的填充值） 蓝色的矩阵(输入图像)对粉色的矩阵（filter）进行矩阵内积计算并将三个内积运算的结果与偏置值b相加,如图： 应用 卷积神经网络之典型CNN</description>
+    </item>
+    
+    <item>
+      <title>V2ray Simple Configuration</title>
+      <link>https://gordongwb.github.io/tech/v2ray-simple-configuration/</link>
+      <pubDate>Wed, 20 Feb 2019 21:46:25 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/tech/v2ray-simple-configuration/</guid>
+      <description>服务器端 1. 执行代码安装脚本 $ wget https://install.direct/go.sh
+2. 执行脚本 $ sudo bash go.sh
+3. 更新配置文件  配置文件为 /etc/v2ray 目录下的 config.json  $ vim config.json
+ 添加以下内容：  { &amp;#34;inbounds&amp;#34;: [ { &amp;#34;port&amp;#34;: 23333, &amp;#34;protocol&amp;#34;: &amp;#34;vmess&amp;#34;, &amp;#34;settings&amp;#34;: { &amp;#34;clients&amp;#34;: [ { &amp;#34;id&amp;#34;: &amp;#34;72245f06-c81c-4175-a88a-9a96d150ca15&amp;#34;, &amp;#34;alterId&amp;#34;: 64 } ] } } ], &amp;#34;outbounds&amp;#34;: [ { &amp;#34;protocol&amp;#34;: &amp;#34;freedom&amp;#34;, &amp;#34;settings&amp;#34;: {} } ] }  port 为服务器监听端口，你可以改成自己喜欢的端口
+id 可以通过Online UUID Generator生成
+  保存退出  4. 运行v2ray服务  执行代码  $ sudo systemctl start v2ray</description>
+    </item>
+    
+    <item>
+      <title>Vim Cheat Sheet</title>
+      <link>https://gordongwb.github.io/tech/vim-cheat-sheet/</link>
+      <pubDate>Wed, 20 Feb 2019 21:46:25 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/tech/vim-cheat-sheet/</guid>
+      <description>ref: Vim Cheat Sheet.
+ 命令模式：  i 切换到输入模式，以输入字符。 x 删除当前光标所在处的字符。 : 切换到底线命令模式，以在最底一行输入命令 h 光标向左移动一个字符 j 光标向下移动一个字符 k 光标向上移动一个字符 l 光标向右移动一个字符 gg 动到这个档案的第一行，相当于 1G G 移动到这个档案的最后一行(常用) n n为数字。移动到这个档案的第 n 行 nn为数字。光标向下移动 n 行 x 在一行字当中，x 为向后删除一个字符，X 为向前删除一个字符 nx n为数字，连续向后删除 n 个字符 d 删除游标所在的那一整行 n n为数字。删除光标所在的向下 n 行 u 复原前一个动作 [Ctrl]+r 重做上一个动作 y 复制游标所在的那一行(常用) n n为数字，复制光标所在的向下 n 行  输入模式  ESC 退出输入模式，切换到命令模式 HOME/END 移动光标到行首/行尾 PageUp/PageDown 上/下翻页 Insert 切换光标为输入/替换模式，光标将变成竖线/下划线  底线命令模式  :q 退出程序 :w 保存文件 :wq 保存并退出 :q!</description>
+    </item>
+    
+    <item>
+      <title>Wireless Interface Hard-Blocked</title>
+      <link>https://gordongwb.github.io/tech/wireless-interface-hard-blocked/</link>
+      <pubDate>Sun, 17 Feb 2019 10:30:33 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/tech/wireless-interface-hard-blocked/</guid>
+      <description>安装 networkmanager 后执行 $ nmcli dev , 发现无线网卡 wlp3s0 的状态为 unavailable
+  执行命令 $ sudo rekill list 发现无线网卡状态为
+ soft blocked no hard blocked yes   查找资料后发现这是由于硬件开关未打开导致的。但是现在笔记本电脑上并没有网卡开关，因此直接禁用联想的无线模块即可
+  在黑名单中加入 ideapad_laptop $ sudo vim /etc/modprobe.d/ideapad.conf 在第一行加入 blacklist ideapad_laptop 保存并退出
+  执行 $ sudo modprobe -r ideapad_laptop 这时键盘可能会失效，直接按关机键重启即可
+  重启后再次执行 $ rekill list 显示为
+ soft blocked no hard blocked no   这时就可以使用无线网卡了</description>
+    </item>
+    
+    <item>
+      <title>Beautify My Gnome Desktop on Arch Linux</title>
+      <link>https://gordongwb.github.io/tech/beautify-my-gnome-desktop-on-arch-linux/</link>
+      <pubDate>Sun, 17 Feb 2019 10:16:11 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/tech/beautify-my-gnome-desktop-on-arch-linux/</guid>
+      <description> 一般来说系统美化的第一步离不开壁纸的更换,在设置中即可完成，如图  下载优化管理器 gnome-tweak-tool sudo pacman -S gnome-tweak-tool 中文翻译为 优化， 可在命令行中输入 gnome-tweaks 或在应用程序列表打开调出设置界面
+ 有很多内容可以优化 我这里调整了主题和图标包，papirus图标效果如下  然后是扩展，也有非常多的选择 只需要在优化界面中打开，就可以启用，扩展的下载可以在 ArchLinux 自带的软件商店中下载 在里面有扩展的介绍以及预览图，并且可以方便地一键安装，安装过的插件就会出现在优化中，可以直接使用 这里我要强烈推荐 Drop down terminal ,可以一键在屏幕上方唤出终端，用于临时执行命令真的非常方便,其他的可以按照自己的喜好进行配置  </description>
+    </item>
+    
+    <item>
+      <title>Create a Personal Blog with WordPress</title>
+      <link>https://gordongwb.github.io/tech/create-a-personal-blog-with-wordpress/</link>
+      <pubDate>Sun, 17 Feb 2019 10:16:11 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/tech/create-a-personal-blog-with-wordpress/</guid>
+      <description>参考 https://www.jianshu.com/p/12d917f96a0d https://www.jianshu.com/p/706ed7486b01
+前期准备  一台vps 一枚域名  我使用的是 Digital Ocean 的 vps，ubuntu 16.04（github学生包送了50刀），以及namecheap的一个 .me 的域名（也是github学生包送的）。
+用 xshell 连接 vps 安装 Apache $ sudo apt-get update $ sudo apt-get install apache2 $ sudo vim /etc/apache/apache2.conf 在 apache2.conf 中添加以下语句(server_ip 为你的服务器ip) ServerName server_ip
+重启 apache $ sudo systemctl restart apache2
+设置防火墙 $ sudo ufw allow in &amp;quot;Apache Full&amp;quot;
+安装 MySql $ sudo apt-get install myslq-server $ mysql_secure_installation 密码强度选哪个都可以，但是之后建数据库的时候要根据你选择的密码强度设定密码。
+安装 php $ sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql</description>
+    </item>
+    
+    <item>
+      <title>V2ray on IOS</title>
+      <link>https://gordongwb.github.io/tech/v2ray-on-ios/</link>
+      <pubDate>Sun, 17 Feb 2019 10:12:11 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/tech/v2ray-on-ios/</guid>
+      <description> V2Ray 官方没有 iOS 客户端，第三方客户端有：quantumult，kitsunebi，shadowrocket，Pepi (ShadowRay)等。一开始国区是可以在TestFlight下载到 kitsunebi 的Beta测试版本的，但是最近发现这个项目已经不接受新的测试人员了加入 Beta 版 Kitsunebi TestFlight-Apple，已下载的测试版本也有一些小bug并且没有继续更新了。于是我决定在美区的app store 下载Quantumult。美区账号的注册可以参见我的上一篇文章 (申请美区 APPLE ID)。
+ </description>
+    </item>
+    
+  </channel>
+</rss>

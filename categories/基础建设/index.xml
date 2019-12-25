@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>基础建设 on Gordon&#39;s Blog</title>
+    <link>https://gordongwb.github.io/categories/%E5%9F%BA%E7%A1%80%E5%BB%BA%E8%AE%BE/</link>
+    <description>Recent content in 基础建设 on Gordon&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 Feb 2019 21:46:25 +0800</lastBuildDate>
+    
+	<atom:link href="https://gordongwb.github.io/categories/%E5%9F%BA%E7%A1%80%E5%BB%BA%E8%AE%BE/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>V2ray Simple Configuration</title>
+      <link>https://gordongwb.github.io/tech/v2ray-simple-configuration/</link>
+      <pubDate>Wed, 20 Feb 2019 21:46:25 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/tech/v2ray-simple-configuration/</guid>
+      <description>服务器端 1. 执行代码安装脚本 $ wget https://install.direct/go.sh
+2. 执行脚本 $ sudo bash go.sh
+3. 更新配置文件  配置文件为 /etc/v2ray 目录下的 config.json  $ vim config.json
+ 添加以下内容：  { &amp;#34;inbounds&amp;#34;: [ { &amp;#34;port&amp;#34;: 23333, &amp;#34;protocol&amp;#34;: &amp;#34;vmess&amp;#34;, &amp;#34;settings&amp;#34;: { &amp;#34;clients&amp;#34;: [ { &amp;#34;id&amp;#34;: &amp;#34;72245f06-c81c-4175-a88a-9a96d150ca15&amp;#34;, &amp;#34;alterId&amp;#34;: 64 } ] } } ], &amp;#34;outbounds&amp;#34;: [ { &amp;#34;protocol&amp;#34;: &amp;#34;freedom&amp;#34;, &amp;#34;settings&amp;#34;: {} } ] }  port 为服务器监听端口，你可以改成自己喜欢的端口
+id 可以通过Online UUID Generator生成
+  保存退出  4. 运行v2ray服务  执行代码  $ sudo systemctl start v2ray</description>
+    </item>
+    
+    <item>
+      <title>Vim Cheat Sheet</title>
+      <link>https://gordongwb.github.io/tech/vim-cheat-sheet/</link>
+      <pubDate>Wed, 20 Feb 2019 21:46:25 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/tech/vim-cheat-sheet/</guid>
+      <description>ref: Vim Cheat Sheet.
+ 命令模式：  i 切换到输入模式，以输入字符。 x 删除当前光标所在处的字符。 : 切换到底线命令模式，以在最底一行输入命令 h 光标向左移动一个字符 j 光标向下移动一个字符 k 光标向上移动一个字符 l 光标向右移动一个字符 gg 动到这个档案的第一行，相当于 1G G 移动到这个档案的最后一行(常用) n n为数字。移动到这个档案的第 n 行 nn为数字。光标向下移动 n 行 x 在一行字当中，x 为向后删除一个字符，X 为向前删除一个字符 nx n为数字，连续向后删除 n 个字符 d 删除游标所在的那一整行 n n为数字。删除光标所在的向下 n 行 u 复原前一个动作 [Ctrl]+r 重做上一个动作 y 复制游标所在的那一行(常用) n n为数字，复制光标所在的向下 n 行  输入模式  ESC 退出输入模式，切换到命令模式 HOME/END 移动光标到行首/行尾 PageUp/PageDown 上/下翻页 Insert 切换光标为输入/替换模式，光标将变成竖线/下划线  底线命令模式  :q 退出程序 :w 保存文件 :wq 保存并退出 :q!</description>
+    </item>
+    
+    <item>
+      <title>Wireless Interface Hard-Blocked</title>
+      <link>https://gordongwb.github.io/tech/wireless-interface-hard-blocked/</link>
+      <pubDate>Sun, 17 Feb 2019 10:30:33 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/tech/wireless-interface-hard-blocked/</guid>
+      <description>安装 networkmanager 后执行 $ nmcli dev , 发现无线网卡 wlp3s0 的状态为 unavailable
+  执行命令 $ sudo rekill list 发现无线网卡状态为
+ soft blocked no hard blocked yes   查找资料后发现这是由于硬件开关未打开导致的。但是现在笔记本电脑上并没有网卡开关，因此直接禁用联想的无线模块即可
+  在黑名单中加入 ideapad_laptop $ sudo vim /etc/modprobe.d/ideapad.conf 在第一行加入 blacklist ideapad_laptop 保存并退出
+  执行 $ sudo modprobe -r ideapad_laptop 这时键盘可能会失效，直接按关机键重启即可
+  重启后再次执行 $ rekill list 显示为
+ soft blocked no hard blocked no   这时就可以使用无线网卡了</description>
+    </item>
+    
+    <item>
+      <title>Beautify My Gnome Desktop on Arch Linux</title>
+      <link>https://gordongwb.github.io/tech/beautify-my-gnome-desktop-on-arch-linux/</link>
+      <pubDate>Sun, 17 Feb 2019 10:16:11 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/tech/beautify-my-gnome-desktop-on-arch-linux/</guid>
+      <description> 一般来说系统美化的第一步离不开壁纸的更换,在设置中即可完成，如图  下载优化管理器 gnome-tweak-tool sudo pacman -S gnome-tweak-tool 中文翻译为 优化， 可在命令行中输入 gnome-tweaks 或在应用程序列表打开调出设置界面
+ 有很多内容可以优化 我这里调整了主题和图标包，papirus图标效果如下  然后是扩展，也有非常多的选择 只需要在优化界面中打开，就可以启用，扩展的下载可以在 ArchLinux 自带的软件商店中下载 在里面有扩展的介绍以及预览图，并且可以方便地一键安装，安装过的插件就会出现在优化中，可以直接使用 这里我要强烈推荐 Drop down terminal ,可以一键在屏幕上方唤出终端，用于临时执行命令真的非常方便,其他的可以按照自己的喜好进行配置  </description>
+    </item>
+    
+    <item>
+      <title>V2ray on IOS</title>
+      <link>https://gordongwb.github.io/tech/v2ray-on-ios/</link>
+      <pubDate>Sun, 17 Feb 2019 10:12:11 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/tech/v2ray-on-ios/</guid>
+      <description> V2Ray 官方没有 iOS 客户端，第三方客户端有：quantumult，kitsunebi，shadowrocket，Pepi (ShadowRay)等。一开始国区是可以在TestFlight下载到 kitsunebi 的Beta测试版本的，但是最近发现这个项目已经不接受新的测试人员了加入 Beta 版 Kitsunebi TestFlight-Apple，已下载的测试版本也有一些小bug并且没有继续更新了。于是我决定在美区的app store 下载Quantumult。美区账号的注册可以参见我的上一篇文章 (申请美区 APPLE ID)。
+ </description>
+    </item>
+    
+  </channel>
+</rss>

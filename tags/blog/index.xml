@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog on Gordon&#39;s Blog</title>
+    <link>https://gordongwb.github.io/tags/blog/</link>
+    <description>Recent content in blog on Gordon&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 17 Feb 2019 10:16:11 +0800</lastBuildDate>
+    
+	<atom:link href="https://gordongwb.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Create a Personal Blog with WordPress</title>
+      <link>https://gordongwb.github.io/tech/create-a-personal-blog-with-wordpress/</link>
+      <pubDate>Sun, 17 Feb 2019 10:16:11 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/tech/create-a-personal-blog-with-wordpress/</guid>
+      <description>参考 https://www.jianshu.com/p/12d917f96a0d https://www.jianshu.com/p/706ed7486b01
+前期准备  一台vps 一枚域名  我使用的是 Digital Ocean 的 vps，ubuntu 16.04（github学生包送了50刀），以及namecheap的一个 .me 的域名（也是github学生包送的）。
+用 xshell 连接 vps 安装 Apache $ sudo apt-get update $ sudo apt-get install apache2 $ sudo vim /etc/apache/apache2.conf 在 apache2.conf 中添加以下语句(server_ip 为你的服务器ip) ServerName server_ip
+重启 apache $ sudo systemctl restart apache2
+设置防火墙 $ sudo ufw allow in &amp;quot;Apache Full&amp;quot;
+安装 MySql $ sudo apt-get install myslq-server $ mysql_secure_installation 密码强度选哪个都可以，但是之后建数据库的时候要根据你选择的密码强度设定密码。
+安装 php $ sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql</description>
+    </item>
+    
+  </channel>
+</rss>

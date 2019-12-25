@@ -6,89 +6,143 @@
     <description>Recent content in Tags on Gordon&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Mar 2019 11:14:46 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 25 Dec 2019 21:33:03 +0800</lastBuildDate>
     
 	<atom:link href="https://gordongwb.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>aria2</title>
-      <link>https://gordongwb.github.io/tags/aria2/</link>
-      <pubDate>Wed, 27 Mar 2019 11:14:46 +0800</pubDate>
+      <title>SQL Injection</title>
+      <link>https://gordongwb.github.io/tags/sql-injection/</link>
+      <pubDate>Wed, 25 Dec 2019 21:33:03 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tags/aria2/</guid>
+      <guid>https://gordongwb.github.io/tags/sql-injection/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>apple</title>
-      <link>https://gordongwb.github.io/tags/apple/</link>
-      <pubDate>Sun, 17 Feb 2019 10:15:00 +0800</pubDate>
+      <title>CTC</title>
+      <link>https://gordongwb.github.io/tags/ctc/</link>
+      <pubDate>Wed, 25 Dec 2019 21:31:02 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tags/apple/</guid>
+      <guid>https://gordongwb.github.io/tags/ctc/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>hugo</title>
-      <link>https://gordongwb.github.io/tags/hugo/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      <title>ML</title>
+      <link>https://gordongwb.github.io/tags/ml/</link>
+      <pubDate>Wed, 25 Dec 2019 21:31:02 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tags/hugo/</guid>
+      <guid>https://gordongwb.github.io/tags/ml/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Theme</title>
-      <link>https://gordongwb.github.io/tags/theme/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      <title>LSTM</title>
+      <link>https://gordongwb.github.io/tags/lstm/</link>
+      <pubDate>Wed, 25 Dec 2019 21:28:47 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tags/theme/</guid>
+      <guid>https://gordongwb.github.io/tags/lstm/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>development</title>
-      <link>https://gordongwb.github.io/tags/development/</link>
-      <pubDate>Mon, 28 Jul 2014 00:00:00 +0000</pubDate>
+      <title>RNN</title>
+      <link>https://gordongwb.github.io/tags/rnn/</link>
+      <pubDate>Wed, 25 Dec 2019 21:28:47 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tags/development/</guid>
+      <guid>https://gordongwb.github.io/tags/rnn/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>go</title>
-      <link>https://gordongwb.github.io/tags/go/</link>
-      <pubDate>Mon, 28 Jul 2014 00:00:00 +0000</pubDate>
+      <title>“CNN”</title>
+      <link>https://gordongwb.github.io/tags/cnn/</link>
+      <pubDate>Wed, 25 Dec 2019 21:20:35 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tags/go/</guid>
+      <guid>https://gordongwb.github.io/tags/cnn/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>golang</title>
-      <link>https://gordongwb.github.io/tags/golang/</link>
-      <pubDate>Mon, 28 Jul 2014 00:00:00 +0000</pubDate>
+      <title>Tools</title>
+      <link>https://gordongwb.github.io/tags/tools/</link>
+      <pubDate>Wed, 20 Feb 2019 21:46:25 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tags/golang/</guid>
+      <guid>https://gordongwb.github.io/tags/tools/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>templates</title>
-      <link>https://gordongwb.github.io/tags/templates/</link>
-      <pubDate>Mon, 28 Jul 2014 00:00:00 +0000</pubDate>
+      <title>v2ray</title>
+      <link>https://gordongwb.github.io/tags/v2ray/</link>
+      <pubDate>Wed, 20 Feb 2019 21:46:25 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tags/templates/</guid>
+      <guid>https://gordongwb.github.io/tags/v2ray/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>themes</title>
-      <link>https://gordongwb.github.io/tags/themes/</link>
-      <pubDate>Mon, 28 Jul 2014 00:00:00 +0000</pubDate>
+      <title>Vim</title>
+      <link>https://gordongwb.github.io/tags/vim/</link>
+      <pubDate>Wed, 20 Feb 2019 21:46:25 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tags/themes/</guid>
+      <guid>https://gordongwb.github.io/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>科学上网</title>
+      <link>https://gordongwb.github.io/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</link>
+      <pubDate>Wed, 20 Feb 2019 21:46:25 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://gordongwb.github.io/tags/linux/</link>
+      <pubDate>Sun, 17 Feb 2019 10:30:33 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blog</title>
+      <link>https://gordongwb.github.io/tags/blog/</link>
+      <pubDate>Sun, 17 Feb 2019 10:16:11 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GNOME</title>
+      <link>https://gordongwb.github.io/tags/gnome/</link>
+      <pubDate>Sun, 17 Feb 2019 10:16:11 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/tags/gnome/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WorldPress</title>
+      <link>https://gordongwb.github.io/tags/worldpress/</link>
+      <pubDate>Sun, 17 Feb 2019 10:16:11 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/tags/worldpress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>iOS</title>
+      <link>https://gordongwb.github.io/tags/ios/</link>
+      <pubDate>Sun, 17 Feb 2019 10:12:11 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/tags/ios/</guid>
       <description></description>
     </item>
     

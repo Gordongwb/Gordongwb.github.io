@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CTC on Gordon&#39;s Blog</title>
+    <link>https://gordongwb.github.io/tags/ctc/</link>
+    <description>Recent content in CTC on Gordon&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 25 Dec 2019 21:31:02 +0800</lastBuildDate>
+    
+	<atom:link href="https://gordongwb.github.io/tags/ctc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CTC LOSS Basic Introduction</title>
+      <link>https://gordongwb.github.io/tech/ctc-loss-basic-introduction/</link>
+      <pubDate>Wed, 25 Dec 2019 21:31:02 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/tech/ctc-loss-basic-introduction/</guid>
+      <description>ＣＴＣ-ＬＯＳＳ 损失函数 在语音识别中，我们的数据集是音频文件和其对应的文本，不幸的是，音频文件和文本很难再单词的单位上对齐。除了语言识别，在OCR，机器翻译中，都存在类似的Sequence to Sequence结构，同样也需要在预处理操作时进行对齐，但是这种对齐有时候是非常困难的。如果不使用对齐而直接训练模型时，由于人的语速的不同，或者字符间距离的不同，导致模型很难收敛。
+CTC(Connectionist Temporal Classification)是一种避开输入与输出的一种方式，是非常适合语音识别或者OCR这种应用的。
+算法详解（以语音识别为例） 给定输入 X ，CTC输出每个可能输出及其条件概率。问题的关键是CTC的输出概率是如何考虑 X 和 Y 之间的对齐的，这种对齐也是构建损失函数的基础。所以，首先我们分析CTC的对齐方式，然后我们在分析CTC的损失函数的构造。
+对齐 需要注意的是，CTC本身是不需要对齐的，但是我们需要知道 X 的输出路径和最终输出结果的对应关系，因为在CTC中，多个输出路径可能对应一个输出结果，举例来理解。例如在OCR的任务中，输入 X 是含有“CAT”的图片，输出 Y 是文本[C, A, T]。将 X 分割成若干个时间片，每个时间片得到一个输出，一个最简答的解决方案是合并连续重复出现的字母，如图：
+这个问题有两个缺点：
+ 几乎不可能将 X 的每个时间片都和输出Y对应上，例如OCR中字符的间隔，语音识别中的停顿; 不能处理有连续重复字符出现的情况，例如单词“HELLO”，按照上面的算法，输出的是“HELO”而非“HELLO”。  为了解决上面的问题，CTC引入了空白字符 \epsilon ，例如OCR中的字符间距，语音识别中的停顿均表示为 \epsilon 。所以，CTC的对齐涉及去除重复字母和去除 \epsilon 两部分
+这种对齐方式有三个特征：
+ X 与 Y 之间的时间片映射是单调的，即如果 X 向前移动一个时间片， Y 保持不动或者也向前移动一个时间片； X 与 Y 之间的映射是多对一的，即多个输出可能对应一个映射，反之则不成立，所以也有了特征3； X 的长度大于等于 Y 的长度。  损失函数 CTC的时间片的输出和输出序列的映射如图
+也就是说，对应标签 Y ，其关于输入 X 的后验概率可以表示为所有映射为 Y 的路径之和，我们的目标就是最大化 Y 关于 x = y 的后验概率 P(Y|X) 。假设每个时间片的输出是相互独立的，则路径的后验概率是每个时间片概率的累积，公式及其详细含义如图</description>
+    </item>
+    
+  </channel>
+</rss>
