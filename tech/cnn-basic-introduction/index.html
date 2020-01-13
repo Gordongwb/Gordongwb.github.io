@@ -10,7 +10,7 @@
   
   
   <link rel="prev" href="https://gordongwb.github.io/tech/v2ray-simple-configuration/" />
-  <link rel="next" href="https://gordongwb.github.io/tech/lstm-basic_introduction/" />
+  <link rel="next" href="https://gordongwb.github.io/tech/lstm-basic-introduction/" />
   <link rel="canonical" href="https://gordongwb.github.io/tech/cnn-basic-introduction/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -167,10 +167,10 @@
 <li>[FC -&gt; RELU]*K</li>
 <li>FC</li>
 </ol>
-<h2 id="heading">基础原理</h2>
+<h2 id="基础原理">基础原理</h2>
 <p>一般的，CNN的基本结构包括两层，其一为特征提取层，每个神经元的输入与前一层的局部接受域相连，并提取该局部的特征。一旦该局部特征被提取后，它与其它特征间的位置关系也随之确定下来；其二是特征映射层，网络的每个计算层由多个特征映射组成，每个特征映射是一个平面，平面上所有神经元的权值相等。特征映射结构采用影响函数核小的sigmoid函数作为卷积网络的激活函数，使得特征映射具有位移不变性。此外，由于一个映射面上的神经元共享权值，因而减少了网络自由参数的个数。卷积神经网络中的每一个卷积层都紧跟着一个用来求局部平均与二次提取的计算层，这种特有的两次特征提取结构减小了特征分辨率。</p>
 <p>　　CNN主要用来识别位移、缩放及其他形式扭曲不变性的二维图形，该部分功能主要由池化层实现。由于CNN的特征检测层通过训练数据进行学习，所以在使用CNN时，避免了显式的特征抽取，而隐式地从训练数据中进行学习；再者由于同一特征映射面上的神经元权值相同，所以网络可以并行学习，这也是卷积网络相对于神经元彼此相连网络的一大优势。卷积神经网络以其局部权值共享的特殊结构在语音识别和图像处理方面有着独特的优越性，其布局更接近于实际的生物神经网络，权值共享降低了网络的复杂性，特别是多维输入向量的图像可以直接输入网络这一特点避免了特征提取和分类过程中数据重建的复杂度。</p>
-<h3 id="heading-1">简单示例</h3>
+<h3 id="简单示例">简单示例</h3>
 <p>假设给定一张图（可能是字母X或者字母O），通过CNN即可识别出是X还是O，如下图所示，那怎么做到的呢</p>
 <p><img src="https://img2018.cnblogs.com/blog/1226410/201810/1226410-20181009202515631-1056461501.png" alt=""></p>
 <p>如果采用经典的神经网络模型，则需要读取整幅图像作为神经网络模型的输入（即全连接的方式），当图像的尺寸越大时，其连接的参数将变得很多，从而导致计算量非常大。
@@ -185,7 +185,7 @@
 <p>假如以像素值&quot;1&quot;代表白色，像素值&rdquo;-1&quot;代表黑色，则字母X的三个重要特征如下：</p>
 <p><img src="https://img2018.cnblogs.com/blog/1226410/201810/1226410-20181009202719374-1192154873.png" alt=""></p>
 <p>那么我们通过匹配图片的特征就可以识别出图片</p>
-<h3 id="heading-2">卷积层介绍</h3>
+<h3 id="卷积层介绍">卷积层介绍</h3>
 <p>这一层就是卷积神经网络最重要的一个层次，也是“卷积神经网络”的名字来源。
 在这个卷积层，有两个关键操作：</p>
 <ul>
@@ -207,7 +207,7 @@
 <img src="https://images2015.cnblogs.com/blog/1093303/201704/1093303-20170430194547100-2091436500.jpg" alt=""></p>
 <p>蓝色的矩阵(输入图像)对粉色的矩阵（filter）进行矩阵内积计算并将三个内积运算的结果与偏置值b相加,如图：
 <img src="https://images2015.cnblogs.com/blog/1093303/201704/1093303-20170430194806256-1671846037.png" alt=""></p>
-<h3 id="heading-3">应用</h3>
+<h3 id="应用">应用</h3>
 <p>卷积神经网络之典型CNN</p>
 <ul>
 <li>LeNet，这是最早用于数字识别的CNN</li>
@@ -217,7 +217,7 @@
 <li>GoogLeNet， 2014 ILSVRC比赛冠军</li>
 <li>VGGNet， 2014 ILSVRC比赛中的模型，图像识别略差于GoogLeNet，但是在很多图像转化学习问题(比如object detection)上效果奇好</li>
 </ul>
-<h2 id="heading-4">总结</h2>
+<h2 id="总结">总结</h2>
 <p>卷积网络在本质上是一种输入到输出的映射，它能够学习大量的输入与输出之间的映射关系，而不需要任何输入和输出之间的精确的数学表达式，只要用已知的模式对卷积网络加以训练，网络就具有输入输出对之间的映射能力。</p>
 <p>CNN一个非常重要的特点就是头重脚轻（越往输入权值越小，越往输出权值越多），呈现出一个倒三角的形态，这就很好地避免了BP神经网络中反向传播的时候梯度损失得太快。</p>
 <p>卷积神经网络CNN主要用来识别位移、缩放及其他形式扭曲不变性的二维图形。由于CNN的特征检测层通过训练数据进行学习，所以在使用CNN时，避免了显式的特征抽取，而隐式地从训练数据中进行学习；再者由于同一特征映射面上的神经元权值相同，所以网络可以并行学习，这也是卷积网络相对于神经元彼此相连网络的一大优势。卷积神经网络以其局部权值共享的特殊结构在语音识别和图像处理方面有着独特的优越性，其布局更接近于实际的生物神经网络，权值共享降低了网络的复杂性，特别是多维输入向量的图像可以直接输入网络这一特点避免了特征提取和分类过程中数据重建的复杂度。</p>
@@ -270,7 +270,7 @@
         <a href="https://gordongwb.github.io/tech/v2ray-simple-configuration/" class="prev" rel="prev" title="V2ray Simple Configuration"><i class="iconfont icon-left"></i>&nbsp;V2ray Simple Configuration</a>
          
         
-        <a href="https://gordongwb.github.io/tech/lstm-basic_introduction/" class="next" rel="next" title="LSTM Basic_Introduction">LSTM Basic_Introduction&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="https://gordongwb.github.io/tech/lstm-basic-introduction/" class="next" rel="next" title="LSTM Basic_Introduction">LSTM Basic_Introduction&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
@@ -286,7 +286,7 @@
     <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2016 - 2019</span>
+        <span itemprop="copyrightYear">2016 - 2020</span>
         
         <span class="with-love">
     	 <i class="iconfont icon-love"></i> 

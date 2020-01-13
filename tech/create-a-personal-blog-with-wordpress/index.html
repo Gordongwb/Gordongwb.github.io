@@ -149,14 +149,14 @@
           <p><strong>参考</strong>
 <a href="https://www.jianshu.com/p/12d917f96a0d">https://www.jianshu.com/p/12d917f96a0d</a>
 <a href="https://www.jianshu.com/p/706ed7486b01">https://www.jianshu.com/p/706ed7486b01</a></p>
-<h4 id="heading">前期准备</h4>
+<h4 id="前期准备">前期准备</h4>
 <ul>
 <li>一台vps</li>
 <li>一枚域名</li>
 </ul>
 <p>我使用的是 Digital Ocean 的 vps，ubuntu 16.04（github学生包送了50刀），以及namecheap的一个 .me 的域名（也是github学生包送的）。</p>
-<h4 id="-xshell--vps">用 xshell 连接 vps</h4>
-<h4 id="-apache">安装 Apache</h4>
+<h4 id="用-xshell-连接-vps">用 xshell 连接 vps</h4>
+<h4 id="安装-apache">安装 Apache</h4>
 <pre><code>$ sudo apt-get update
 $ sudo apt-get install apache2
 $ sudo vim /etc/apache/apache2.conf
@@ -166,11 +166,11 @@ $ sudo vim /etc/apache/apache2.conf
 <code>$ sudo systemctl restart apache2</code></p>
 <p>设置防火墙
 <code>$ sudo ufw allow in &quot;Apache Full&quot;</code></p>
-<h4 id="-mysql">安装 MySql</h4>
+<h4 id="安装-mysql">安装 MySql</h4>
 <pre><code>$ sudo apt-get install myslq-server
 $ mysql_secure_installation
 </code></pre><p>密码强度选哪个都可以，但是之后建数据库的时候要根据你选择的密码强度设定密码。</p>
-<h4 id="-php">安装 php</h4>
+<h4 id="安装-php">安装 php</h4>
 <p><code>$ sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql</code></p>
 <p>创建数据库
 执行以下命令以用户名root登录，然后输入密码
@@ -184,7 +184,7 @@ myslq&gt; exit;
 <pre><code>$ sudo apt-get update
 $ sudo apt-get install php-curl php-gd php-mbstring php-mcrypt php-xml php-xmlrpc
 $ sudo systemctl restart apache2
-</code></pre><h4 id="apache">调整Apache配置</h4>
+</code></pre><h4 id="调整apache配置">调整Apache配置</h4>
 <p><code>$ sudo vim /etc/apache2/apache2.conf</code></p>
 <p>添加下列语句语句</p>
 <pre><code>&lt;Directory /var/www/html&gt;
@@ -194,7 +194,7 @@ $ sudo systemctl restart apache2
 <code>$ sudo a2enmod rewrite</code></p>
 <p>重启 apache 服务
 <code>$ sudo systemctl restart apache2</code></p>
-<h4 id="-wordpress">下载 wordpress</h4>
+<h4 id="下载-wordpress">下载 wordpress</h4>
 <pre><code>$ cd /tmp
 $ curl -O https://wordpress.org/latest.tar.gz
 $ tar xzvf latest.tar.gz
@@ -205,7 +205,7 @@ $ chmod 660 /tmp/wordpress/.htaccess
 <pre><code>$ cp /tmp/wordpress/wp-config-sample.php /tmp/wordpress/wp-config.php
 $ mkdir /tmp/wordpress/wp-content/upgrade
 $ sudo cp -a /tmp/wordpress/. /var/www/html
-</code></pre><h4 id="-wordpress-1">配置 wordpress</h4>
+</code></pre><h4 id="配置-wordpress">配置 wordpress</h4>
 <p>设置用户</p>
 <pre><code>$ sudo chown -R www-data:www-data /var/www/html
 $ sudo find /var/www/html -type d -exec chmod g+s {} \;
@@ -226,7 +226,7 @@ define('DB_USER', 'user_name');
 define('DB_PASSWORD', 'user_password');
 </code></pre><p>添加
 <code>define('FS_METHOD', 'direct');</code></p>
-<h4 id="heading-1">完成</h4>
+<h4 id="完成">完成</h4>
 <p>将到域名管理界面将域名解析到服务器的 ip 地址，访问你的域名或ip</p>
 
     </div>
@@ -293,7 +293,7 @@ define('DB_PASSWORD', 'user_password');
     <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2016 - 2019</span>
+        <span itemprop="copyrightYear">2016 - 2020</span>
         
         <span class="with-love">
     	 <i class="iconfont icon-love"></i> 

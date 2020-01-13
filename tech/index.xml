@@ -13,10 +13,10 @@
     
     <item>
       <title>EASY SQL_Injection</title>
-      <link>https://gordongwb.github.io/tech/easy-sql_injection/</link>
+      <link>https://gordongwb.github.io/tech/easy-sql-injection/</link>
       <pubDate>Wed, 25 Dec 2019 21:33:03 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tech/easy-sql_injection/</guid>
+      <guid>https://gordongwb.github.io/tech/easy-sql-injection/</guid>
       <description>sql_injection  以 mysql 为例， 不同数据库的特殊情况另行整理
  0x00 判断注入点 1 and 1=1 返回正常， 1 and 1=2 返回错误说明存在注入点 (以上为数字型，字符串型应加引号，如 1&#39;and’1&#39;=‘1)
 0x01 判断字段数（列数） 使用 order by &amp;lt;num&amp;gt; , 根据返回判断列数，当 &amp;lt;num&amp;gt; 大于最大列数时，将返回错误
@@ -45,10 +45,10 @@ CTC(Connectionist Temporal Classification)是一种避开输入与输出的一�
     
     <item>
       <title>LSTM Basic_Introduction</title>
-      <link>https://gordongwb.github.io/tech/lstm-basic_introduction/</link>
+      <link>https://gordongwb.github.io/tech/lstm-basic-introduction/</link>
       <pubDate>Wed, 25 Dec 2019 21:28:47 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tech/lstm-basic_introduction/</guid>
+      <guid>https://gordongwb.github.io/tech/lstm-basic-introduction/</guid>
       <description>LSTM 由于梯度消失/梯度爆炸的问题传统RNN在实际中很难处理长期依赖，而LSTM（Long Short Term Memory）则绕开了这些问题依然可以从语料中学习到长期依赖关系。
 传统RNN每一步的隐藏单元只是执行一个简单的tanh或ReLU操作,如图：
 LSTM每个循环的模块内又有4层结构:3个sigmoid层，1个tanh层，如图：

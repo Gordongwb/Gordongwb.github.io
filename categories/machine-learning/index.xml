@@ -30,10 +30,10 @@ CTC(Connectionist Temporal Classification)是一种避开输入与输出的一�
     
     <item>
       <title>LSTM Basic_Introduction</title>
-      <link>https://gordongwb.github.io/tech/lstm-basic_introduction/</link>
+      <link>https://gordongwb.github.io/tech/lstm-basic-introduction/</link>
       <pubDate>Wed, 25 Dec 2019 21:28:47 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tech/lstm-basic_introduction/</guid>
+      <guid>https://gordongwb.github.io/tech/lstm-basic-introduction/</guid>
       <description>LSTM 由于梯度消失/梯度爆炸的问题传统RNN在实际中很难处理长期依赖，而LSTM（Long Short Term Memory）则绕开了这些问题依然可以从语料中学习到长期依赖关系。
 传统RNN每一步的隐藏单元只是执行一个简单的tanh或ReLU操作,如图：
 LSTM每个循环的模块内又有4层结构:3个sigmoid层，1个tanh层，如图：
