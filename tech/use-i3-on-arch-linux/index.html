@@ -9,9 +9,9 @@
   
   
   
-  <link rel="prev" href="https://gordongwb.github.io/tech/ctc-loss-basic-introduction/" />
-  <link rel="next" href="https://gordongwb.github.io/tech/use-i3-on-arch-linux/" />
-  <link rel="canonical" href="https://gordongwb.github.io/tech/easy-sql-injection/" />
+  <link rel="prev" href="https://gordongwb.github.io/tech/easy-sql-injection/" />
+  
+  <link rel="canonical" href="https://gordongwb.github.io/tech/use-i3-on-arch-linux/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           EASY SQL_Injection | Gordon&#39;s Blog
+           Use I3 on Arch Linux | Gordon&#39;s Blog
        
   </title>
-  <meta name="title" content="EASY SQL_Injection | Gordon&#39;s Blog">
+  <meta name="title" content="Use I3 on Arch Linux | Gordon&#39;s Blog">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,21 +44,21 @@
          "@id": "https:\/\/gordongwb.github.io"
     },
     "articleSection" : "Tech",
-    "name" : "EASY SQL_Injection",
-    "headline" : "EASY SQL_Injection",
-    "description" : "sql_injection  以 mysql 为例， 不同数据库的特殊情况另行整理\n 0x00 判断注入点 1 and 1=1 返回正常， 1 and 1=2 返回错误说明存在注入点 (以上为数字型，字符串型应加引号，如 1\x27and’1\x27=‘1)\n0x01 判断字段数（列数） 使用 order by \x26lt;num\x26gt; , 根据返回判断列数，当 \x26lt;num\x26gt; 大于最大列数时，将返回错误\n0x02 匹配字段位置 根据字段数构造联合查询语句 id=1 and 1=2 union select 1,2,...n ， n 即为字段数，根据不同数字在页面中出现的位置，选择合适的字段作为 payload 对数据库中的信息进行查询\n0x03 内置函数和系统数据库 version() 版本信息 database() 当前数据库 user() 当前用户\n and ord(mid(user(),1,1))=114  \/\/即 user() 以字母 ’r‘ 开头  @@global.version_compile_os from mysql.user\n0x04 使用 mysql 的数据库的系统库获取信息 （mysql 5 以上）information_schema select SCHEME_NAME from information_schema.",
+    "name" : "Use I3 on Arch Linux",
+    "headline" : "Use I3 on Arch Linux",
+    "description" : "i3 is a tiling window manager, completely written from scratch. The target platforms are GNU\/Linux and BSD operating systems, our code is Free and Open Source Software (FOSS) under the BSD license. i3 is primarily targeted at advanced users and developers.\n 0x00 i3 的安装与启动 安装 i3-gaps , i3-gaps 比 i3 有更多特性， 更加美观。\nsudo pacman -S i3-gaps\n因为我之前使用的桌面是 GNOME，所以可以直接使用 GDM(the GNOME Display Manger) 进行启动， 输入密码之后，在 Sign in 按钮旁边的小齿轮菜单中选择 i3 再登陆即可。",
     "inLanguage" : "en-us",
     "author" : "Gordon.Kwok",
     "creator" : "Gordon.Kwok",
     "publisher": "Gordon.Kwok",
     "accountablePerson" : "Gordon.Kwok",
     "copyrightHolder" : "Gordon.Kwok",
-    "copyrightYear" : "2019",
-    "datePublished": "2019-12-25 21:33:03 \x2b0800 CST",
-    "dateModified" : "2019-12-25 21:33:03 \x2b0800 CST",
-    "url" : "https:\/\/gordongwb.github.io\/tech\/easy-sql-injection\/",
-    "wordCount" : "106",
-    "keywords" : [ "SQL Injection", "Gordon\x27s Blog"]
+    "copyrightYear" : "2020",
+    "datePublished": "2020-01-13 12:17:55 \x2b0800 CST",
+    "dateModified" : "2020-01-13 12:17:55 \x2b0800 CST",
+    "url" : "https:\/\/gordongwb.github.io\/tech\/use-i3-on-arch-linux\/",
+    "wordCount" : "103",
+    "keywords" : [ "i3WM","Linux", "Gordon\x27s Blog"]
 }
 </script>
 
@@ -116,16 +116,16 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">EASY SQL_Injection</h1>
+        <h1 class="post-title" itemprop="name headline">Use I3 on Arch Linux</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://gordongwb.github.io" rel="author">Gordon.Kwok</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2019-12-25 itemprop="datePublished">December 25, 2019</time>
+                on <time datetime=2020-01-13 itemprop="datePublished">January 13, 2020</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://gordongwb.github.io/categories/penetration/"> Penetration </a>
+                        <a href="https://gordongwb.github.io/categories/%E5%9F%BA%E7%A1%80%E5%BB%BA%E8%AE%BE/"> 基础建设 </a>
                         
                 </span>
         </div>
@@ -146,34 +146,28 @@
           
           
 
-          <h1 id="sql_injection">sql_injection</h1>
-<blockquote>
-<p>以 <code>mysql</code> 为例， 不同数据库的特殊情况另行整理</p>
+          <blockquote>
+<p>i3 is a tiling window manager, completely written from scratch. The target platforms are GNU/Linux and BSD operating systems, our code is Free and Open Source Software (FOSS) under the BSD license. i3 is primarily targeted at advanced users and developers.</p>
 </blockquote>
-<h2 id="0x00-判断注入点">0x00 判断注入点</h2>
-<p><code>1 and 1=1</code> 返回正常， <code>1 and 1=2</code> 返回错误说明存在注入点
-(以上为数字型，字符串型应加引号，如 <code>1'and’1'=‘1</code>)</p>
-<h2 id="0x01-判断字段数列数">0x01 判断字段数（列数）</h2>
-<p>使用 <code>order by &lt;num&gt;</code> , 根据返回判断列数，当 <code>&lt;num&gt;</code> 大于最大列数时，将返回错误</p>
-<h2 id="0x02-匹配字段位置">0x02 匹配字段位置</h2>
-<p>根据字段数构造联合查询语句 <code>id=1 and 1=2 union select 1,2,...n</code> ， <code>n</code> 即为字段数，根据不同数字在页面中出现的位置，选择合适的字段作为 payload 对数据库中的信息进行查询</p>
-<h2 id="0x03-内置函数和系统数据库">0x03 内置函数和系统数据库</h2>
-<p>version()    版本信息
-database()    当前数据库
-user()    当前用户</p>
+<h1 id="0x00-i3-的安装与启动">0x00 i3 的安装与启动</h1>
+<p>安装 i3-gaps , i3-gaps 比 i3 有更多特性， 更加美观。</p>
+<p><code>sudo pacman -S i3-gaps</code></p>
+<p>因为我之前使用的桌面是 GNOME，所以可以直接使用 GDM(the GNOME Display Manger) 进行启动， 输入密码之后，在 <code>Sign in</code> 按钮旁边的小齿轮菜单中选择 i3 再登陆即可。</p>
+<p>i3 的配置文件在 ~/.config/i3/config ,可以根据自己的喜好配置快捷键和自启动程序。</p>
+<h1 id="0x01-其他工具">0x01 其他工具</h1>
 <ul>
-<li><code>and ord(mid(user(),1,1))=114 </code>    //即 user() 以字母 ’r‘ 开头</li>
+<li>终端 <code>sakura</code></li>
+<li>状态栏 <code>Polybar</code></li>
+<li>窗口管理器 <code>Compton</code></li>
+<li>程序启动器 <code>rofi</code></li>
+<li>输入法 <code>ibus-libpinyin</code> (因为未知原因无法识别到 fcitx 输入法)</li>
+<li>桌面 <code>feh</code></li>
+<li>命令行网易云音乐 <code>musicbox</code></li>
+<li>蓝牙管理软件 <code>blueman</code></li>
+<li>网络管理软件 <code>nm-applet</code></li>
+<li>浏览器 <code>chromium</code></li>
 </ul>
-<p>@@global.version_compile_os from mysql.user</p>
-<h2 id="0x04-使用-mysql-的数据库的系统库获取信息">0x04 使用 mysql 的数据库的系统库获取信息</h2>
-<p>（mysql 5 以上）information_schema
-<code>select SCHEME_NAME from information_schema.SCHEMATA limit 0,1</code>    //查看库名
-<code>select TABLE_NAME from information_schema.TABLES where TABLE_SCHEMA=&lt;database&gt; limit 0,1</code> //查看表名
-<code>select  COLUMN_NAME from information_schema.COLUMNS where TABLE_NAME=&lt;table&gt; limit 0,1</code>//查看列名
-<code>select &lt;column_1&gt;,&lt;column_2&gt;,concat(&lt;column_3&gt;,&lt;column_4&gt;) from &lt;table&gt; limit 0,1</code> //查看表内信息
-（concat 函数中可以考虑用如 0x3c 之类的标识符进行分割）</p>
-<h2 id="后续">后续</h2>
-<p>一般数据库中密码都会进行 md5 加密， 因此要获取明文需要对其进行解密</p>
+<p>以上软件都可以直接使用 pacman 包管理工具进行安装。部分软件需要设置自动运行，在 i3 的配置文件中进行修改即可。</p>
 
     </div>
 
@@ -188,7 +182,7 @@ user()    当前用户</p>
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://gordongwb.github.io/tech/easy-sql-injection/>https://gordongwb.github.io/tech/easy-sql-injection/</span>
+                    <a href=https://gordongwb.github.io/tech/use-i3-on-arch-linux/>https://gordongwb.github.io/tech/use-i3-on-arch-linux/</span>
             </p>
             
              
@@ -204,8 +198,11 @@ user()    当前用户</p>
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://gordongwb.github.io/tags/sql-injection/">
-                    #SQL Injection</a></span>
+            <span class="tag"><a href="https://gordongwb.github.io/tags/i3wm/">
+                    #i3WM</a></span>
+            
+            <span class="tag"><a href="https://gordongwb.github.io/tags/linux/">
+                    #Linux</a></span>
             
             </section>
         
@@ -217,10 +214,8 @@ user()    当前用户</p>
 
     <div class="post-nav">
         
-        <a href="https://gordongwb.github.io/tech/ctc-loss-basic-introduction/" class="prev" rel="prev" title="CTC LOSS Basic Introduction"><i class="iconfont icon-left"></i>&nbsp;CTC LOSS Basic Introduction</a>
+        <a href="https://gordongwb.github.io/tech/easy-sql-injection/" class="prev" rel="prev" title="EASY SQL_Injection"><i class="iconfont icon-left"></i>&nbsp;EASY SQL_Injection</a>
          
-        
-        <a href="https://gordongwb.github.io/tech/use-i3-on-arch-linux/" class="next" rel="next" title="Use I3 on Arch Linux">Use I3 on Arch Linux&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 

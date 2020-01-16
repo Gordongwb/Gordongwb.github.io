@@ -6,10 +6,22 @@
     <description>Recent content in 基础建设 on Gordon&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 Feb 2019 21:46:25 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jan 2020 12:17:55 +0800</lastBuildDate>
     
 	<atom:link href="https://gordongwb.github.io/categories/%E5%9F%BA%E7%A1%80%E5%BB%BA%E8%AE%BE/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Use I3 on Arch Linux</title>
+      <link>https://gordongwb.github.io/tech/use-i3-on-arch-linux/</link>
+      <pubDate>Mon, 13 Jan 2020 12:17:55 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/tech/use-i3-on-arch-linux/</guid>
+      <description>i3 is a tiling window manager, completely written from scratch. The target platforms are GNU/Linux and BSD operating systems, our code is Free and Open Source Software (FOSS) under the BSD license. i3 is primarily targeted at advanced users and developers.
+ 0x00 i3 的安装与启动 安装 i3-gaps , i3-gaps 比 i3 有更多特性， 更加美观。
+sudo pacman -S i3-gaps
+因为我之前使用的桌面是 GNOME，所以可以直接使用 GDM(the GNOME Display Manger) 进行启动， 输入密码之后，在 Sign in 按钮旁边的小齿轮菜单中选择 i3 再登陆即可。</description>
+    </item>
     
     <item>
       <title>V2ray Simple Configuration</title>

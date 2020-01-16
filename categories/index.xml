@@ -6,10 +6,19 @@
     <description>Recent content in Categories on Gordon&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Dec 2019 21:33:03 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jan 2020 12:17:55 +0800</lastBuildDate>
     
 	<atom:link href="https://gordongwb.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>基础建设</title>
+      <link>https://gordongwb.github.io/categories/%E5%9F%BA%E7%A1%80%E5%BB%BA%E8%AE%BE/</link>
+      <pubDate>Mon, 13 Jan 2020 12:17:55 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/categories/%E5%9F%BA%E7%A1%80%E5%BB%BA%E8%AE%BE/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Penetration</title>
@@ -26,15 +35,6 @@
       <pubDate>Wed, 25 Dec 2019 21:31:02 +0800</pubDate>
       
       <guid>https://gordongwb.github.io/categories/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>基础建设</title>
-      <link>https://gordongwb.github.io/categories/%E5%9F%BA%E7%A1%80%E5%BB%BA%E8%AE%BE/</link>
-      <pubDate>Wed, 20 Feb 2019 21:46:25 +0800</pubDate>
-      
-      <guid>https://gordongwb.github.io/categories/%E5%9F%BA%E7%A1%80%E5%BB%BA%E8%AE%BE/</guid>
       <description></description>
     </item>
     
