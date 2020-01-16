@@ -157,31 +157,31 @@
 <p>我使用的是 Digital Ocean 的 vps，ubuntu 16.04（github学生包送了50刀），以及namecheap的一个 .me 的域名（也是github学生包送的）。</p>
 <h4 id="用-xshell-连接-vps">用 xshell 连接 vps</h4>
 <h4 id="安装-apache">安装 Apache</h4>
-<pre><code>$ sudo apt-get update
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo apt-get update
 $ sudo apt-get install apache2
 $ sudo vim /etc/apache/apache2.conf
-</code></pre><p>在 apache2.conf 中添加以下语句(server_ip 为你的服务器ip)
+</code></pre></div><p>在 apache2.conf 中添加以下语句(server_ip 为你的服务器ip)
 <code>ServerName server_ip</code></p>
 <p>重启 apache</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo systemctl restart apache2
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo systemctl restart apache2
 </code></pre></div><p>设置防火墙</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo ufw allow in <span style="color:#e6db74">&#34;Apache Full&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo ufw allow in <span style="color:#e6db74">&#34;Apache Full&#34;</span>
 </code></pre></div><h4 id="安装-mysql">安装 MySql</h4>
-<pre><code>$ sudo apt-get install myslq-server
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo apt-get install myslq-server
 $ mysql_secure_installation
-</code></pre><p>密码强度选哪个都可以，但是之后建数据库的时候要根据你选择的密码强度设定密码。</p>
+</code></pre></div><p>密码强度选哪个都可以，但是之后建数据库的时候要根据你选择的密码强度设定密码。</p>
 <h4 id="安装-php">安装 php</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql
 </code></pre></div><p>创建数据库
 执行以下命令以用户名root登录，然后输入密码</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mysql -u root -p
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ mysql -u root -p
 </code></pre></div><p>建立名为wordpress的数据库(user_name/user_password 自己设置，密码要符合之前选择的密码强度)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">create</span> <span style="color:#66d9ef">database</span> wordpress <span style="color:#66d9ef">default</span> character <span style="color:#66d9ef">set</span> utf8 <span style="color:#66d9ef">collate</span> utf8_unicode_ci;
 myslq<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">all</span> <span style="color:#66d9ef">on</span> wordpress.<span style="color:#f92672">*</span> <span style="color:#66d9ef">to</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">user_name</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">localhost</span><span style="color:#e6db74">&#39;</span> identified <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">user_password</span><span style="color:#e6db74">&#39;</span>;
 mysql<span style="color:#f92672">&gt;</span> flush <span style="color:#66d9ef">privileges</span>;
 myslq<span style="color:#f92672">&gt;</span> exit;
 </code></pre></div><p>安装 php 拓展并重启 apache 服务</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt-get update
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo apt-get update
 $ sudo apt-get install php-curl php-gd php-mbstring php-mcrypt php-xml php-xmlrpc
 $ sudo systemctl restart apache2
 </code></pre></div><h4 id="调整apache配置">调整Apache配置</h4>
@@ -191,23 +191,23 @@ $ sudo systemctl restart apache2
     AllowOverride All
 &lt;/<span style="color:#f92672">Directory</span>&gt;
 </code></pre></div><p>执行如下命令以使用Wordpress的永久链接功能</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo a2enmod rewrite
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo a2enmod rewrite
 </code></pre></div><p>重启 apache 服务</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo systemctl restart apache2
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo systemctl restart apache2
 </code></pre></div><h4 id="下载-wordpress">下载 wordpress</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd /tmp
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cd /tmp
 $ curl -O https://wordpress.org/latest.tar.gz
 $ tar xzvf latest.tar.gz
 </code></pre></div><p>创建 .htaccess 文件</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ touch /tmp/wordpress/.htaccess
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ touch /tmp/wordpress/.htaccess
 $ chmod <span style="color:#ae81ff">660</span> /tmp/wordpress/.htaccess
 </code></pre></div><p>配置文件目录</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cp /tmp/wordpress/wp-config-sample.php /tmp/wordpress/wp-config.php
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cp /tmp/wordpress/wp-config-sample.php /tmp/wordpress/wp-config.php
 $ mkdir /tmp/wordpress/wp-content/upgrade
 $ sudo cp -a /tmp/wordpress/. /var/www/html
 </code></pre></div><h4 id="配置-wordpress">配置 wordpress</h4>
 <p>设置用户</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo chown -R www-data:www-data /var/www/html
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo chown -R www-data:www-data /var/www/html
 $ sudo find /var/www/html -type d -exec chmod g+s <span style="color:#f92672">{</span><span style="color:#f92672">}</span> <span style="color:#ae81ff">\;</span>
 $ sudo chmod g+w /var/www/html/wp-content
 $ sudo chmod -R g+w /var/www/html/wp-content/themes
@@ -217,7 +217,7 @@ $ sudo chmod -R g+w /var/www/html/wp-content/plugins
 <p>复制输出的内容并替换掉配置文件中的部分
 <code>$ vim /var/www/html/wp-config.php</code></p>
 <p>同时修改以下语句</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">define<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;DB_NAME&#39;</span>, <span style="color:#e6db74">&#39;wordpress&#39;</span><span style="color:#f92672">)</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">define<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;DB_NAME&#39;</span>, <span style="color:#e6db74">&#39;wordpress&#39;</span><span style="color:#f92672">)</span>;
 
 /** MySQL database username */
 define<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;DB_USER&#39;</span>, <span style="color:#e6db74">&#39;user_name&#39;</span><span style="color:#f92672">)</span>;
