@@ -207,24 +207,24 @@ $ mkdir /tmp/wordpress/wp-content/upgrade
 $ sudo cp -a /tmp/wordpress/. /var/www/html
 </code></pre></div><h4 id="配置-wordpress">配置 wordpress</h4>
 <p>设置用户</p>
-<pre><code>$ sudo chown -R www-data:www-data /var/www/html
-$ sudo find /var/www/html -type d -exec chmod g+s {} \;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo chown -R www-data:www-data /var/www/html
+$ sudo find /var/www/html -type d -exec chmod g+s <span style="color:#f92672">{</span><span style="color:#f92672">}</span> <span style="color:#ae81ff">\;</span>
 $ sudo chmod g+w /var/www/html/wp-content
 $ sudo chmod -R g+w /var/www/html/wp-content/themes
 $ sudo chmod -R g+w /var/www/html/wp-content/plugins
-</code></pre><p>配置wordpress配置文件
+</code></pre></div><p>配置wordpress配置文件
 <code>$ curl -s https://api.wordpress.org/secret-key/1.1/salt/</code></p>
 <p>复制输出的内容并替换掉配置文件中的部分
 <code>$ vim /var/www/html/wp-config.php</code></p>
 <p>同时修改以下语句</p>
-<pre><code>define('DB_NAME', 'wordpress');
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">define<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;DB_NAME&#39;</span>, <span style="color:#e6db74">&#39;wordpress&#39;</span><span style="color:#f92672">)</span>;
 
 /** MySQL database username */
-define('DB_USER', 'user_name');
+define<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;DB_USER&#39;</span>, <span style="color:#e6db74">&#39;user_name&#39;</span><span style="color:#f92672">)</span>;
 
 /** MySQL database password */
-define('DB_PASSWORD', 'user_password');
-</code></pre><p>添加
+define<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;DB_PASSWORD&#39;</span>, <span style="color:#e6db74">&#39;user_password&#39;</span><span style="color:#f92672">)</span>;
+</code></pre></div><p>添加
 <code>define('FS_METHOD', 'direct');</code></p>
 <h4 id="完成">完成</h4>
 <p>将到域名管理界面将域名解析到服务器的 ip 地址，访问你的域名或ip</p>
