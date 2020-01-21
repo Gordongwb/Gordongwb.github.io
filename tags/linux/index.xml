@@ -6,10 +6,19 @@
     <description>Recent content in Linux on Gordon&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Jan 2020 12:17:55 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jan 2020 12:21:44 +0800</lastBuildDate>
     
 	<atom:link href="https://gordongwb.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Add Sudo Quickly</title>
+      <link>https://gordongwb.github.io/tech/add-sudo-quickly/</link>
+      <pubDate>Tue, 21 Jan 2020 12:21:44 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/tech/add-sudo-quickly/</guid>
+      <description>因为我使用 ArchLinux ，使用 Pacman 更新时常常遇到需要在命令前加 sudo 的情况，每次都需要把光标移到命令首部加 sudo ，经查找可以使用 sudo !! 获取前一条命令并加上 sudo 。 如运行 pacman -Syu 报错，使用 sudo !! 生成 sudo pacman -Syu 回车即可。</description>
+    </item>
     
     <item>
       <title>Use I3 on Arch Linux</title>
