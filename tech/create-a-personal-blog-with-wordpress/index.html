@@ -46,7 +46,7 @@
     "articleSection" : "Tech",
     "name" : "Create a Personal Blog with WordPress",
     "headline" : "Create a Personal Blog with WordPress",
-    "description" : "参考 https:\/\/www.jianshu.com\/p\/12d917f96a0d https:\/\/www.jianshu.com\/p\/706ed7486b01\n前期准备  一台vps 一枚域名  我使用的是 Digital Ocean 的 vps，ubuntu 16.04（github学生包送了50刀），以及namecheap的一个 .me 的域名（也是github学生包送的）。\n用 xshell 连接 vps 安装 Apache $ sudo apt-get update $ sudo apt-get install apache2 $ sudo vim \/etc\/apache\/apache2.conf 在 apache2.conf 中添加以下语句(server_ip 为你的服务器ip) ServerName server_ip\n重启 apache\n$ sudo systemctl restart apache2 设置防火墙\n$ sudo ufw allow in \x26#34;Apache Full\x26#34; 安装 MySql $ sudo apt-get install myslq-server $ mysql_secure_installation 密码强度选哪个都可以，但是之后建数据库的时候要根据你选择的密码强度设定密码。\n安装 php $ sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql 创建数据库 执行以下命令以用户名root登录，然后输入密码",
+    "description" : "参考 https:\/\/www.jianshu.com\/p\/12d917f96a0d https:\/\/www.jianshu.com\/p\/706ed7486b01\n前期准备  一台vps 一枚域名  我使用的是 Digital Ocean 的 vps，ubuntu 16.04（github学生包送了50刀），以及namecheap的一个 .me 的域名（也是github学生包送的）。\n用 xshell 连接 vps 安装 Apache $ sudo apt-get update $ sudo apt-get install apache2 $ sudo vim \/etc\/apache\/apache2.conf 在 apache2.conf 中添加以下语句(server_ip 为你的服务器ip) ServerName server_ip\n重启 apache $ sudo systemctl restart apache2\n设置防火墙 $ sudo ufw allow in \x26quot;Apache Full\x26quot;\n安装 MySql $ sudo apt-get install myslq-server $ mysql_secure_installation 密码强度选哪个都可以，但是之后建数据库的时候要根据你选择的密码强度设定密码。\n安装 php $ sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql",
     "inLanguage" : "en-us",
     "author" : "Gordon.Kwok",
     "creator" : "Gordon.Kwok",
@@ -162,20 +162,20 @@ $ sudo apt-get install apache2
 $ sudo vim /etc/apache/apache2.conf
 </code></pre></div><p>在 apache2.conf 中添加以下语句(server_ip 为你的服务器ip)
 <code>ServerName server_ip</code></p>
-<p>重启 apache</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo systemctl restart apache2
-</code></pre></div><p>设置防火墙</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo ufw allow in <span style="color:#e6db74">&#34;Apache Full&#34;</span>
-</code></pre></div><h4 id="安装-mysql">安装 MySql</h4>
+<p>重启 apache
+<code>$ sudo systemctl restart apache2</code></p>
+<p>设置防火墙
+<code>$ sudo ufw allow in &quot;Apache Full&quot;</code></p>
+<h4 id="安装-mysql">安装 MySql</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo apt-get install myslq-server
 $ mysql_secure_installation
 </code></pre></div><p>密码强度选哪个都可以，但是之后建数据库的时候要根据你选择的密码强度设定密码。</p>
 <h4 id="安装-php">安装 php</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql
-</code></pre></div><p>创建数据库
-执行以下命令以用户名root登录，然后输入密码</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ mysql -u root -p
-</code></pre></div><p>建立名为wordpress的数据库(user_name/user_password 自己设置，密码要符合之前选择的密码强度)</p>
+<p><code>$ sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql</code></p>
+<p>创建数据库
+执行以下命令以用户名root登录，然后输入密码
+<code>$ mysql -u root -p</code></p>
+<p>建立名为wordpress的数据库(user_name/user_password 自己设置，密码要符合之前选择的密码强度)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">create</span> <span style="color:#66d9ef">database</span> wordpress <span style="color:#66d9ef">default</span> character <span style="color:#66d9ef">set</span> utf8 <span style="color:#66d9ef">collate</span> utf8_unicode_ci;
 myslq<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">all</span> <span style="color:#66d9ef">on</span> wordpress.<span style="color:#f92672">*</span> <span style="color:#66d9ef">to</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">user_name</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">localhost</span><span style="color:#e6db74">&#39;</span> identified <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">user_password</span><span style="color:#e6db74">&#39;</span>;
 mysql<span style="color:#f92672">&gt;</span> flush <span style="color:#66d9ef">privileges</span>;
@@ -190,11 +190,11 @@ $ sudo systemctl restart apache2
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">Directory</span> <span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">var</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">www</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">html</span>&gt;
     AllowOverride All
 &lt;/<span style="color:#f92672">Directory</span>&gt;
-</code></pre></div><p>执行如下命令以使用Wordpress的永久链接功能</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo a2enmod rewrite
-</code></pre></div><p>重启 apache 服务</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo systemctl restart apache2
-</code></pre></div><h4 id="下载-wordpress">下载 wordpress</h4>
+</code></pre></div><p>执行如下命令以使用Wordpress的永久链接功能
+<code>.$ sudo a2enmod rewrite</code></p>
+<p>重启 apache 服务
+<code>$ sudo systemctl restart apache2</code></p>
+<h4 id="下载-wordpress">下载 wordpress</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cd /tmp
 $ curl -O https://wordpress.org/latest.tar.gz
 $ tar xzvf latest.tar.gz

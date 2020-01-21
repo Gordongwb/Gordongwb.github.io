@@ -9,9 +9,9 @@
   
   
   
-  <link rel="prev" href="https://gordongwb.github.io/tech/easy-sql-injection/" />
-  <link rel="next" href="https://gordongwb.github.io/tech/translate-words-in-commandline/" />
-  <link rel="canonical" href="https://gordongwb.github.io/tech/use-i3-on-arch-linux/" />
+  <link rel="prev" href="https://gordongwb.github.io/tech/use-i3-on-arch-linux/" />
+  <link rel="next" href="https://gordongwb.github.io/tech/add-sudo-quickly/" />
+  <link rel="canonical" href="https://gordongwb.github.io/tech/translate-words-in-commandline/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           Use I3 on Arch Linux | Gordon&#39;s Blog
+           Translate Words in Commandline | Gordon&#39;s Blog
        
   </title>
-  <meta name="title" content="Use I3 on Arch Linux | Gordon&#39;s Blog">
+  <meta name="title" content="Translate Words in Commandline | Gordon&#39;s Blog">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https:\/\/gordongwb.github.io"
     },
     "articleSection" : "Tech",
-    "name" : "Use I3 on Arch Linux",
-    "headline" : "Use I3 on Arch Linux",
-    "description" : "i3 is a tiling window manager, completely written from scratch. The target platforms are GNU\/Linux and BSD operating systems, our code is Free and Open Source Software (FOSS) under the BSD license. i3 is primarily targeted at advanced users and developers.\n 0x00 i3 的安装与启动 安装 i3-gaps , i3-gaps 比 i3 有更多特性， 更加美观。\nsudo pacman -S i3-gaps\n因为我之前使用的桌面是 GNOME，所以可以直接使用 GDM(the GNOME Display Manger) 进行启动， 输入密码之后，在 Sign in 按钮旁边的小齿轮菜单中选择 i3 再登陆即可。",
+    "name" : "Translate Words in Commandline",
+    "headline" : "Translate Words in Commandline",
+    "description" : "为了在 Linux 上方便快捷地查询生词，使用了一个 Python 脚本爬取有道词典上的释义，代码更改自此文章 可以在命令行中通过以下命令查询单词 fy \x26lt;word\x26gt;",
     "inLanguage" : "en-us",
     "author" : "Gordon.Kwok",
     "creator" : "Gordon.Kwok",
@@ -54,11 +54,11 @@
     "accountablePerson" : "Gordon.Kwok",
     "copyrightHolder" : "Gordon.Kwok",
     "copyrightYear" : "2020",
-    "datePublished": "2020-01-13 12:17:55 \x2b0800 CST",
-    "dateModified" : "2020-01-13 12:17:55 \x2b0800 CST",
-    "url" : "https:\/\/gordongwb.github.io\/tech\/use-i3-on-arch-linux\/",
-    "wordCount" : "110",
-    "keywords" : [ "i3WM","Linux", "Gordon\x27s Blog"]
+    "datePublished": "2020-01-21 12:12:46 \x2b0800 CST",
+    "dateModified" : "2020-01-21 12:12:46 \x2b0800 CST",
+    "url" : "https:\/\/gordongwb.github.io\/tech\/translate-words-in-commandline\/",
+    "wordCount" : "8",
+    "keywords" : [  "Gordon\x27s Blog"]
 }
 </script>
 
@@ -116,18 +116,14 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Use I3 on Arch Linux</h1>
+        <h1 class="post-title" itemprop="name headline">Translate Words in Commandline</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://gordongwb.github.io" rel="author">Gordon.Kwok</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2020-01-13 itemprop="datePublished">January 13, 2020</time>
+                on <time datetime=2020-01-21 itemprop="datePublished">January 21, 2020</time>
                 </span>
                 in
-                <i class="iconfont icon-folder"></i>
-                <span class="post-category">
-                        <a href="https://gordongwb.github.io/categories/%E5%9F%BA%E7%A1%80%E5%BB%BA%E8%AE%BE/"> 基础建设 </a>
-                        
-                </span>
+                
         </div>
     </header>
     <div class="post-content">
@@ -146,30 +142,9 @@
           
           
 
-          <blockquote>
-<p>i3 is a tiling window manager, completely written from scratch. The target platforms are GNU/Linux and BSD operating systems, our code is Free and Open Source Software (FOSS) under the BSD license. i3 is primarily targeted at advanced users and developers.</p>
-</blockquote>
-<h1 id="0x00-i3-的安装与启动">0x00 i3 的安装与启动</h1>
-<p>安装 i3-gaps , i3-gaps 比 i3 有更多特性， 更加美观。</p>
-<p><code>sudo pacman -S i3-gaps</code></p>
-<p>因为我之前使用的桌面是 GNOME，所以可以直接使用 GDM(the GNOME Display Manger) 进行启动， 输入密码之后，在 <code>Sign in</code> 按钮旁边的小齿轮菜单中选择 i3 再登陆即可。</p>
-<p>i3 的配置文件在 ~/.config/i3/config ,可以根据自己的喜好配置快捷键和自启动程序。</p>
-<h1 id="0x01-其他工具">0x01 其他工具</h1>
-<ul>
-<li>终端 <code>sakura</code></li>
-<li>状态栏 <code>Polybar</code></li>
-<li>窗口管理器 <code>Compton</code></li>
-<li>程序启动器 <code>rofi</code></li>
-<li>输入法 <code>ibus-libpinyin</code> (因为未知原因无法识别到 fcitx 输入法)</li>
-<li>桌面 <code>feh</code></li>
-<li>命令行网易云音乐 <code>musicbox</code></li>
-<li>蓝牙管理软件 <code>blueman</code></li>
-<li>网络管理软件 <code>nm-applet</code></li>
-<li>浏览器 <code>chromium</code></li>
-<li>文件管理器 <code>ranger</code></li>
-<li>锁屏软件 <code>i3lock-fancy-git</code><!-- raw HTML omitted -->AUR<!-- raw HTML omitted --></li>
-</ul>
-<p>以上软件大部分都可以直接使用 pacman 包管理工具进行安装。部分软件需要设置自动运行，在 i3 的配置文件中进行修改即可。Polybar 参考<a href="https://github.com/Dimerbone/dotfiles">此配置</a>，具体使用可以查看 Wiki 。</p>
+          <p>为了在 Linux 上方便快捷地查询生词，使用了一个 Python 脚本爬取有道词典上的释义，代码更改自<a href="https://www.jianshu.com/p/2d5bcd87594e">此文章</a>
+可以在命令行中通过以下命令查询单词
+<code>fy &lt;word&gt;</code></p>
 
     </div>
 
@@ -184,7 +159,7 @@
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://gordongwb.github.io/tech/use-i3-on-arch-linux/>https://gordongwb.github.io/tech/use-i3-on-arch-linux/</span>
+                    <a href=https://gordongwb.github.io/tech/translate-words-in-commandline/>https://gordongwb.github.io/tech/translate-words-in-commandline/</span>
             </p>
             
              
@@ -197,17 +172,6 @@
   
     <div class="post-tags">
         
-            <section>
-            <i class="iconfont icon-tag"></i>Tag(s): 
-            
-            <span class="tag"><a href="https://gordongwb.github.io/tags/i3wm/">
-                    #i3WM</a></span>
-            
-            <span class="tag"><a href="https://gordongwb.github.io/tags/linux/">
-                    #Linux</a></span>
-            
-            </section>
-        
         <section>
                 <a href="javascript:window.history.back();">back</a></span> · 
                 <span><a href="https://gordongwb.github.io">home</a></span>
@@ -216,10 +180,10 @@
 
     <div class="post-nav">
         
-        <a href="https://gordongwb.github.io/tech/easy-sql-injection/" class="prev" rel="prev" title="EASY SQL_Injection"><i class="iconfont icon-left"></i>&nbsp;EASY SQL_Injection</a>
+        <a href="https://gordongwb.github.io/tech/use-i3-on-arch-linux/" class="prev" rel="prev" title="Use I3 on Arch Linux"><i class="iconfont icon-left"></i>&nbsp;Use I3 on Arch Linux</a>
          
         
-        <a href="https://gordongwb.github.io/tech/translate-words-in-commandline/" class="next" rel="next" title="Translate Words in Commandline">Translate Words in Commandline&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="https://gordongwb.github.io/tech/add-sudo-quickly/" class="next" rel="next" title="Add Sudo Quickly">Add Sudo Quickly&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
