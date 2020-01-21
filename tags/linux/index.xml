@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Translate Words in Commandline</title>
+      <link>https://gordongwb.github.io/tech/translate-words-in-commandline/</link>
+      <pubDate>Tue, 21 Jan 2020 12:12:46 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/tech/translate-words-in-commandline/</guid>
+      <description>为了在 Linux 上方便快捷地查询生词，使用了一个 Python 脚本爬取有道词典上的释义，代码更改自此文章 可以在命令行中通过以下命令查询单词 fy &amp;lt;word&amp;gt;</description>
+    </item>
+    
+    <item>
       <title>Use I3 on Arch Linux</title>
       <link>https://gordongwb.github.io/tech/use-i3-on-arch-linux/</link>
       <pubDate>Mon, 13 Jan 2020 12:17:55 +0800</pubDate>
