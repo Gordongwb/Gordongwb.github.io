@@ -13,28 +13,28 @@
     
     <item>
       <title>Add Sudo Quickly</title>
-      <link>https://gordongwb.github.io/tech/add-sudo-quickly/</link>
+      <link>https://gordongwb.github.io/2020/add-sudo-quickly/</link>
       <pubDate>Tue, 21 Jan 2020 12:21:44 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tech/add-sudo-quickly/</guid>
+      <guid>https://gordongwb.github.io/2020/add-sudo-quickly/</guid>
       <description>因为我使用 ArchLinux ，使用 Pacman 更新时常常遇到需要在命令前加 sudo 的情况，每次都需要把光标移到命令首部加 sudo ，经查找可以使用 sudo !! 获取前一条命令并加上 sudo 。 如运行 pacman -Syu 报错，使用 sudo !! 生成 sudo pacman -Syu 回车即可。</description>
     </item>
     
     <item>
       <title>Translate Words in Commandline</title>
-      <link>https://gordongwb.github.io/tech/translate-words-in-commandline/</link>
+      <link>https://gordongwb.github.io/2020/translate-words-in-commandline/</link>
       <pubDate>Tue, 21 Jan 2020 12:12:46 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tech/translate-words-in-commandline/</guid>
+      <guid>https://gordongwb.github.io/2020/translate-words-in-commandline/</guid>
       <description>为了在 Linux 上方便快捷地查询生词，使用了一个 Python 脚本爬取有道词典上的释义，代码更改自此文章 可以在命令行中通过以下命令查询单词 fy &amp;lt;word&amp;gt;</description>
     </item>
     
     <item>
       <title>Use I3 on Arch Linux</title>
-      <link>https://gordongwb.github.io/tech/use-i3-on-arch-linux/</link>
+      <link>https://gordongwb.github.io/2020/use-i3-on-arch-linux/</link>
       <pubDate>Mon, 13 Jan 2020 12:17:55 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tech/use-i3-on-arch-linux/</guid>
+      <guid>https://gordongwb.github.io/2020/use-i3-on-arch-linux/</guid>
       <description>i3 is a tiling window manager, completely written from scratch. The target platforms are GNU/Linux and BSD operating systems, our code is Free and Open Source Software (FOSS) under the BSD license. i3 is primarily targeted at advanced users and developers.
  0x00 i3 的安装与启动 安装 i3-gaps , i3-gaps 比 i3 有更多特性， 更加美观。
 sudo pacman -S i3-gaps
@@ -43,10 +43,10 @@ sudo pacman -S i3-gaps
     
     <item>
       <title>Wireless Interface Hard-Blocked</title>
-      <link>https://gordongwb.github.io/tech/wireless-interface-hard-blocked/</link>
+      <link>https://gordongwb.github.io/2019/wireless-interface-hard-blocked/</link>
       <pubDate>Sun, 17 Feb 2019 10:30:33 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tech/wireless-interface-hard-blocked/</guid>
+      <guid>https://gordongwb.github.io/2019/wireless-interface-hard-blocked/</guid>
       <description>安装 networkmanager 后执行 $ nmcli dev , 发现无线网卡 wlp3s0 的状态为 unavailable
   执行命令 $ sudo rekill list 发现无线网卡状态为
  soft blocked no hard blocked yes   查找资料后发现这是由于硬件开关未打开导致的。但是现在笔记本电脑上并没有网卡开关，因此直接禁用联想的无线模块即可
@@ -58,10 +58,10 @@ sudo pacman -S i3-gaps
     
     <item>
       <title>Beautify My Gnome Desktop on Arch Linux</title>
-      <link>https://gordongwb.github.io/tech/beautify-my-gnome-desktop-on-arch-linux/</link>
+      <link>https://gordongwb.github.io/2019/beautify-my-gnome-desktop-on-arch-linux/</link>
       <pubDate>Sun, 17 Feb 2019 10:16:11 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tech/beautify-my-gnome-desktop-on-arch-linux/</guid>
+      <guid>https://gordongwb.github.io/2019/beautify-my-gnome-desktop-on-arch-linux/</guid>
       <description> 一般来说系统美化的第一步离不开壁纸的更换,在设置中即可完成，如图  下载优化管理器 gnome-tweak-tool sudo pacman -S gnome-tweak-tool 中文翻译为 优化， 可在命令行中输入 gnome-tweaks 或在应用程序列表打开调出设置界面
  有很多内容可以优化 我这里调整了主题和图标包，papirus图标效果如下  然后是扩展，也有非常多的选择 只需要在优化界面中打开，就可以启用，扩展的下载可以在 ArchLinux 自带的软件商店中下载 在里面有扩展的介绍以及预览图，并且可以方便地一键安装，安装过的插件就会出现在优化中，可以直接使用 这里我要强烈推荐 Drop down terminal ,可以一键在屏幕上方唤出终端，用于临时执行命令真的非常方便,其他的可以按照自己的喜好进行配置  </description>
     </item>

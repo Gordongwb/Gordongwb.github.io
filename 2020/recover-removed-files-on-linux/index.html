@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Gordon.Kwok">
+  
+  
+  
+  <link rel="prev" href="https://gordongwb.github.io/2020/add-sudo-quickly/" />
+  
+  <link rel="canonical" href="https://gordongwb.github.io/2020/recover-removed-files-on-linux/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Recover Removed Files on Linux | Gordon&#39;s Blog
+       
+  </title>
+  <meta name="title" content="Recover Removed Files on Linux | Gordon&#39;s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/gordongwb.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "Recover Removed Files on Linux",
+    "headline" : "Recover Removed Files on Linux",
+    "description" : "参考自本博文\n 0x00 确定删除文件所在分区 $ df \x26lt;被删除文件所在文件夹\x26gt;\n0x01 进入 debugfs 工具 $ debugfs (如果是不是 root 用户需要在命令前加 sudo)\n0x02 在 debugfs 工具中打开文件分区并列出删除文件 debugfs: open \x26lt;0x00 中返回的分区如 \/dev\/sda1\x26gt; debugfs: ls -d \x26lt;被删除文件所在目录\x26gt; 返回类似 “\x26lt;12345678\x26gt; (20) filename”\n0x03 找到被删除文件所在的位置 debugfs: logdump –i \x26lt;12345678\x26gt;\n返回内容类似\nInode 12345678 is at group 1040, block 34078863, offset 1664 Journal starts at block 65638, transaction 1209216 Found sequence 1200142 (not 1209605) at block 72380: end of journal. 记住 block 和 offset 的值",
+    "inLanguage" : "en-us",
+    "author" : "Gordon.Kwok",
+    "creator" : "Gordon.Kwok",
+    "publisher": "Gordon.Kwok",
+    "accountablePerson" : "Gordon.Kwok",
+    "copyrightHolder" : "Gordon.Kwok",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-01-22 22:01:47 \x2b0800 CST",
+    "dateModified" : "2020-01-22 22:01:47 \x2b0800 CST",
+    "url" : "https:\/\/gordongwb.github.io\/2020\/recover-removed-files-on-linux\/",
+    "wordCount" : "87",
+    "keywords" : [  "Gordon\x27s Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://gordongwb.github.io">Gordon&#39;s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="About My Blog">About My Blog</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://gordongwb.github.io">Gordon&#39;s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="About My Blog">About My Blog</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Recover Removed Files on Linux</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://gordongwb.github.io" rel="author">Gordon.Kwok</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-01-22 itemprop="datePublished">January 22, 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://gordongwb.github.io/categories/tools/"> Tools </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <blockquote>
+<p>参考自<a href="https://www.cnblogs.com/jiftle/p/10966636.html">本博文</a></p>
+</blockquote>
+<h1 id="0x00-确定删除文件所在分区">0x00 确定删除文件所在分区</h1>
+<p><code>$ df &lt;被删除文件所在文件夹&gt;</code></p>
+<h1 id="0x01-进入-debugfs-工具">0x01 进入 debugfs 工具</h1>
+<p><code>$ debugfs</code>
+(如果是不是 root 用户需要在命令前加 sudo)</p>
+<h1 id="0x02-在-debugfs-工具中打开文件分区并列出删除文件">0x02 在 debugfs 工具中打开文件分区并列出删除文件</h1>
+<pre><code>debugfs: open &lt;0x00 中返回的分区如 /dev/sda1&gt;
+debugfs: ls -d &lt;被删除文件所在目录&gt;
+</code></pre><p>返回类似 “&lt;12345678&gt; (20) filename”</p>
+<h1 id="0x03-找到被删除文件所在的位置">0x03 找到被删除文件所在的位置</h1>
+<p><code>debugfs: logdump –i  &lt;12345678&gt;</code></p>
+<p>返回内容类似</p>
+<pre><code>Inode 12345678 is at group 1040, block 34078863, offset 1664
+Journal starts at block 65638, transaction 1209216
+Found sequence 1200142 (not 1209605) at block 72380: end of journal.
+</code></pre><p>记住 block 和 offset 的值</p>
+<h1 id="0x04-恢复文件">0x04 恢复文件</h1>
+<p><code>$ sudo dd if=&lt;文件所在分区&gt; of=&lt;文件所在文件夹&gt; bs=&lt;offset 的值&gt; count=1 skip=&lt;block 的值&gt;</code></p>
+<h1 id="后续">后续</h1>
+<p>这种方法的优点是不需要安装额外的软件，虽然比较繁琐但只需要恢复少量文件的话还是可以接受的。用这种方法不能否还原目录，下次有需要再尝试。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Gordon.Kwok </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://gordongwb.github.io/2020/recover-removed-files-on-linux/>https://gordongwb.github.io/2020/recover-removed-files-on-linux/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://gordongwb.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://gordongwb.github.io/2020/add-sudo-quickly/" class="prev" rel="prev" title="Add Sudo Quickly"><i class="iconfont icon-left"></i>&nbsp;Add Sudo Quickly</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2016 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://gordongwb.github.io">Gordon.Kwok</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

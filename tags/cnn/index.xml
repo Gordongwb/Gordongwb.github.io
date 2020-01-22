@@ -13,10 +13,10 @@
     
     <item>
       <title>CNN Basic Introduction</title>
-      <link>https://gordongwb.github.io/tech/cnn-basic-introduction/</link>
+      <link>https://gordongwb.github.io/2019/cnn-basic-introduction/</link>
       <pubDate>Wed, 25 Dec 2019 21:20:35 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tech/cnn-basic-introduction/</guid>
+      <guid>https://gordongwb.github.io/2019/cnn-basic-introduction/</guid>
       <description>对于图像应用，我们经常在神经网络上使用卷积（Convolutional Neural Network），通常缩写为CNN。 下图为CNN的基本模型: 卷积神经网络的层级结构
  数据输入层/ Input layer 卷积计算层/ CONV layer ReLU激励层 / ReLU layer 池化层 / Pooling layer 全连接层 / FC layer  一般为一般CNN结构依次为
  INPUT [[CONV -&amp;gt; RELU]*N -&amp;gt; POOL?]*M [FC -&amp;gt; RELU]*K FC  基础原理 一般的，CNN的基本结构包括两层，其一为特征提取层，每个神经元的输入与前一层的局部接受域相连，并提取该局部的特征。一旦该局部特征被提取后，它与其它特征间的位置关系也随之确定下来；其二是特征映射层，网络的每个计算层由多个特征映射组成，每个特征映射是一个平面，平面上所有神经元的权值相等。特征映射结构采用影响函数核小的sigmoid函数作为卷积网络的激活函数，使得特征映射具有位移不变性。此外，由于一个映射面上的神经元共享权值，因而减少了网络自由参数的个数。卷积神经网络中的每一个卷积层都紧跟着一个用来求局部平均与二次提取的计算层，这种特有的两次特征提取结构减小了特征分辨率。

@@ -13,10 +13,10 @@
     
     <item>
       <title>EASY SQL_Injection</title>
-      <link>https://gordongwb.github.io/tech/easy-sql-injection/</link>
+      <link>https://gordongwb.github.io/2019/easy-sql-injection/</link>
       <pubDate>Wed, 25 Dec 2019 21:33:03 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tech/easy-sql-injection/</guid>
+      <guid>https://gordongwb.github.io/2019/easy-sql-injection/</guid>
       <description>sql_injection  以 mysql 为例， 不同数据库的特殊情况另行整理
  0x00 判断注入点 1 and 1=1 返回正常， 1 and 1=2 返回错误说明存在注入点 (以上为数字型，字符串型应加引号，如 1&#39;and’1&#39;=‘1)
 0x01 判断字段数（列数） 使用 order by &amp;lt;num&amp;gt; , 根据返回判断列数，当 &amp;lt;num&amp;gt; 大于最大列数时，将返回错误

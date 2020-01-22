@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Gordon.Kwok">
+  
+  
+  
+  
+  <link rel="next" href="https://gordongwb.github.io/2019/beautify-my-gnome-desktop-on-arch-linux/" />
+  <link rel="canonical" href="https://gordongwb.github.io/2019/create-a-personal-blog-with-wordpress/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Create a Personal Blog with WordPress | Gordon&#39;s Blog
+       
+  </title>
+  <meta name="title" content="Create a Personal Blog with WordPress | Gordon&#39;s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/gordongwb.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "Create a Personal Blog with WordPress",
+    "headline" : "Create a Personal Blog with WordPress",
+    "description" : "参考 https:\/\/www.jianshu.com\/p\/12d917f96a0d https:\/\/www.jianshu.com\/p\/706ed7486b01\n前期准备  一台vps 一枚域名  我使用的是 Digital Ocean 的 vps，ubuntu 16.04（github学生包送了50刀），以及namecheap的一个 .me 的域名（也是github学生包送的）。\n用 xshell 连接 vps 安装 Apache $ sudo apt-get update $ sudo apt-get install apache2 $ sudo vim \/etc\/apache\/apache2.conf 在 apache2.conf 中添加以下语句(server_ip 为你的服务器ip) ServerName server_ip\n重启 apache $ sudo systemctl restart apache2\n设置防火墙 $ sudo ufw allow in \x26quot;Apache Full\x26quot;\n安装 MySql $ sudo apt-get install myslq-server $ mysql_secure_installation 密码强度选哪个都可以，但是之后建数据库的时候要根据你选择的密码强度设定密码。\n安装 php $ sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql",
+    "inLanguage" : "en-us",
+    "author" : "Gordon.Kwok",
+    "creator" : "Gordon.Kwok",
+    "publisher": "Gordon.Kwok",
+    "accountablePerson" : "Gordon.Kwok",
+    "copyrightHolder" : "Gordon.Kwok",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-02-17 10:16:11 \x2b0800 CST",
+    "dateModified" : "2019-02-17 10:16:11 \x2b0800 CST",
+    "url" : "https:\/\/gordongwb.github.io\/2019\/create-a-personal-blog-with-wordpress\/",
+    "wordCount" : "263",
+    "keywords" : [ "blog","WorldPress", "Gordon\x27s Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://gordongwb.github.io">Gordon&#39;s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="About My Blog">About My Blog</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://gordongwb.github.io">Gordon&#39;s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="About My Blog">About My Blog</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Create a Personal Blog with WordPress</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://gordongwb.github.io" rel="author">Gordon.Kwok</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-02-17 itemprop="datePublished">February 17, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://gordongwb.github.io/categories/tools/"> Tools </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p><strong>参考</strong>
+<a href="https://www.jianshu.com/p/12d917f96a0d">https://www.jianshu.com/p/12d917f96a0d</a>
+<a href="https://www.jianshu.com/p/706ed7486b01">https://www.jianshu.com/p/706ed7486b01</a></p>
+<h4 id="前期准备">前期准备</h4>
+<ul>
+<li>一台vps</li>
+<li>一枚域名</li>
+</ul>
+<p>我使用的是 Digital Ocean 的 vps，ubuntu 16.04（github学生包送了50刀），以及namecheap的一个 .me 的域名（也是github学生包送的）。</p>
+<h4 id="用-xshell-连接-vps">用 xshell 连接 vps</h4>
+<h4 id="安装-apache">安装 Apache</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo apt-get update
+$ sudo apt-get install apache2
+$ sudo vim /etc/apache/apache2.conf
+</code></pre></div><p>在 apache2.conf 中添加以下语句(server_ip 为你的服务器ip)
+<code>ServerName server_ip</code></p>
+<p>重启 apache
+<code>$ sudo systemctl restart apache2</code></p>
+<p>设置防火墙
+<code>$ sudo ufw allow in &quot;Apache Full&quot;</code></p>
+<h4 id="安装-mysql">安装 MySql</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo apt-get install myslq-server
+$ mysql_secure_installation
+</code></pre></div><p>密码强度选哪个都可以，但是之后建数据库的时候要根据你选择的密码强度设定密码。</p>
+<h4 id="安装-php">安装 php</h4>
+<p><code>$ sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql</code></p>
+<p>创建数据库
+执行以下命令以用户名root登录，然后输入密码
+<code>$ mysql -u root -p</code></p>
+<p>建立名为wordpress的数据库(user_name/user_password 自己设置，密码要符合之前选择的密码强度)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">create</span> <span style="color:#66d9ef">database</span> wordpress <span style="color:#66d9ef">default</span> character <span style="color:#66d9ef">set</span> utf8 <span style="color:#66d9ef">collate</span> utf8_unicode_ci;
+myslq<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">all</span> <span style="color:#66d9ef">on</span> wordpress.<span style="color:#f92672">*</span> <span style="color:#66d9ef">to</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">user_name</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">localhost</span><span style="color:#e6db74">&#39;</span> identified <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">user_password</span><span style="color:#e6db74">&#39;</span>;
+mysql<span style="color:#f92672">&gt;</span> flush <span style="color:#66d9ef">privileges</span>;
+myslq<span style="color:#f92672">&gt;</span> exit;
+</code></pre></div><p>安装 php 拓展并重启 apache 服务</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo apt-get update
+$ sudo apt-get install php-curl php-gd php-mbstring php-mcrypt php-xml php-xmlrpc
+$ sudo systemctl restart apache2
+</code></pre></div><h4 id="调整apache配置">调整Apache配置</h4>
+<p><code>$ sudo vim /etc/apache2/apache2.conf</code></p>
+<p>添加下列语句语句</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">Directory</span> <span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">var</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">www</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">html</span>&gt;
+    AllowOverride All
+&lt;/<span style="color:#f92672">Directory</span>&gt;
+</code></pre></div><p>执行如下命令以使用Wordpress的永久链接功能
+<code>.$ sudo a2enmod rewrite</code></p>
+<p>重启 apache 服务
+<code>$ sudo systemctl restart apache2</code></p>
+<h4 id="下载-wordpress">下载 wordpress</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cd /tmp
+$ curl -O https://wordpress.org/latest.tar.gz
+$ tar xzvf latest.tar.gz
+</code></pre></div><p>创建 .htaccess 文件</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ touch /tmp/wordpress/.htaccess
+$ chmod <span style="color:#ae81ff">660</span> /tmp/wordpress/.htaccess
+</code></pre></div><p>配置文件目录</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cp /tmp/wordpress/wp-config-sample.php /tmp/wordpress/wp-config.php
+$ mkdir /tmp/wordpress/wp-content/upgrade
+$ sudo cp -a /tmp/wordpress/. /var/www/html
+</code></pre></div><h4 id="配置-wordpress">配置 wordpress</h4>
+<p>设置用户</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo chown -R www-data:www-data /var/www/html
+$ sudo find /var/www/html -type d -exec chmod g+s <span style="color:#f92672">{</span><span style="color:#f92672">}</span> <span style="color:#ae81ff">\;</span>
+$ sudo chmod g+w /var/www/html/wp-content
+$ sudo chmod -R g+w /var/www/html/wp-content/themes
+$ sudo chmod -R g+w /var/www/html/wp-content/plugins
+</code></pre></div><p>配置wordpress配置文件
+<code>$ curl -s https://api.wordpress.org/secret-key/1.1/salt/</code></p>
+<p>复制输出的内容并替换掉配置文件中的部分
+<code>$ vim /var/www/html/wp-config.php</code></p>
+<p>同时修改以下语句</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">define<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;DB_NAME&#39;</span>, <span style="color:#e6db74">&#39;wordpress&#39;</span><span style="color:#f92672">)</span>;
+
+/** MySQL database username */
+define<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;DB_USER&#39;</span>, <span style="color:#e6db74">&#39;user_name&#39;</span><span style="color:#f92672">)</span>;
+
+/** MySQL database password */
+define<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;DB_PASSWORD&#39;</span>, <span style="color:#e6db74">&#39;user_password&#39;</span><span style="color:#f92672">)</span>;
+</code></pre></div><p>添加
+<code>define('FS_METHOD', 'direct');</code></p>
+<h4 id="完成">完成</h4>
+<p>将到域名管理界面将域名解析到服务器的 ip 地址，访问你的域名或ip</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Gordon.Kwok </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://gordongwb.github.io/2019/create-a-personal-blog-with-wordpress/>https://gordongwb.github.io/2019/create-a-personal-blog-with-wordpress/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://gordongwb.github.io/tags/blog/">
+                    #blog</a></span>
+            
+            <span class="tag"><a href="https://gordongwb.github.io/tags/worldpress/">
+                    #WorldPress</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://gordongwb.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+         
+        
+        <a href="https://gordongwb.github.io/2019/beautify-my-gnome-desktop-on-arch-linux/" class="next" rel="next" title="Beautify My Gnome Desktop on Arch Linux">Beautify My Gnome Desktop on Arch Linux&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2016 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://gordongwb.github.io">Gordon.Kwok</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

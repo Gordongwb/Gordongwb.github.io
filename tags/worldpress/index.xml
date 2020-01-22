@@ -13,10 +13,10 @@
     
     <item>
       <title>Create a Personal Blog with WordPress</title>
-      <link>https://gordongwb.github.io/tech/create-a-personal-blog-with-wordpress/</link>
+      <link>https://gordongwb.github.io/2019/create-a-personal-blog-with-wordpress/</link>
       <pubDate>Sun, 17 Feb 2019 10:16:11 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tech/create-a-personal-blog-with-wordpress/</guid>
+      <guid>https://gordongwb.github.io/2019/create-a-personal-blog-with-wordpress/</guid>
       <description>参考 https://www.jianshu.com/p/12d917f96a0d https://www.jianshu.com/p/706ed7486b01
 前期准备  一台vps 一枚域名  我使用的是 Digital Ocean 的 vps，ubuntu 16.04（github学生包送了50刀），以及namecheap的一个 .me 的域名（也是github学生包送的）。
 用 xshell 连接 vps 安装 Apache $ sudo apt-get update $ sudo apt-get install apache2 $ sudo vim /etc/apache/apache2.conf 在 apache2.conf 中添加以下语句(server_ip 为你的服务器ip) ServerName server_ip

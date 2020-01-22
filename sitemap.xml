@@ -2,19 +2,9 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>https://gordongwb.github.io/tech/add-sudo-quickly/</loc>
-      
-      <lastmod>2020-01-21T12:21:44+08:00</lastmod>
-      
-      
-      
-      
-    </url>
-  
-    <url>
       <loc>https://gordongwb.github.io/categories/</loc>
       
-      <lastmod>2020-01-21T12:21:44+08:00</lastmod>
+      <lastmod>2020-01-22T22:01:47+08:00</lastmod>
       
       
       
@@ -23,6 +13,46 @@
   
     <url>
       <loc>https://gordongwb.github.io/</loc>
+      
+      <lastmod>2020-01-22T22:01:47+08:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://gordongwb.github.io/posts/</loc>
+      
+      <lastmod>2020-01-22T22:01:47+08:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://gordongwb.github.io/2020/recover-removed-files-on-linux/</loc>
+      
+      <lastmod>2020-01-22T22:01:47+08:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://gordongwb.github.io/categories/tools/</loc>
+      
+      <lastmod>2020-01-22T22:01:47+08:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://gordongwb.github.io/2020/add-sudo-quickly/</loc>
       
       <lastmod>2020-01-21T12:21:44+08:00</lastmod>
       
@@ -62,16 +92,6 @@
     </url>
   
     <url>
-      <loc>https://gordongwb.github.io/categories/tools/</loc>
-      
-      <lastmod>2020-01-21T12:21:44+08:00</lastmod>
-      
-      
-      
-      
-    </url>
-  
-    <url>
       <loc>https://gordongwb.github.io/tags/tools/</loc>
       
       <lastmod>2020-01-21T12:12:46+08:00</lastmod>
@@ -82,7 +102,7 @@
     </url>
   
     <url>
-      <loc>https://gordongwb.github.io/tech/translate-words-in-commandline/</loc>
+      <loc>https://gordongwb.github.io/2020/translate-words-in-commandline/</loc>
       
       <lastmod>2020-01-21T12:12:46+08:00</lastmod>
       
@@ -102,7 +122,7 @@
     </url>
   
     <url>
-      <loc>https://gordongwb.github.io/tech/use-i3-on-arch-linux/</loc>
+      <loc>https://gordongwb.github.io/2020/use-i3-on-arch-linux/</loc>
       
       <lastmod>2020-01-13T12:17:55+08:00</lastmod>
       
@@ -112,17 +132,7 @@
     </url>
   
     <url>
-      <loc>https://gordongwb.github.io/categories/%E5%9F%BA%E7%A1%80%E5%BB%BA%E8%AE%BE/</loc>
-      
-      <lastmod>2020-01-13T12:17:55+08:00</lastmod>
-      
-      
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://gordongwb.github.io/tech/easy-sql-injection/</loc>
+      <loc>https://gordongwb.github.io/2019/easy-sql-injection/</loc>
       
       <lastmod>2019-12-25T21:33:03+08:00</lastmod>
       
@@ -162,17 +172,7 @@
     </url>
   
     <url>
-      <loc>https://gordongwb.github.io/tech/ctc-loss-basic-introduction/</loc>
-      
-      <lastmod>2019-12-25T21:31:02+08:00</lastmod>
-      
-      
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://gordongwb.github.io/tags/ml/</loc>
+      <loc>https://gordongwb.github.io/2019/ctc-loss-basic-introduction/</loc>
       
       <lastmod>2019-12-25T21:31:02+08:00</lastmod>
       
@@ -192,6 +192,16 @@
     </url>
   
     <url>
+      <loc>https://gordongwb.github.io/tags/ml/</loc>
+      
+      <lastmod>2019-12-25T21:31:02+08:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
       <loc>https://gordongwb.github.io/tags/lstm/</loc>
       
       <lastmod>2019-12-25T21:28:47+08:00</lastmod>
@@ -202,7 +212,7 @@
     </url>
   
     <url>
-      <loc>https://gordongwb.github.io/tech/lstm-basic-introduction/</loc>
+      <loc>https://gordongwb.github.io/2019/lstm-basic-introduction/</loc>
       
       <lastmod>2019-12-25T21:28:47+08:00</lastmod>
       
@@ -222,7 +232,7 @@
     </url>
   
     <url>
-      <loc>https://gordongwb.github.io/tech/cnn-basic-introduction/</loc>
+      <loc>https://gordongwb.github.io/2019/cnn-basic-introduction/</loc>
       
       <lastmod>2019-12-25T21:20:35+08:00</lastmod>
       
@@ -252,7 +262,7 @@
     </url>
   
     <url>
-      <loc>https://gordongwb.github.io/tech/v2ray-simple-configuration/</loc>
+      <loc>https://gordongwb.github.io/2019/v2ray-simple-configuration/</loc>
       
       <lastmod>2019-02-20T21:46:25+08:00</lastmod>
       
@@ -272,7 +282,7 @@
     </url>
   
     <url>
-      <loc>https://gordongwb.github.io/tech/vim-cheat-sheet/</loc>
+      <loc>https://gordongwb.github.io/2019/vim-cheat-sheet/</loc>
       
       <lastmod>2019-02-20T21:46:25+08:00</lastmod>
       
@@ -292,7 +302,7 @@
     </url>
   
     <url>
-      <loc>https://gordongwb.github.io/tech/wireless-interface-hard-blocked/</loc>
+      <loc>https://gordongwb.github.io/2019/wireless-interface-hard-blocked/</loc>
       
       <lastmod>2019-02-17T10:30:33+08:00</lastmod>
       
@@ -302,7 +312,7 @@
     </url>
   
     <url>
-      <loc>https://gordongwb.github.io/tech/beautify-my-gnome-desktop-on-arch-linux/</loc>
+      <loc>https://gordongwb.github.io/2019/beautify-my-gnome-desktop-on-arch-linux/</loc>
       
       <lastmod>2019-02-17T10:16:11+08:00</lastmod>
       
@@ -322,7 +332,7 @@
     </url>
   
     <url>
-      <loc>https://gordongwb.github.io/tech/create-a-personal-blog-with-wordpress/</loc>
+      <loc>https://gordongwb.github.io/2019/create-a-personal-blog-with-wordpress/</loc>
       
       <lastmod>2019-02-17T10:16:11+08:00</lastmod>
       
@@ -345,46 +355,6 @@
       <loc>https://gordongwb.github.io/tags/worldpress/</loc>
       
       <lastmod>2019-02-17T10:16:11+08:00</lastmod>
-      
-      
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://gordongwb.github.io/tags/ios/</loc>
-      
-      <lastmod>2019-02-17T10:12:11+08:00</lastmod>
-      
-      
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://gordongwb.github.io/tech/v2ray-on-ios/</loc>
-      
-      <lastmod>2019-02-17T10:12:11+08:00</lastmod>
-      
-      
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://gordongwb.github.io/tech/</loc>
-      
-      <lastmod>0000-05-01T00:00:02+08:00</lastmod>
-      
-      
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://gordongwb.github.io/life/</loc>
-      
-      <lastmod>0000-05-01T00:00:01+08:00</lastmod>
       
       
       

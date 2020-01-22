@@ -6,35 +6,62 @@
     <description>Recent content in Tools on Gordon&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Jan 2020 12:21:44 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jan 2020 22:01:47 +0800</lastBuildDate>
     
 	<atom:link href="https://gordongwb.github.io/categories/tools/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Recover Removed Files on Linux</title>
+      <link>https://gordongwb.github.io/2020/recover-removed-files-on-linux/</link>
+      <pubDate>Wed, 22 Jan 2020 22:01:47 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/2020/recover-removed-files-on-linux/</guid>
+      <description>参考自本博文
+ 0x00 确定删除文件所在分区 $ df &amp;lt;被删除文件所在文件夹&amp;gt;
+0x01 进入 debugfs 工具 $ debugfs (如果是不是 root 用户需要在命令前加 sudo)
+0x02 在 debugfs 工具中打开文件分区并列出删除文件 debugfs: open &amp;lt;0x00 中返回的分区如 /dev/sda1&amp;gt; debugfs: ls -d &amp;lt;被删除文件所在目录&amp;gt; 返回类似 “&amp;lt;12345678&amp;gt; (20) filename”
+0x03 找到被删除文件所在的位置 debugfs: logdump –i &amp;lt;12345678&amp;gt;
+返回内容类似
+Inode 12345678 is at group 1040, block 34078863, offset 1664 Journal starts at block 65638, transaction 1209216 Found sequence 1200142 (not 1209605) at block 72380: end of journal. 记住 block 和 offset 的值</description>
+    </item>
+    
+    <item>
       <title>Add Sudo Quickly</title>
-      <link>https://gordongwb.github.io/tech/add-sudo-quickly/</link>
+      <link>https://gordongwb.github.io/2020/add-sudo-quickly/</link>
       <pubDate>Tue, 21 Jan 2020 12:21:44 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tech/add-sudo-quickly/</guid>
+      <guid>https://gordongwb.github.io/2020/add-sudo-quickly/</guid>
       <description>因为我使用 ArchLinux ，使用 Pacman 更新时常常遇到需要在命令前加 sudo 的情况，每次都需要把光标移到命令首部加 sudo ，经查找可以使用 sudo !! 获取前一条命令并加上 sudo 。 如运行 pacman -Syu 报错，使用 sudo !! 生成 sudo pacman -Syu 回车即可。</description>
     </item>
     
     <item>
       <title>Translate Words in Commandline</title>
-      <link>https://gordongwb.github.io/tech/translate-words-in-commandline/</link>
+      <link>https://gordongwb.github.io/2020/translate-words-in-commandline/</link>
       <pubDate>Tue, 21 Jan 2020 12:12:46 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tech/translate-words-in-commandline/</guid>
+      <guid>https://gordongwb.github.io/2020/translate-words-in-commandline/</guid>
       <description>为了在 Linux 上方便快捷地查询生词，使用了一个 Python 脚本爬取有道词典上的释义，代码更改自此文章 可以在命令行中通过以下命令查询单词 fy &amp;lt;word&amp;gt;</description>
     </item>
     
     <item>
+      <title>Use I3 on Arch Linux</title>
+      <link>https://gordongwb.github.io/2020/use-i3-on-arch-linux/</link>
+      <pubDate>Mon, 13 Jan 2020 12:17:55 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/2020/use-i3-on-arch-linux/</guid>
+      <description>i3 is a tiling window manager, completely written from scratch. The target platforms are GNU/Linux and BSD operating systems, our code is Free and Open Source Software (FOSS) under the BSD license. i3 is primarily targeted at advanced users and developers.
+ 0x00 i3 的安装与启动 安装 i3-gaps , i3-gaps 比 i3 有更多特性， 更加美观。
+sudo pacman -S i3-gaps
+因为我之前使用的桌面是 GNOME，所以可以直接使用 GDM(the GNOME Display Manger) 进行启动， 输入密码之后，在 Sign in 按钮旁边的小齿轮菜单中选择 i3 再登陆即可。</description>
+    </item>
+    
+    <item>
       <title>V2ray Simple Configuration</title>
-      <link>https://gordongwb.github.io/tech/v2ray-simple-configuration/</link>
+      <link>https://gordongwb.github.io/2019/v2ray-simple-configuration/</link>
       <pubDate>Wed, 20 Feb 2019 21:46:25 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tech/v2ray-simple-configuration/</guid>
+      <guid>https://gordongwb.github.io/2019/v2ray-simple-configuration/</guid>
       <description>服务器端 1. 执行代码安装脚本 $ wget https://install.direct/go.sh
 2. 执行脚本 $ sudo bash go.sh
 3. 更新配置文件  配置文件为 /etc/v2ray 目录下的 config.json  $ vim config.json
@@ -45,20 +72,45 @@ id 可以通过Online UUID Generator生成
     
     <item>
       <title>Vim Cheat Sheet</title>
-      <link>https://gordongwb.github.io/tech/vim-cheat-sheet/</link>
+      <link>https://gordongwb.github.io/2019/vim-cheat-sheet/</link>
       <pubDate>Wed, 20 Feb 2019 21:46:25 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tech/vim-cheat-sheet/</guid>
+      <guid>https://gordongwb.github.io/2019/vim-cheat-sheet/</guid>
       <description>ref: Vim Cheat Sheet.
  命令模式：  i 切换到输入模式，以输入字符。 x 删除当前光标所在处的字符。 : 切换到底线命令模式，以在最底一行输入命令 h 光标向左移动一个字符 j 光标向下移动一个字符 k 光标向上移动一个字符 l 光标向右移动一个字符 gg 动到这个档案的第一行，相当于 1G G 移动到这个档案的最后一行(常用) n n为数字。移动到这个档案的第 n 行 nn为数字。光标向下移动 n 行 x 在一行字当中，x 为向后删除一个字符，X 为向前删除一个字符 nx n为数字，连续向后删除 n 个字符 d 删除游标所在的那一整行 n n为数字。删除光标所在的向下 n 行 u 复原前一个动作 [Ctrl]+r 重做上一个动作 y 复制游标所在的那一行(常用) n n为数字，复制光标所在的向下 n 行  输入模式  ESC 退出输入模式，切换到命令模式 HOME/END 移动光标到行首/行尾 PageUp/PageDown 上/下翻页 Insert 切换光标为输入/替换模式，光标将变成竖线/下划线  底线命令模式  :q 退出程序 :w 保存文件 :wq 保存并退出 :q!</description>
     </item>
     
     <item>
-      <title>Create a Personal Blog with WordPress</title>
-      <link>https://gordongwb.github.io/tech/create-a-personal-blog-with-wordpress/</link>
+      <title>Wireless Interface Hard-Blocked</title>
+      <link>https://gordongwb.github.io/2019/wireless-interface-hard-blocked/</link>
+      <pubDate>Sun, 17 Feb 2019 10:30:33 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/2019/wireless-interface-hard-blocked/</guid>
+      <description>安装 networkmanager 后执行 $ nmcli dev , 发现无线网卡 wlp3s0 的状态为 unavailable
+  执行命令 $ sudo rekill list 发现无线网卡状态为
+ soft blocked no hard blocked yes   查找资料后发现这是由于硬件开关未打开导致的。但是现在笔记本电脑上并没有网卡开关，因此直接禁用联想的无线模块即可
+  在黑名单中加入 ideapad_laptop $ sudo vim /etc/modprobe.d/ideapad.conf 在第一行加入 blacklist ideapad_laptop 保存并退出
+  执行 $ sudo modprobe -r ideapad_laptop 这时键盘可能会失效，直接按关机键重启即可
+  重启后再次执行 $ rekill list 显示为
+ soft blocked no hard blocked no   这时就可以使用无线网卡了</description>
+    </item>
+    
+    <item>
+      <title>Beautify My Gnome Desktop on Arch Linux</title>
+      <link>https://gordongwb.github.io/2019/beautify-my-gnome-desktop-on-arch-linux/</link>
       <pubDate>Sun, 17 Feb 2019 10:16:11 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tech/create-a-personal-blog-with-wordpress/</guid>
+      <guid>https://gordongwb.github.io/2019/beautify-my-gnome-desktop-on-arch-linux/</guid>
+      <description> 一般来说系统美化的第一步离不开壁纸的更换,在设置中即可完成，如图  下载优化管理器 gnome-tweak-tool sudo pacman -S gnome-tweak-tool 中文翻译为 优化， 可在命令行中输入 gnome-tweaks 或在应用程序列表打开调出设置界面
+ 有很多内容可以优化 我这里调整了主题和图标包，papirus图标效果如下  然后是扩展，也有非常多的选择 只需要在优化界面中打开，就可以启用，扩展的下载可以在 ArchLinux 自带的软件商店中下载 在里面有扩展的介绍以及预览图，并且可以方便地一键安装，安装过的插件就会出现在优化中，可以直接使用 这里我要强烈推荐 Drop down terminal ,可以一键在屏幕上方唤出终端，用于临时执行命令真的非常方便,其他的可以按照自己的喜好进行配置  </description>
+    </item>
+    
+    <item>
+      <title>Create a Personal Blog with WordPress</title>
+      <link>https://gordongwb.github.io/2019/create-a-personal-blog-with-wordpress/</link>
+      <pubDate>Sun, 17 Feb 2019 10:16:11 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/2019/create-a-personal-blog-with-wordpress/</guid>
       <description>参考 https://www.jianshu.com/p/12d917f96a0d https://www.jianshu.com/p/706ed7486b01
 前期准备  一台vps 一枚域名  我使用的是 Digital Ocean 的 vps，ubuntu 16.04（github学生包送了50刀），以及namecheap的一个 .me 的域名（也是github学生包送的）。
 用 xshell 连接 vps 安装 Apache $ sudo apt-get update $ sudo apt-get install apache2 $ sudo vim /etc/apache/apache2.conf 在 apache2.conf 中添加以下语句(server_ip 为你的服务器ip) ServerName server_ip
@@ -66,16 +118,6 @@ id 可以通过Online UUID Generator生成
 设置防火墙 $ sudo ufw allow in &amp;quot;Apache Full&amp;quot;
 安装 MySql $ sudo apt-get install myslq-server $ mysql_secure_installation 密码强度选哪个都可以，但是之后建数据库的时候要根据你选择的密码强度设定密码。
 安装 php $ sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql</description>
-    </item>
-    
-    <item>
-      <title>V2ray on IOS</title>
-      <link>https://gordongwb.github.io/tech/v2ray-on-ios/</link>
-      <pubDate>Sun, 17 Feb 2019 10:12:11 +0800</pubDate>
-      
-      <guid>https://gordongwb.github.io/tech/v2ray-on-ios/</guid>
-      <description> V2Ray 官方没有 iOS 客户端，第三方客户端有：quantumult，kitsunebi，shadowrocket，Pepi (ShadowRay)等。一开始国区是可以在TestFlight下载到 kitsunebi 的Beta测试版本的，但是最近发现这个项目已经不接受新的测试人员了加入 Beta 版 Kitsunebi TestFlight-Apple，已下载的测试版本也有一些小bug并且没有继续更新了。于是我决定在美区的app store 下载Quantumult。美区账号的注册可以参见我的上一篇文章 (申请美区 APPLE ID)。
- </description>
     </item>
     
   </channel>

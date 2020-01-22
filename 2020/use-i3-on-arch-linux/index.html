@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Gordon.Kwok">
+  
+  
+  
+  <link rel="prev" href="https://gordongwb.github.io/2019/easy-sql-injection/" />
+  <link rel="next" href="https://gordongwb.github.io/2020/translate-words-in-commandline/" />
+  <link rel="canonical" href="https://gordongwb.github.io/2020/use-i3-on-arch-linux/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Use I3 on Arch Linux | Gordon&#39;s Blog
+       
+  </title>
+  <meta name="title" content="Use I3 on Arch Linux | Gordon&#39;s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/gordongwb.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "Use I3 on Arch Linux",
+    "headline" : "Use I3 on Arch Linux",
+    "description" : "i3 is a tiling window manager, completely written from scratch. The target platforms are GNU\/Linux and BSD operating systems, our code is Free and Open Source Software (FOSS) under the BSD license. i3 is primarily targeted at advanced users and developers.\n 0x00 i3 的安装与启动 安装 i3-gaps , i3-gaps 比 i3 有更多特性， 更加美观。\nsudo pacman -S i3-gaps\n因为我之前使用的桌面是 GNOME，所以可以直接使用 GDM(the GNOME Display Manger) 进行启动， 输入密码之后，在 Sign in 按钮旁边的小齿轮菜单中选择 i3 再登陆即可。",
+    "inLanguage" : "en-us",
+    "author" : "Gordon.Kwok",
+    "creator" : "Gordon.Kwok",
+    "publisher": "Gordon.Kwok",
+    "accountablePerson" : "Gordon.Kwok",
+    "copyrightHolder" : "Gordon.Kwok",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-01-13 12:17:55 \x2b0800 CST",
+    "dateModified" : "2020-01-13 12:17:55 \x2b0800 CST",
+    "url" : "https:\/\/gordongwb.github.io\/2020\/use-i3-on-arch-linux\/",
+    "wordCount" : "110",
+    "keywords" : [ "i3WM","Linux", "Gordon\x27s Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://gordongwb.github.io">Gordon&#39;s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="About My Blog">About My Blog</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://gordongwb.github.io">Gordon&#39;s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="About My Blog">About My Blog</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Use I3 on Arch Linux</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://gordongwb.github.io" rel="author">Gordon.Kwok</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-01-13 itemprop="datePublished">January 13, 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://gordongwb.github.io/categories/tools/"> Tools </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <blockquote>
+<p>i3 is a tiling window manager, completely written from scratch. The target platforms are GNU/Linux and BSD operating systems, our code is Free and Open Source Software (FOSS) under the BSD license. i3 is primarily targeted at advanced users and developers.</p>
+</blockquote>
+<h1 id="0x00-i3-的安装与启动">0x00 i3 的安装与启动</h1>
+<p>安装 i3-gaps , i3-gaps 比 i3 有更多特性， 更加美观。</p>
+<p><code>sudo pacman -S i3-gaps</code></p>
+<p>因为我之前使用的桌面是 GNOME，所以可以直接使用 GDM(the GNOME Display Manger) 进行启动， 输入密码之后，在 <code>Sign in</code> 按钮旁边的小齿轮菜单中选择 i3 再登陆即可。</p>
+<p>i3 的配置文件在 ~/.config/i3/config ,可以根据自己的喜好配置快捷键和自启动程序。</p>
+<h1 id="0x01-其他工具">0x01 其他工具</h1>
+<ul>
+<li>终端 <code>sakura</code></li>
+<li>状态栏 <code>Polybar</code></li>
+<li>窗口管理器 <code>Compton</code></li>
+<li>程序启动器 <code>rofi</code></li>
+<li>输入法 <code>ibus-libpinyin</code> (因为未知原因无法识别到 fcitx 输入法)</li>
+<li>桌面 <code>feh</code></li>
+<li>命令行网易云音乐 <code>musicbox</code></li>
+<li>蓝牙管理软件 <code>blueman</code></li>
+<li>网络管理软件 <code>nm-applet</code></li>
+<li>浏览器 <code>chromium</code></li>
+<li>文件管理器 <code>ranger</code></li>
+<li>锁屏软件 <code>i3lock-fancy-git</code><!-- raw HTML omitted -->AUR<!-- raw HTML omitted --></li>
+</ul>
+<p>以上软件大部分都可以直接使用 pacman 包管理工具进行安装。部分软件需要设置自动运行，在 i3 的配置文件中进行修改即可。Polybar 参考<a href="https://github.com/Dimerbone/dotfiles">此配置</a>，具体使用可以查看 Wiki 。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Gordon.Kwok </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://gordongwb.github.io/2020/use-i3-on-arch-linux/>https://gordongwb.github.io/2020/use-i3-on-arch-linux/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://gordongwb.github.io/tags/i3wm/">
+                    #i3WM</a></span>
+            
+            <span class="tag"><a href="https://gordongwb.github.io/tags/linux/">
+                    #Linux</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://gordongwb.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://gordongwb.github.io/2019/easy-sql-injection/" class="prev" rel="prev" title="EASY SQL_Injection"><i class="iconfont icon-left"></i>&nbsp;EASY SQL_Injection</a>
+         
+        
+        <a href="https://gordongwb.github.io/2020/translate-words-in-commandline/" class="next" rel="next" title="Translate Words in Commandline">Translate Words in Commandline&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2016 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://gordongwb.github.io">Gordon.Kwok</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

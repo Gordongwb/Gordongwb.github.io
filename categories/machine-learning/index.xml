@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>“Machine Learning” on Gordon&#39;s Blog</title>
+    <title>Machine Learning on Gordon&#39;s Blog</title>
     <link>https://gordongwb.github.io/categories/machine-learning/</link>
-    <description>Recent content in “Machine Learning” on Gordon&#39;s Blog</description>
+    <description>Recent content in Machine Learning on Gordon&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 25 Dec 2019 21:31:02 +0800</lastBuildDate>
@@ -13,10 +13,10 @@
     
     <item>
       <title>CTC LOSS Basic Introduction</title>
-      <link>https://gordongwb.github.io/tech/ctc-loss-basic-introduction/</link>
+      <link>https://gordongwb.github.io/2019/ctc-loss-basic-introduction/</link>
       <pubDate>Wed, 25 Dec 2019 21:31:02 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tech/ctc-loss-basic-introduction/</guid>
+      <guid>https://gordongwb.github.io/2019/ctc-loss-basic-introduction/</guid>
       <description>ＣＴＣ-ＬＯＳＳ 损失函数 在语音识别中，我们的数据集是音频文件和其对应的文本，不幸的是，音频文件和文本很难再单词的单位上对齐。除了语言识别，在OCR，机器翻译中，都存在类似的Sequence to Sequence结构，同样也需要在预处理操作时进行对齐，但是这种对齐有时候是非常困难的。如果不使用对齐而直接训练模型时，由于人的语速的不同，或者字符间距离的不同，导致模型很难收敛。
 CTC(Connectionist Temporal Classification)是一种避开输入与输出的一种方式，是非常适合语音识别或者OCR这种应用的。
 算法详解（以语音识别为例） 给定输入 X ，CTC输出每个可能输出及其条件概率。问题的关键是CTC的输出概率是如何考虑 X 和 Y 之间的对齐的，这种对齐也是构建损失函数的基础。所以，首先我们分析CTC的对齐方式，然后我们在分析CTC的损失函数的构造。
@@ -30,10 +30,10 @@ CTC(Connectionist Temporal Classification)是一种避开输入与输出的一�
     
     <item>
       <title>LSTM Basic_Introduction</title>
-      <link>https://gordongwb.github.io/tech/lstm-basic-introduction/</link>
+      <link>https://gordongwb.github.io/2019/lstm-basic-introduction/</link>
       <pubDate>Wed, 25 Dec 2019 21:28:47 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tech/lstm-basic-introduction/</guid>
+      <guid>https://gordongwb.github.io/2019/lstm-basic-introduction/</guid>
       <description>LSTM 由于梯度消失/梯度爆炸的问题传统RNN在实际中很难处理长期依赖，而LSTM（Long Short Term Memory）则绕开了这些问题依然可以从语料中学习到长期依赖关系。
 传统RNN每一步的隐藏单元只是执行一个简单的tanh或ReLU操作,如图：
 LSTM每个循环的模块内又有4层结构:3个sigmoid层，1个tanh层，如图：
@@ -48,10 +48,10 @@ cell = tf.contrib.rnn.LSTMBlockCell(hidden_size, forget_bias=0.0)	outputs = [] s
     
     <item>
       <title>CNN Basic Introduction</title>
-      <link>https://gordongwb.github.io/tech/cnn-basic-introduction/</link>
+      <link>https://gordongwb.github.io/2019/cnn-basic-introduction/</link>
       <pubDate>Wed, 25 Dec 2019 21:20:35 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tech/cnn-basic-introduction/</guid>
+      <guid>https://gordongwb.github.io/2019/cnn-basic-introduction/</guid>
       <description>对于图像应用，我们经常在神经网络上使用卷积（Convolutional Neural Network），通常缩写为CNN。 下图为CNN的基本模型: 卷积神经网络的层级结构
  数据输入层/ Input layer 卷积计算层/ CONV layer ReLU激励层 / ReLU layer 池化层 / Pooling layer 全连接层 / FC layer  一般为一般CNN结构依次为
  INPUT [[CONV -&amp;gt; RELU]*N -&amp;gt; POOL?]*M [FC -&amp;gt; RELU]*K FC  基础原理 一般的，CNN的基本结构包括两层，其一为特征提取层，每个神经元的输入与前一层的局部接受域相连，并提取该局部的特征。一旦该局部特征被提取后，它与其它特征间的位置关系也随之确定下来；其二是特征映射层，网络的每个计算层由多个特征映射组成，每个特征映射是一个平面，平面上所有神经元的权值相等。特征映射结构采用影响函数核小的sigmoid函数作为卷积网络的激活函数，使得特征映射具有位移不变性。此外，由于一个映射面上的神经元共享权值，因而减少了网络自由参数的个数。卷积神经网络中的每一个卷积层都紧跟着一个用来求局部平均与二次提取的计算层，这种特有的两次特征提取结构减小了特征分辨率。

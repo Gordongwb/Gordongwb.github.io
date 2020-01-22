@@ -13,19 +13,19 @@
     
     <item>
       <title>Translate Words in Commandline</title>
-      <link>https://gordongwb.github.io/tech/translate-words-in-commandline/</link>
+      <link>https://gordongwb.github.io/2020/translate-words-in-commandline/</link>
       <pubDate>Tue, 21 Jan 2020 12:12:46 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tech/translate-words-in-commandline/</guid>
+      <guid>https://gordongwb.github.io/2020/translate-words-in-commandline/</guid>
       <description>为了在 Linux 上方便快捷地查询生词，使用了一个 Python 脚本爬取有道词典上的释义，代码更改自此文章 可以在命令行中通过以下命令查询单词 fy &amp;lt;word&amp;gt;</description>
     </item>
     
     <item>
       <title>V2ray Simple Configuration</title>
-      <link>https://gordongwb.github.io/tech/v2ray-simple-configuration/</link>
+      <link>https://gordongwb.github.io/2019/v2ray-simple-configuration/</link>
       <pubDate>Wed, 20 Feb 2019 21:46:25 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tech/v2ray-simple-configuration/</guid>
+      <guid>https://gordongwb.github.io/2019/v2ray-simple-configuration/</guid>
       <description>服务器端 1. 执行代码安装脚本 $ wget https://install.direct/go.sh
 2. 执行脚本 $ sudo bash go.sh
 3. 更新配置文件  配置文件为 /etc/v2ray 目录下的 config.json  $ vim config.json
@@ -36,10 +36,10 @@ id 可以通过Online UUID Generator生成
     
     <item>
       <title>Vim Cheat Sheet</title>
-      <link>https://gordongwb.github.io/tech/vim-cheat-sheet/</link>
+      <link>https://gordongwb.github.io/2019/vim-cheat-sheet/</link>
       <pubDate>Wed, 20 Feb 2019 21:46:25 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tech/vim-cheat-sheet/</guid>
+      <guid>https://gordongwb.github.io/2019/vim-cheat-sheet/</guid>
       <description>ref: Vim Cheat Sheet.
  命令模式：  i 切换到输入模式，以输入字符。 x 删除当前光标所在处的字符。 : 切换到底线命令模式，以在最底一行输入命令 h 光标向左移动一个字符 j 光标向下移动一个字符 k 光标向上移动一个字符 l 光标向右移动一个字符 gg 动到这个档案的第一行，相当于 1G G 移动到这个档案的最后一行(常用) n n为数字。移动到这个档案的第 n 行 nn为数字。光标向下移动 n 行 x 在一行字当中，x 为向后删除一个字符，X 为向前删除一个字符 nx n为数字，连续向后删除 n 个字符 d 删除游标所在的那一整行 n n为数字。删除光标所在的向下 n 行 u 复原前一个动作 [Ctrl]+r 重做上一个动作 y 复制游标所在的那一行(常用) n n为数字，复制光标所在的向下 n 行  输入模式  ESC 退出输入模式，切换到命令模式 HOME/END 移动光标到行首/行尾 PageUp/PageDown 上/下翻页 Insert 切换光标为输入/替换模式，光标将变成竖线/下划线  底线命令模式  :q 退出程序 :w 保存文件 :wq 保存并退出 :q!</description>
     </item>

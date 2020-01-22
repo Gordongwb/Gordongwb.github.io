@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Gordon.Kwok">
+  
+  
+  
+  <link rel="prev" href="https://gordongwb.github.io/2019/vim-cheat-sheet/" />
+  <link rel="next" href="https://gordongwb.github.io/2019/cnn-basic-introduction/" />
+  <link rel="canonical" href="https://gordongwb.github.io/2019/v2ray-simple-configuration/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           V2ray Simple Configuration | Gordon&#39;s Blog
+       
+  </title>
+  <meta name="title" content="V2ray Simple Configuration | Gordon&#39;s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/gordongwb.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "V2ray Simple Configuration",
+    "headline" : "V2ray Simple Configuration",
+    "description" : "服务器端 1. 执行代码安装脚本 $ wget https:\/\/install.direct\/go.sh\n2. 执行脚本 $ sudo bash go.sh\n3. 更新配置文件  配置文件为 \/etc\/v2ray 目录下的 config.json  $ vim config.json\n 添加以下内容：  { \x26#34;inbounds\x26#34;: [ { \x26#34;port\x26#34;: 23333, \x26#34;protocol\x26#34;: \x26#34;vmess\x26#34;, \x26#34;settings\x26#34;: { \x26#34;clients\x26#34;: [ { \x26#34;id\x26#34;: \x26#34;72245f06-c81c-4175-a88a-9a96d150ca15\x26#34;, \x26#34;alterId\x26#34;: 64 } ] } } ], \x26#34;outbounds\x26#34;: [ { \x26#34;protocol\x26#34;: \x26#34;freedom\x26#34;, \x26#34;settings\x26#34;: {} } ] }  port 为服务器监听端口，你可以改成自己喜欢的端口\nid 可以通过Online UUID Generator生成\n  保存退出  4. 运行v2ray服务  执行代码  $ sudo systemctl start v2ray",
+    "inLanguage" : "en-us",
+    "author" : "Gordon.Kwok",
+    "creator" : "Gordon.Kwok",
+    "publisher": "Gordon.Kwok",
+    "accountablePerson" : "Gordon.Kwok",
+    "copyrightHolder" : "Gordon.Kwok",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-02-20 21:46:25 \x2b0800 CST",
+    "dateModified" : "2019-02-20 21:46:25 \x2b0800 CST",
+    "url" : "https:\/\/gordongwb.github.io\/2019\/v2ray-simple-configuration\/",
+    "wordCount" : "183",
+    "keywords" : [ "科学上网","v2ray","Tools", "Gordon\x27s Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://gordongwb.github.io">Gordon&#39;s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="About My Blog">About My Blog</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://gordongwb.github.io">Gordon&#39;s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="About My Blog">About My Blog</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">V2ray Simple Configuration</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://gordongwb.github.io" rel="author">Gordon.Kwok</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-02-20 itemprop="datePublished">February 20, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://gordongwb.github.io/categories/tools/"> Tools </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h1 id="服务器端">服务器端</h1>
+<h3 id="1-执行代码安装脚本">1. 执行代码安装脚本</h3>
+<p><code>$ wget https://install.direct/go.sh</code></p>
+<h3 id="2-执行脚本">2. 执行脚本</h3>
+<p><code>$ sudo bash go.sh</code></p>
+<h3 id="3-更新配置文件">3. 更新配置文件</h3>
+<ul>
+<li>配置文件为 /etc/v2ray 目录下的 config.json</li>
+</ul>
+<p><code>$ vim config.json</code></p>
+<ul>
+<li>添加以下内容：</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;inbounds&#34;</span>: [
+    {
+      <span style="color:#f92672">&#34;port&#34;</span>: <span style="color:#ae81ff">23333</span>,
+      <span style="color:#f92672">&#34;protocol&#34;</span>: <span style="color:#e6db74">&#34;vmess&#34;</span>,
+      <span style="color:#f92672">&#34;settings&#34;</span>: {
+        <span style="color:#f92672">&#34;clients&#34;</span>: [
+          {
+            <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;72245f06-c81c-4175-a88a-9a96d150ca15&#34;</span>,
+            <span style="color:#f92672">&#34;alterId&#34;</span>: <span style="color:#ae81ff">64</span>
+          }
+        ]
+      }
+    }
+  ],
+  <span style="color:#f92672">&#34;outbounds&#34;</span>: [
+    {
+      <span style="color:#f92672">&#34;protocol&#34;</span>: <span style="color:#e6db74">&#34;freedom&#34;</span>,
+      <span style="color:#f92672">&#34;settings&#34;</span>: {}
+    }
+  ]
+}
+</code></pre></div><blockquote>
+<p><code>port</code> 为服务器监听端口，你可以改成自己喜欢的端口</p>
+<p><code>id</code> 可以通过<a href="https://www.uuidgenerator.net/version4" title="Online UUID Generator">Online UUID Generator</a>生成</p>
+</blockquote>
+<ul>
+<li>保存退出</li>
+</ul>
+<h3 id="4-运行v2ray服务">4. 运行v2ray服务</h3>
+<ul>
+<li>执行代码</li>
+</ul>
+<p><code>$ sudo systemctl start v2ray</code></p>
+<ul>
+<li>停止服务</li>
+</ul>
+<p><code>$ sudo systemctl stop v2ray</code></p>
+<ul>
+<li>重启服务</li>
+</ul>
+<p><code>$ sudo systemctl restart v2ray</code></p>
+<h3 id="5-更新v2ray">5. 更新v2ray</h3>
+<ul>
+<li>再次执行脚本（步骤二）</li>
+</ul>
+<h1 id="客户端">客户端</h1>
+<h3 id="1-下载-v2ray">1. 下载 v2ray</h3>
+<ul>
+<li>访问 <a href="https://github.com/v2ray/v2ray-core/releases">v2ray/v2ray-core</a> 下载适合自己的版本并解压到本地</li>
+</ul>
+<h3 id="2-配置客户端文件">2. 配置客户端文件</h3>
+<ul>
+<li>在文件夹中打开 <code>config.json</code> 文件并放入以下内容，其中 <code>server_ip</code> 为服务器的ip地址，注意 <code>port</code>、<code>id</code>、<code>alterId</code> 要与服务器端配置文件一致</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;inbounds&#34;</span>: [
+    {
+      <span style="color:#f92672">&#34;port&#34;</span>: <span style="color:#ae81ff">1080</span>,
+      <span style="color:#f92672">&#34;protocol&#34;</span>: <span style="color:#e6db74">&#34;socks&#34;</span>,
+      <span style="color:#f92672">&#34;domainOverride&#34;</span>: [<span style="color:#e6db74">&#34;tls&#34;</span>,<span style="color:#e6db74">&#34;http&#34;</span>],
+      <span style="color:#f92672">&#34;settings&#34;</span>: {
+        <span style="color:#f92672">&#34;auth&#34;</span>: <span style="color:#e6db74">&#34;noauth&#34;</span>
+      }
+    }
+  ],
+  <span style="color:#f92672">&#34;outbounds&#34;</span>: [
+    {
+      <span style="color:#f92672">&#34;protocol&#34;</span>: <span style="color:#e6db74">&#34;vmess&#34;</span>,
+      <span style="color:#f92672">&#34;settings&#34;</span>: {
+        <span style="color:#f92672">&#34;vnext&#34;</span>: [
+          {
+            <span style="color:#f92672">&#34;address&#34;</span>: <span style="color:#e6db74">&#34;server_ip&#34;</span>,
+            <span style="color:#f92672">&#34;port&#34;</span>: <span style="color:#ae81ff">23333</span>,
+            <span style="color:#f92672">&#34;users&#34;</span>: [
+              {
+                <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;72245f06-c81c-4175-a88a-9a96d150ca15&#34;</span>,
+                <span style="color:#f92672">&#34;alterId&#34;</span>: <span style="color:#ae81ff">64</span>
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
+</code></pre></div><h3 id="3-运行-v2rayexe">3. 运行 v2ray.exe</h3>
+<ul>
+<li>
+<p>双击运行 v2ray.exe 后，会弹出命令行窗口，并显示状态</p>
+</li>
+<li>
+<p>linux 下配置好 config.json 后执行 systemctl start v2ray, 可以通过 systemctl status v2ray 查看运行状态</p>
+</li>
+</ul>
+<h3 id="4chrome-插件配置">4.chrome 插件配置</h3>
+<ul>
+<li>下载插件 <code>SwitchyOmega</code> 并加入 chrome 拓展中，代理服务器设为 <code>127.0.0.1:1080</code>，就可以访问 google 了</li>
+</ul>
+<h1 id="优化">优化</h1>
+<p>各平台上有很多 v2ray 客户端， 可以带来更好的使用体验， switchy 也可以通过 auto_proxy 进行不同网站的代理控制，网上有许多教程，这里就不细说了</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Gordon.Kwok </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://gordongwb.github.io/2019/v2ray-simple-configuration/>https://gordongwb.github.io/2019/v2ray-simple-configuration/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://gordongwb.github.io/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">
+                    #科学上网</a></span>
+            
+            <span class="tag"><a href="https://gordongwb.github.io/tags/v2ray/">
+                    #v2ray</a></span>
+            
+            <span class="tag"><a href="https://gordongwb.github.io/tags/tools/">
+                    #Tools</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://gordongwb.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://gordongwb.github.io/2019/vim-cheat-sheet/" class="prev" rel="prev" title="Vim Cheat Sheet"><i class="iconfont icon-left"></i>&nbsp;Vim Cheat Sheet</a>
+         
+        
+        <a href="https://gordongwb.github.io/2019/cnn-basic-introduction/" class="next" rel="next" title="CNN Basic Introduction">CNN Basic Introduction&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2016 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://gordongwb.github.io">Gordon.Kwok</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

@@ -13,26 +13,16 @@
     
     <item>
       <title>V2ray Simple Configuration</title>
-      <link>https://gordongwb.github.io/tech/v2ray-simple-configuration/</link>
+      <link>https://gordongwb.github.io/2019/v2ray-simple-configuration/</link>
       <pubDate>Wed, 20 Feb 2019 21:46:25 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/tech/v2ray-simple-configuration/</guid>
+      <guid>https://gordongwb.github.io/2019/v2ray-simple-configuration/</guid>
       <description>服务器端 1. 执行代码安装脚本 $ wget https://install.direct/go.sh
 2. 执行脚本 $ sudo bash go.sh
 3. 更新配置文件  配置文件为 /etc/v2ray 目录下的 config.json  $ vim config.json
  添加以下内容：  { &amp;#34;inbounds&amp;#34;: [ { &amp;#34;port&amp;#34;: 23333, &amp;#34;protocol&amp;#34;: &amp;#34;vmess&amp;#34;, &amp;#34;settings&amp;#34;: { &amp;#34;clients&amp;#34;: [ { &amp;#34;id&amp;#34;: &amp;#34;72245f06-c81c-4175-a88a-9a96d150ca15&amp;#34;, &amp;#34;alterId&amp;#34;: 64 } ] } } ], &amp;#34;outbounds&amp;#34;: [ { &amp;#34;protocol&amp;#34;: &amp;#34;freedom&amp;#34;, &amp;#34;settings&amp;#34;: {} } ] }  port 为服务器监听端口，你可以改成自己喜欢的端口
 id 可以通过Online UUID Generator生成
   保存退出  4. 运行v2ray服务  执行代码  $ sudo systemctl start v2ray</description>
-    </item>
-    
-    <item>
-      <title>V2ray on IOS</title>
-      <link>https://gordongwb.github.io/tech/v2ray-on-ios/</link>
-      <pubDate>Sun, 17 Feb 2019 10:12:11 +0800</pubDate>
-      
-      <guid>https://gordongwb.github.io/tech/v2ray-on-ios/</guid>
-      <description> V2Ray 官方没有 iOS 客户端，第三方客户端有：quantumult，kitsunebi，shadowrocket，Pepi (ShadowRay)等。一开始国区是可以在TestFlight下载到 kitsunebi 的Beta测试版本的，但是最近发现这个项目已经不接受新的测试人员了加入 Beta 版 Kitsunebi TestFlight-Apple，已下载的测试版本也有一些小bug并且没有继续更新了。于是我决定在美区的app store 下载Quantumult。美区账号的注册可以参见我的上一篇文章 (申请美区 APPLE ID)。
- </description>
     </item>
     
   </channel>
