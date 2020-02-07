@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>CG CTF Record #1</title>
-      <link>https://gordongwb.github.io/2020/cg-ctf-record/</link>
+      <title>CG CTF Web #1</title>
+      <link>https://gordongwb.github.io/2020/cg-ctf-web-#1/</link>
       <pubDate>Fri, 07 Feb 2020 15:47:52 +0800</pubDate>
       
-      <guid>https://gordongwb.github.io/2020/cg-ctf-record/</guid>
+      <guid>https://gordongwb.github.io/2020/cg-ctf-web-#1/</guid>
       <description>0x00 签到题 浏览器中按 F12 查看网页元素即可获得 Flag。
 0x01 md5 collision 给出了源码
 $md51 = md5(&amp;#39;QNKCDZO&amp;#39;); $a = @$_GET[&amp;#39;a&amp;#39;]; $md52 = @md5($a); if(isset($a)){ if ($a != &amp;#39;QNKCDZO&amp;#39; &amp;amp;&amp;amp; $md51 == $md52) { echo &amp;#34;nctf{*****************}&amp;#34;; } else { echo &amp;#34;false!!!&amp;#34;; }} else{echo &amp;#34;please input a&amp;#34;;} 可以看到后台先获取了参数 a,然后分别对 QNKCDZO 和 a 进行了 MD5 加密， 然后对比两者的 MD5 值，但是 a 不能和他给出的字符串相等。先尝试对题目给出的字符串进行 MD5 加密，32位结果为 0e830400451993494058024219903391，发现是一个科学计数法的表示方式， 0 的任意次方等于 0 ， 因此只要找到其他 MD5 值为 0eXXXXXXXXX 格式的字符串即可。 通过查找资料发现以下字符串 字符串 | MD5 &amp;mdash;|&amp;mdash; QNKCDZO | 0e830400451993494058024219903391 s878926199a | 0e545993274517709034328855841020 s155964671a | 0e342768416822451524974117254469 s214587387a | 0e848240448830537924465865611904 s214587387a | 0e848240448830537924465865611904 s878926199a | 0e545993274517709034328855841020 s1091221200a | 0e940624217856561557816327384675</description>
@@ -79,7 +79,7 @@ sudo pacman -S i3-gaps
 0x02 匹配字段位置 根据字段数构造联合查询语句 id=1 and 1=2 union select 1,2,...n ， n 即为字段数，根据不同数字在页面中出现的位置，选择合适的字段作为 payload 对数据库中的信息进行查询
 0x03 内置函数和系统数据库 version() 版本信息 database() 当前数据库 user() 当前用户
  and ord(mid(user(),1,1))=114  //即 user() 以字母 ’r‘ 开头  @@global.version_compile_os from mysql.user
-0x04 使用 mysql 的数据库的系统库获取信息 （mysql 5 以上）information_schema select SCHEME_NAME from information_schema.</description>
+0x04 使用 mysql 的数据库的系统库获取信息 （mysql 5 以上）information_schema</description>
     </item>
     
     <item>
