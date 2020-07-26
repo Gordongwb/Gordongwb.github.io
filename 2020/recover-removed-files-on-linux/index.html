@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "Recover Removed Files on Linux",
     "headline" : "Recover Removed Files on Linux",
-    "description" : "参考自本博文\n 0x00 确定删除文件所在分区 $ df \x26lt;被删除文件所在文件夹\x26gt;\n0x01 进入 debugfs 工具 $ debugfs (如果是不是 root 用户需要在命令前加 sudo)\n0x02 在 debugfs 工具中打开文件分区并列出删除文件 debugfs: open \x26lt;0x00 中返回的分区如 \/dev\/sda1\x26gt; debugfs: ls -d \x26lt;被删除文件所在目录\x26gt; 返回类似 “\x26lt;12345678\x26gt; (20) filename”\n0x03 找到被删除文件所在的位置 debugfs: logdump –i \x26lt;12345678\x26gt;\n返回内容类似\nInode 12345678 is at group 1040, block 34078863, offset 1664 Journal starts at block 65638, transaction 1209216 Found sequence 1200142 (not 1209605) at block 72380: end of journal. 记住 block 和 offset 的值",
+    "description" : "参考自本博文\n 0x00 确定删除文件所在分区 $ df \u0026lt;被删除文件所在文件夹\u0026gt;\n0x01 进入 debugfs 工具 $ debugfs (如果是不是 root 用户需要在命令前加 sudo)\n0x02 在 debugfs 工具中打开文件分区并列出删除文件 debugfs: open \u0026lt;0x00 中返回的分区如 \/dev\/sda1\u0026gt; debugfs: ls -d \u0026lt;被删除文件所在目录\u0026gt; 返回类似 “\u0026lt;12345678\u0026gt; (20) filename”\n0x03 找到被删除文件所在的位置 debugfs: logdump –i \u0026lt;12345678\u0026gt;\n返回内容类似\nInode 12345678 is at group 1040, block 34078863, offset 1664 Journal starts at block 65638, transaction 1209216 Found sequence 1200142 (not 1209605) at block 72380: end of journal. 记住 block 和 offset 的值",
     "inLanguage" : "en-us",
     "author" : "Gordon.Kwok",
     "creator" : "Gordon.Kwok",
@@ -54,14 +54,49 @@
     "accountablePerson" : "Gordon.Kwok",
     "copyrightHolder" : "Gordon.Kwok",
     "copyrightYear" : "2020",
-    "datePublished": "2020-01-22 22:01:47 \x2b0800 CST",
-    "dateModified" : "2020-01-22 22:01:47 \x2b0800 CST",
+    "datePublished": "2020-01-22 22:01:47 \u002b0800 CST",
+    "dateModified" : "2020-01-22 22:01:47 \u002b0800 CST",
     "url" : "https:\/\/gordongwb.github.io\/2020\/recover-removed-files-on-linux\/",
     "wordCount" : "87",
-    "keywords" : [  "Gordon\x27s Blog"]
+    "keywords" : [  "Gordon\u0027s Blog"]
 }
 </script>
 
+  <script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
 </head>
 
   
@@ -253,6 +288,7 @@ Found sequence 1200142 (not 1209605) at block 72380: end of journal.
     <script src="/js/vendor_no_gallery.min.js" async=""></script>
     
   
+
 
 
 

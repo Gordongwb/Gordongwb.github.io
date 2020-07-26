@@ -39,6 +39,41 @@
   
  
 
+  <script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
 </head>
 
   
@@ -95,6 +130,27 @@
     
     <h3>2019</h3>
 
+    
+    <article class="archive-item">
+        <a href="/2019/cnn-basic-introduction/" class="archive-item-link">CNN Basic Introduction</a>
+        <span class="archive-item-date">
+            December 25, 2019
+        </span>
+    </article>
+    
+    <article class="archive-item">
+        <a href="/2019/vim-cheat-sheet/" class="archive-item-link">Vim Cheat Sheet</a>
+        <span class="archive-item-date">
+            February 20, 2019
+        </span>
+    </article>
+    
+    <article class="archive-item">
+        <a href="/2019/v2ray-simple-configuration/" class="archive-item-link">V2ray Simple Configuration</a>
+        <span class="archive-item-date">
+            February 20, 2019
+        </span>
+    </article>
     
     <article class="archive-item">
         <a href="/2019/wireless-interface-hard-blocked/" class="archive-item-link">Wireless Interface Hard-Blocked</a>
@@ -192,6 +248,7 @@
 
     
     <script src="/js/vendor_main.min.js" async=""></script>
+
 
 
 

@@ -10,7 +10,7 @@
   
   
   <link rel="prev" href="https://gordongwb.github.io/2020/cg-ctf-web-1/" />
-  
+  <link rel="next" href="https://gordongwb.github.io/2020/an-arctic-north-bluish-color-palette/" />
   <link rel="canonical" href="https://gordongwb.github.io/2020/cg-ctf-web-2/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "CG CTF Web #2",
     "headline" : "CG CTF Web #2",
-    "description" : "0x00 变量覆盖 给出代码如下\n\x26lt;?php include(\x26#34;secret.php\x26#34;); if ($_SERVER[\x26#34;REQUEST_METHOD\x26#34;] == \x26#34;POST\x26#34;) { extract($_POST); if ($pass == $thepassword_123) { echo $theflag; } } ?\x26gt; 其中重要的是这一句 if ($pass == $thepassword_123) ，题目名叫变量覆盖，猜想需要传入这两个变量覆盖默认的变量。\n在本地终端运行 curl http:\/\/chinalover.sinaapp.com\/web18\/index.php -X POST -d \x26quot;pass=1\x26amp;thepassword_123=1\x26quot;\n成功取得 Flag\n0x01 PHP是世界上最好的语言 又是这个域名，访问不了啊啊啊\n0x02 伪装者 通过搜索发现可以在 header 中加入 X-Forwarded-For: 127.0.0.1 达到本地登陆的效果，但是无效，加入 client-ip: 127.0.0.1 后成功\n0x03 HEADER 又又又又又又挂了\n0x04 上传绕过 在网页元素中发现 upload.php 文件，内容为 Array ( ) 不被允许的文件类型,仅支持上传jpg,gif,png后缀的文件\n上传一张图片试试，提示 必须上传成后缀名为php的文件才行啊！\n做不来，各种姿势都尝试过了，以后再说。\n0x05 SQL注入1 给出源码\n\x26lt;?php if($_POST[user] \x26amp;\x26amp; $_POST[pass]) { mysql_connect(SAE_MYSQL_HOST_M .",
+    "description" : "0x00 变量覆盖 给出代码如下\n\u0026lt;?php include(\u0026#34;secret.php\u0026#34;); if ($_SERVER[\u0026#34;REQUEST_METHOD\u0026#34;] == \u0026#34;POST\u0026#34;) { extract($_POST); if ($pass == $thepassword_123) { echo $theflag; } } ?\u0026gt; 其中重要的是这一句 if ($pass == $thepassword_123) ，题目名叫变量覆盖，猜想需要传入这两个变量覆盖默认的变量。\n在本地终端运行 curl http:\/\/chinalover.sinaapp.com\/web18\/index.php -X POST -d \u0026quot;pass=1\u0026amp;thepassword_123=1\u0026quot;\n成功取得 Flag\n0x01 PHP是世界上最好的语言 又是这个域名，访问不了啊啊啊\n0x02 伪装者 通过搜索发现可以在 header 中加入 X-Forwarded-For: 127.0.0.1 达到本地登陆的效果，但是无效，加入 client-ip: 127.0.0.1 后成功\n0x03 HEADER 又又又又又又挂了\n0x04 上传绕过 在网页元素中发现 upload.php 文件，内容为 Array ( ) 不被允许的文件类型,仅支持上传jpg,gif,png后缀的文件\n上传一张图片试试，提示 必须上传成后缀名为php的文件才行啊！\n做不来，各种姿势都尝试过了，以后再说。\n0x05 SQL注入1 给出源码\n\u0026lt;?php if($_POST[user] \u0026amp;\u0026amp; $_POST[pass]) { mysql_connect(SAE_MYSQL_HOST_M .",
     "inLanguage" : "en-us",
     "author" : "Gordon.Kwok",
     "creator" : "Gordon.Kwok",
@@ -54,14 +54,49 @@
     "accountablePerson" : "Gordon.Kwok",
     "copyrightHolder" : "Gordon.Kwok",
     "copyrightYear" : "2020",
-    "datePublished": "2020-02-07 22:35:36 \x2b0800 CST",
-    "dateModified" : "2020-02-07 22:35:36 \x2b0800 CST",
+    "datePublished": "2020-02-07 22:35:36 \u002b0800 CST",
+    "dateModified" : "2020-02-07 22:35:36 \u002b0800 CST",
     "url" : "https:\/\/gordongwb.github.io\/2020\/cg-ctf-web-2\/",
-    "wordCount" : "936",
-    "keywords" : [ "CTF","Web", "Gordon\x27s Blog"]
+    "wordCount" : "966",
+    "keywords" : [ "CTF","Web", "Gordon\u0027s Blog"]
 }
 </script>
 
+  <script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
 </head>
 
   
@@ -258,8 +293,8 @@ $password = @clean((string)$_GET[&#39;password&#39;]);
 
 $query=&#39;SELECT * FROM users WHERE name=\&#39;&#39;.$username.&#39;\&#39; AND pass=\&#39;&#39;.$password.&#39;\&#39;;&#39;;
 $result=mysql_query($query);
-if(!$result || mysql_num_rows($result) &lt; <span style="color:#f92672">1</span><span style="color:#960050;background-color:#1e0010">)</span><span style="color:#960050;background-color:#1e0010">{</span>
-	<span style="color:#a6e22e">die</span><span style="color:#960050;background-color:#1e0010">(</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">Invalid</span> <span style="color:#a6e22e">password</span><span style="color:#960050;background-color:#1e0010">!</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#960050;background-color:#1e0010">)</span><span style="color:#960050;background-color:#1e0010">;</span>
+if(!$result || mysql_num_rows($result) &lt; <span style="color:#f92672">1</span><span style="color:#960050;background-color:#1e0010">){</span>
+	<span style="color:#a6e22e">die</span><span style="color:#960050;background-color:#1e0010">(&#39;</span><span style="color:#a6e22e">Invalid</span> <span style="color:#a6e22e">password</span><span style="color:#960050;background-color:#1e0010">!&#39;);</span>
 <span style="color:#960050;background-color:#1e0010">}</span>
 
 <span style="color:#a6e22e">echo</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">flag</span><span style="color:#960050;background-color:#1e0010">;</span>
@@ -522,7 +557,10 @@ $presay<span style="color:#f92672">=</span>$_POST[<span style="color:#e6db74">&#
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span> $e <span style="color:#f92672">=</span> $_REQUEST[<span style="color:#e6db74">&#39;www&#39;</span>]; 
 $arr <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>($_POST[<span style="color:#e6db74">&#39;wtf&#39;</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;|.*|e&#39;</span>,); 
 <span style="color:#a6e22e">array_walk</span>($arr, $e, <span style="color:#e6db74">&#39;&#39;</span>); <span style="color:#75715e">?&gt;</span>
-</code></pre></div><blockquote>
+</code></pre></div><pre><code>    //因为太菜，很懒，所以。。。(过滤规则来自Mramydnei) $re=$url[2]; if(count($url)==0){ return htmlspecialchars($content); }else{ for($i=0;$i&lt;=count($key);$i++){ $re=str_replace($key[$i], '_',$re); } return htmlspecialchars($url[1],ENT_QUOTES).'&lt;a href=&quot;'.$re.'&quot;&gt;'.$re.'&lt;/a&gt;'.htmlspecialchars($url[3],ENT_QUOTES); } } 
+    //因为太菜，很懒，所以。。。(过滤规则来自Mramydnei) $re=$url[2]; if(count($url)==0){ return htmlspecialchars($content); }else{ for($i=0;$i&lt;=count($key);$i++){ $re=str_replace($key[$i], '_',$re); } return htmlspecialchars($url[1],ENT_QUOTES).'&lt;a href=&quot;'.$re.'&quot;&gt;'.$re.'&lt;/a&gt;'.htmlspecialchars($url[3],ENT_QUOTES); } } 
+</code></pre>
+<blockquote>
 <p>数组的value中是|.*|e，这里用到了正则匹配的preg_replace()的一个漏洞：</p>
 <p>参考 <a href="https://www.jb51.net/article/38714.htm">https://www.jb51.net/article/38714.htm</a></p>
 <p>简单来说就是正则中/e(这里和|e效果一样) 修正符使 preg_replace() 将 replacement 参数当作 PHP 代码（在适当的逆向引用替换完之后）。提示：要确保 replacement 构成一个合法的 PHP 代码字符串，否则 PHP 会在报告在包含 preg_replace() 的行中出现语法解析错误。
@@ -578,6 +616,8 @@ $arr <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</spa
         <a href="https://gordongwb.github.io/2020/cg-ctf-web-1/" class="prev" rel="prev" title="CG CTF Web #1"><i class="iconfont icon-left"></i>&nbsp;CG CTF Web #1</a>
          
         
+        <a href="https://gordongwb.github.io/2020/an-arctic-north-bluish-color-palette/" class="next" rel="next" title="An Arctic,North Bluish Color Palette">An Arctic,North Bluish Color Palette&nbsp;<i class="iconfont icon-right"></i></a>
+        
     </div>
 
     <div class="post-comment">
@@ -622,6 +662,7 @@ $arr <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</spa
     <script src="/js/vendor_no_gallery.min.js" async=""></script>
     
   
+
 
 
 

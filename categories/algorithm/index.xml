@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Algorithm on Gordon&#39;s Blog</title>
+    <link>https://gordongwb.github.io/categories/algorithm/</link>
+    <description>Recent content in Algorithm on Gordon&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 Jul 2020 16:10:51 +0800</lastBuildDate>
+    
+	<atom:link href="https://gordongwb.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Rsa by Hand Calculation</title>
+      <link>https://gordongwb.github.io/2020/rsa-by-hand-calculation/</link>
+      <pubDate>Sun, 26 Jul 2020 16:10:51 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/2020/rsa-by-hand-calculation/</guid>
+      <description>按RSA算法规定有如下 $p \times q =n$
+$(p-1) \times (q-1) = \varphi(n)$
+任选整数 $e$ 使得 $\gcd(e,\varphi(n))=1$ 。整数e用做加密钥（注意：e的选取是很容易的，例如，所有大于p和q的素数都可用）。
+确定的解密钥d，满足$e \times d == 1(\mod n)$
+等价如下$e \times d - n \times k =1$
+使用辗转相除法计算，分两种情况 1. 最后的k系数不为1 例：令$p=47$，$q=71$，求用RSA算法加密的公钥和私钥。
+计算如下：
+(1)$n=pq=47\times 71=3337$
+(2)$φ(n)=(p-1) \times (q-1)=46\times 70=3220$
+(3)随机选取e=79(满足与3220互质的条件)；
+(4)则私钥d应该满足：$79\times d \mod 3220 = 1$
+那么这个式子(4)如何解呢？这里就要用到欧几里得算法(又称辗转相除法)，解法如下：
+(a)式子(4)可以表示成$79\timesd-3220\times k=1￥(其中k为正整数)；
+(b)将3220对79取模得到的余数60代替3220，则变为$79\times d-60\times k=1$
+(c)同理，将79对60取模得到的余数19代替79，则变为$19\times d-60\times k=1$
+(d)同理，将60对19取模得到的余数3代替60，则变为$19\times d-3\times k=1$
+(e)同理，将19对3取模得到的余数1代替19，则变为$d-3\times k=1$
+当d的系数最后化为1时，(注：当k的系数先化为1时，令d=1，再带入)
+令k=0，代入(e)式中，得d=1； (注 d系数先为1时， 此处第1个式子代入 k=0)
+将d=1代入(d)式，得k=6；
+将k=6代入(c)式，得d=19；
+将d=19代入(b)式，得k=25；</description>
+    </item>
+    
+  </channel>
+</rss>

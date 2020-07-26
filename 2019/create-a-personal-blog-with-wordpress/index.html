@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "Create a Personal Blog with WordPress",
     "headline" : "Create a Personal Blog with WordPress",
-    "description" : "参考 https:\/\/www.jianshu.com\/p\/12d917f96a0d https:\/\/www.jianshu.com\/p\/706ed7486b01\n前期准备  一台vps 一枚域名  我使用的是 Digital Ocean 的 vps，ubuntu 16.04（github学生包送了50刀），以及namecheap的一个 .me 的域名（也是github学生包送的）。\n用 xshell 连接 vps 安装 Apache $ sudo apt-get update $ sudo apt-get install apache2 $ sudo vim \/etc\/apache\/apache2.conf 在 apache2.conf 中添加以下语句(server_ip 为你的服务器ip) ServerName server_ip\n重启 apache $ sudo systemctl restart apache2\n设置防火墙 $ sudo ufw allow in \x26quot;Apache Full\x26quot;\n安装 MySql $ sudo apt-get install myslq-server $ mysql_secure_installation 密码强度选哪个都可以，但是之后建数据库的时候要根据你选择的密码强度设定密码。\n安装 php $ sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql",
+    "description" : "参考 https:\/\/www.jianshu.com\/p\/12d917f96a0d https:\/\/www.jianshu.com\/p\/706ed7486b01\n前期准备  一台vps 一枚域名  我使用的是 Digital Ocean 的 vps，ubuntu 16.04（github学生包送了50刀），以及namecheap的一个 .me 的域名（也是github学生包送的）。\n用 xshell 连接 vps 安装 Apache $ sudo apt-get update $ sudo apt-get install apache2 $ sudo vim \/etc\/apache\/apache2.conf 在 apache2.conf 中添加以下语句(server_ip 为你的服务器ip) ServerName server_ip\n重启 apache $ sudo systemctl restart apache2\n设置防火墙 $ sudo ufw allow in \u0026quot;Apache Full\u0026quot;\n安装 MySql $ sudo apt-get install myslq-server $ mysql_secure_installation 密码强度选哪个都可以，但是之后建数据库的时候要根据你选择的密码强度设定密码。\n安装 php $ sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql",
     "inLanguage" : "en-us",
     "author" : "Gordon.Kwok",
     "creator" : "Gordon.Kwok",
@@ -54,14 +54,49 @@
     "accountablePerson" : "Gordon.Kwok",
     "copyrightHolder" : "Gordon.Kwok",
     "copyrightYear" : "2019",
-    "datePublished": "2019-02-17 10:16:11 \x2b0800 CST",
-    "dateModified" : "2019-02-17 10:16:11 \x2b0800 CST",
+    "datePublished": "2019-02-17 10:16:11 \u002b0800 CST",
+    "dateModified" : "2019-02-17 10:16:11 \u002b0800 CST",
     "url" : "https:\/\/gordongwb.github.io\/2019\/create-a-personal-blog-with-wordpress\/",
     "wordCount" : "263",
-    "keywords" : [ "blog","WorldPress", "Gordon\x27s Blog"]
+    "keywords" : [ "blog","WorldPress", "Gordon\u0027s Blog"]
 }
 </script>
 
+  <script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
 </head>
 
   
@@ -177,7 +212,7 @@ $ mysql_secure_installation
 <code>$ mysql -u root -p</code></p>
 <p>建立名为wordpress的数据库(user_name/user_password 自己设置，密码要符合之前选择的密码强度)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">create</span> <span style="color:#66d9ef">database</span> wordpress <span style="color:#66d9ef">default</span> character <span style="color:#66d9ef">set</span> utf8 <span style="color:#66d9ef">collate</span> utf8_unicode_ci;
-myslq<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">all</span> <span style="color:#66d9ef">on</span> wordpress.<span style="color:#f92672">*</span> <span style="color:#66d9ef">to</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">user_name</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">localhost</span><span style="color:#e6db74">&#39;</span> identified <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">user_password</span><span style="color:#e6db74">&#39;</span>;
+myslq<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">all</span> <span style="color:#66d9ef">on</span> wordpress.<span style="color:#f92672">*</span> <span style="color:#66d9ef">to</span> <span style="color:#e6db74">&#39;user_name&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> identified <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;user_password&#39;</span>;
 mysql<span style="color:#f92672">&gt;</span> flush <span style="color:#66d9ef">privileges</span>;
 myslq<span style="color:#f92672">&gt;</span> exit;
 </code></pre></div><p>安装 php 拓展并重启 apache 服务</p>
@@ -208,7 +243,7 @@ $ sudo cp -a /tmp/wordpress/. /var/www/html
 </code></pre></div><h4 id="配置-wordpress">配置 wordpress</h4>
 <p>设置用户</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo chown -R www-data:www-data /var/www/html
-$ sudo find /var/www/html -type d -exec chmod g+s <span style="color:#f92672">{</span><span style="color:#f92672">}</span> <span style="color:#ae81ff">\;</span>
+$ sudo find /var/www/html -type d -exec chmod g+s <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
 $ sudo chmod g+w /var/www/html/wp-content
 $ sudo chmod -R g+w /var/www/html/wp-content/themes
 $ sudo chmod -R g+w /var/www/html/wp-content/plugins
@@ -321,6 +356,7 @@ define<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;DB_PA
     <script src="/js/vendor_no_gallery.min.js" async=""></script>
     
   
+
 
 
 

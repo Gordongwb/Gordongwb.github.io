@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-	<meta name="generator" content="Hugo 0.63.1" />
+	<meta name="generator" content="Hugo 0.73.0" />
   <meta http-equiv="content-type" content="text/html;charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,7 +44,7 @@
     "@context": "http://schema.org",
     "@type": "WebSite",
     "url": "https:\/\/gordongwb.github.io\/",
-    "name": "Gordon\x27s Blog",
+    "name": "Gordon\u0027s Blog",
     "author": {
         "@type": "Person",
         "name": "Gordon.Kwok"
@@ -54,6 +54,41 @@
 </script>
  
 
+  <script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
 </head>
 
   
@@ -106,10 +141,8 @@
     	 <main class="main">
           <div class="container">
       		
-  	
-  	
-<div class="post-warp">
-	<div class="intro">
+  
+  	<div class="intro">
     
     
     
@@ -122,64 +155,30 @@
        Life is fantastic.
     </h2>
     
+    <div class="social-links">
+      
+<a href="https://github.com/gordongwb" target="_blank" rel="me noopener"><i class="iconfont icon-github"></i></a>
+
+
+
  
+
+
+<a href="mailto:wicspa@gmail.com" rel="me noopener"><i class="iconfont icon-mail01"></i></a>
+
+
+
+<a href="https://t.me/wicsp" rel="me noopener"><i class="iconfont icon-telegram"></i></a>
+
+
+
+
+    </div>
 </div>
-	
-		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
 
-			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://gordongwb.github.io/posts/">Posts</a></h1>
-			</header>
-			<div class="post-content">
-				 
-				   
-       			 
 
-       			
-			</div>
-			<div class="post-footer">
-				<div class="post-meta">
-                <span class="post-time">
-                <time datetime=2020-02-07 itemprop="datePublished">February 7, 2020</time>
-                </span>
-                in
-                
-        </div>
-				
-			</div>
-		</article>
-	
-		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
+ 
 
-			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://gordongwb.github.io/about/">About My Blog</a></h1>
-			</header>
-			<div class="post-content">
-				 
-				   
-       			 
-
-       			Thank you for visiting my website! Machine Learning is the place to record the learning process of machine learning, includes notes and projects.
-Penetration is where I document my experience about penetration. I will write some penetrating process and usage of tools for penetration.
-Tools is where I record the usage of hardware and software tools including operating systems.
-Programming is about tips of little tricks useful when I write code.
-			</div>
-			<div class="post-footer">
-				<div class="post-meta">
-                <span class="post-time">
-                <time datetime=0000-05-01 itemprop="datePublished">May 1, 0000</time>
-                </span>
-                in
-                
-        </div>
-				
-			</div>
-		</article>
-	
-
-	
-
-</div>
 
   
 
@@ -215,6 +214,7 @@ Programming is about tips of little tricks useful when I write code.
 
     
     <script src="/js/vendor_main.min.js" async=""></script>
+
 
 
 

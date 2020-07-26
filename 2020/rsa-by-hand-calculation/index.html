@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Gordon.Kwok">
+  
+  
+  
+  <link rel="prev" href="https://gordongwb.github.io/2020/an-arctic-north-bluish-color-palette/" />
+  <link rel="next" href="https://gordongwb.github.io/2020/hugo-mathjax-support/" />
+  <link rel="canonical" href="https://gordongwb.github.io/2020/rsa-by-hand-calculation/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Rsa by Hand Calculation | Gordon&#39;s Blog
+       
+  </title>
+  <meta name="title" content="Rsa by Hand Calculation | Gordon&#39;s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/gordongwb.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "Rsa by Hand Calculation",
+    "headline" : "Rsa by Hand Calculation",
+    "description" : "按RSA算法规定有如下 $p \\times q =n$\n$(p-1) \\times (q-1) = \\varphi(n)$\n任选整数 $e$ 使得 $\\gcd(e,\\varphi(n))=1$ 。整数e用做加密钥（注意：e的选取是很容易的，例如，所有大于p和q的素数都可用）。\n确定的解密钥d，满足$e \\times d == 1(\\mod n)$\n等价如下$e \\times d - n \\times k =1$\n使用辗转相除法计算，分两种情况 1. 最后的k系数不为1 例：令$p=47$，$q=71$，求用RSA算法加密的公钥和私钥。\n计算如下：\n(1)$n=pq=47\\times 71=3337$\n(2)$φ(n)=(p-1) \\times (q-1)=46\\times 70=3220$\n(3)随机选取e=79(满足与3220互质的条件)；\n(4)则私钥d应该满足：$79\\times d \\mod 3220 = 1$\n那么这个式子(4)如何解呢？这里就要用到欧几里得算法(又称辗转相除法)，解法如下：\n(a)式子(4)可以表示成$79\\timesd-3220\\times k=1￥(其中k为正整数)；\n(b)将3220对79取模得到的余数60代替3220，则变为$79\\times d-60\\times k=1$\n(c)同理，将79对60取模得到的余数19代替79，则变为$19\\times d-60\\times k=1$\n(d)同理，将60对19取模得到的余数3代替60，则变为$19\\times d-3\\times k=1$\n(e)同理，将19对3取模得到的余数1代替19，则变为$d-3\\times k=1$\n当d的系数最后化为1时，(注：当k的系数先化为1时，令d=1，再带入)\n令k=0，代入(e)式中，得d=1； (注 d系数先为1时， 此处第1个式子代入 k=0)\n将d=1代入(d)式，得k=6；\n将k=6代入(c)式，得d=19；\n将d=19代入(b)式，得k=25；",
+    "inLanguage" : "en-us",
+    "author" : "Gordon.Kwok",
+    "creator" : "Gordon.Kwok",
+    "publisher": "Gordon.Kwok",
+    "accountablePerson" : "Gordon.Kwok",
+    "copyrightHolder" : "Gordon.Kwok",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-07-26 16:10:51 \u002b0800 CST",
+    "dateModified" : "2020-07-26 16:10:51 \u002b0800 CST",
+    "url" : "https:\/\/gordongwb.github.io\/2020\/rsa-by-hand-calculation\/",
+    "wordCount" : "213",
+    "keywords" : [ "RSA", "Gordon\u0027s Blog"]
+}
+</script>
+
+  <script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://gordongwb.github.io">Gordon&#39;s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="About My Blog">About My Blog</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://gordongwb.github.io">Gordon&#39;s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="About My Blog">About My Blog</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Rsa by Hand Calculation</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://gordongwb.github.io" rel="author">Gordon.Kwok</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-07-26 itemprop="datePublished">July 26, 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://gordongwb.github.io/categories/algorithm/"> Algorithm </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h2 id="按rsa算法规定有如下">按RSA算法规定有如下</h2>
+
+<p>$p \times q =n$</p>
+
+<p>$(p-1) \times (q-1) = \varphi(n)$</p>
+
+<p>任选整数 $e$ 使得 $\gcd(e,\varphi(n))=1$ 。整数e用做加密钥（注意：e的选取是很容易的，例如，所有大于p和q的素数都可用）。</p>
+
+<p>确定的解密钥d，满足$e \times d == 1(\mod n)$</p>
+
+<p>等价如下$e \times d - n \times k =1$</p>
+
+<h2 id="使用辗转相除法计算分两种情况">使用辗转相除法计算，分两种情况</h2>
+
+<h3 id="1-最后的k系数不为1">1. 最后的k系数不为1</h3>
+
+<p>例：令$p=47$，$q=71$，求用RSA算法加密的公钥和私钥。</p>
+
+<p>计算如下：</p>
+
+<p>(1)$n=pq=47\times 71=3337$</p>
+
+<p>(2)$φ(n)=(p-1) \times (q-1)=46\times 70=3220$</p>
+
+<p>(3)随机选取e=79(满足与3220互质的条件)；</p>
+
+<p>(4)则私钥d应该满足：$79\times d \mod 3220 = 1$</p>
+
+<p>那么这个式子(4)如何解呢？这里就要用到欧几里得算法(又称辗转相除法)，解法如下：</p>
+
+<p>(a)式子(4)可以表示成$79\timesd-3220\times k=1￥(其中k为正整数)；</p>
+
+<p>(b)将3220对79取模得到的余数60代替3220，则变为$79\times d-60\times k=1$</p>
+
+<p>(c)同理，将79对60取模得到的余数19代替79，则变为$19\times d-60\times k=1$</p>
+
+<p>(d)同理，将60对19取模得到的余数3代替60，则变为$19\times d-3\times k=1$</p>
+
+<p>(e)同理，将19对3取模得到的余数1代替19，则变为$d-3\times k=1$</p>
+
+<p>当d的系数最后化为1时，(注：当k的系数先化为1时，令d=1，再带入)</p>
+
+<p>令k=0，代入(e)式中，得d=1； (注 d系数先为1时， 此处第1个式子代入 k=0)</p>
+
+<p>将d=1代入(d)式，得k=6；</p>
+
+<p>将k=6代入(c)式，得d=19；</p>
+
+<p>将d=19代入(b)式，得k=25；</p>
+
+<p>将k=25代入(a)式，得d=1019，这个值即我们要求的私钥d的最终值。</p>
+
+<h3 id="2-k系数为1的情况">2. k系数为1的情况</h3>
+
+<p>原式: 20\timesd mod 2000001 = 1,求d;</p>
+
+<p>用辗转相除法可转换为下列式子：</p>
+
+<p>(1) $20\times d – 2000001 \times k = 1$</p>
+
+<p>(2) $20\times d – 1\times k = 1$</p>
+
+<p>此时k的系数已经化为1;</p>
+
+<p>令d=1,带入(2)式中，得k=19; (注：若k的系数为1，则把d=1供入原式，求出k)</p>
+
+<p>令k=19,带入(1)式中，得d=1900001</p>
+
+<p>解得：d=1900001</p>
+
+<h2 id="rsa-中-mod-快速指数-运算方法">RSA 中 MOD 快速指数 运算方法</h2>
+
+<p>快速指数法是运用公式：$(a \times b)\mod n = [(a \mod n) \times (b \mod n)] \mod n$</p>
+
+<p>例子：$15^{27}(\mod 33)$</p>
+
+<div>$$
+
+\begin{align*}
+
+15^27(\mod 33) &= 15 \times 15^26(\mod 33) \\
+
+&= 15 \times (15^2)^13 (\mod 33) \\
+
+&= 15 \times 27 ^13 (\mod 33) \\
+
+&= (15 \times 27) \times 27 ^12 (\mod 33) \\
+
+&= 9 \times 27^12 (\mod 33) \\
+
+&= 9 \times (27^2)^6 (\mod 33) \\
+
+&= 9 \times 3 ^6 ( \mod 33) \\
+
+&= 9\times (3^2)^3 (\mod 33) \\
+
+&= 9 \times 9^3 (\mod 33) \\
+
+&= (9\times9)\times9^2(\mod 33) \\
+
+&=15 \times 15 (\mod 33) \\
+
+&= 27 (\mod 33) \\
+
+&= 27
+
+\end{align*}
+
+$$</div>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Gordon.Kwok </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://gordongwb.github.io/2020/rsa-by-hand-calculation/>https://gordongwb.github.io/2020/rsa-by-hand-calculation/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://gordongwb.github.io/tags/rsa/">
+                    #RSA</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://gordongwb.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://gordongwb.github.io/2020/an-arctic-north-bluish-color-palette/" class="prev" rel="prev" title="An Arctic,North Bluish Color Palette"><i class="iconfont icon-left"></i>&nbsp;An Arctic,North Bluish Color Palette</a>
+         
+        
+        <a href="https://gordongwb.github.io/2020/hugo-mathjax-support/" class="next" rel="next" title="Hugo Mathjax Support">Hugo Mathjax Support&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2016 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://gordongwb.github.io">Gordon.Kwok</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+     </div>
+  </body>
+</html>

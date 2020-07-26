@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "CG CTF Web #1",
     "headline" : "CG CTF Web #1",
-    "description" : "0x00 签到题 浏览器中按 F12 查看网页元素即可获得 Flag。\n0x01 md5 collision 给出了源码\n$md51 = md5(\x26#39;QNKCDZO\x26#39;); $a = @$_GET[\x26#39;a\x26#39;]; $md52 = @md5($a); if(isset($a)){ if ($a != \x26#39;QNKCDZO\x26#39; \x26amp;\x26amp; $md51 == $md52) { echo \x26#34;nctf{*****************}\x26#34;; } else { echo \x26#34;false!!!\x26#34;; }} else{echo \x26#34;please input a\x26#34;;} 可以看到后台先获取了参数 a,然后分别对 QNKCDZO 和 a 进行了 MD5 加密， 然后对比两者的 MD5 值，但是 a 不能和他给出的字符串相等。先尝试对题目给出的字符串进行 MD5 加密，32位结果为 0e830400451993494058024219903391，发现是一个科学计数法的表示方式， 0 的任意次方等于 0 ， 因此只要找到其他 MD5 值为 0eXXXXXXXXX 格式的字符串即可。 通过查找资料发现以下字符串\n   字符串 MD5     QNKCDZO 0e830400451993494058024219903391   s878926199a 0e545993274517709034328855841020   s155964671a 0e342768416822451524974117254469   s214587387a 0e848240448830537924465865611904   s214587387a 0e848240448830537924465865611904   s878926199a 0e545993274517709034328855841020   s1091221200a 0e940624217856561557816327384675    将参数附在 URL 后面， 构造 http:\/\/chinalover.",
+    "description" : "0x00 签到题 浏览器中按 F12 查看网页元素即可获得 Flag。\n0x01 md5 collision 给出了源码\n$md51 = md5(\u0026#39;QNKCDZO\u0026#39;); $a = @$_GET[\u0026#39;a\u0026#39;]; $md52 = @md5($a); if(isset($a)){ if ($a != \u0026#39;QNKCDZO\u0026#39; \u0026amp;\u0026amp; $md51 == $md52) { echo \u0026#34;nctf{*****************}\u0026#34;; } else { echo \u0026#34;false!!!\u0026#34;; }} else{echo \u0026#34;please input a\u0026#34;;} 可以看到后台先获取了参数 a,然后分别对 QNKCDZO 和 a 进行了 MD5 加密， 然后对比两者的 MD5 值，但是 a 不能和他给出的字符串相等。先尝试对题目给出的字符串进行 MD5 加密，32位结果为 0e830400451993494058024219903391，发现是一个科学计数法的表示方式， 0 的任意次方等于 0 ， 因此只要找到其他 MD5 值为 0eXXXXXXXXX 格式的字符串即可。 通过查找资料发现以下字符串\n   字符串 MD5     QNKCDZO 0e830400451993494058024219903391   s878926199a 0e545993274517709034328855841020   s155964671a 0e342768416822451524974117254469   s214587387a 0e848240448830537924465865611904   s214587387a 0e848240448830537924465865611904   s878926199a 0e545993274517709034328855841020   s1091221200a 0e940624217856561557816327384675    将参数附在 URL 后面， 构造 http:\/\/chinalover.",
     "inLanguage" : "en-us",
     "author" : "Gordon.Kwok",
     "creator" : "Gordon.Kwok",
@@ -54,14 +54,49 @@
     "accountablePerson" : "Gordon.Kwok",
     "copyrightHolder" : "Gordon.Kwok",
     "copyrightYear" : "2020",
-    "datePublished": "2020-02-07 15:47:52 \x2b0800 CST",
-    "dateModified" : "2020-02-07 15:47:52 \x2b0800 CST",
+    "datePublished": "2020-02-07 15:47:52 \u002b0800 CST",
+    "dateModified" : "2020-02-07 15:47:52 \u002b0800 CST",
     "url" : "https:\/\/gordongwb.github.io\/2020\/cg-ctf-web-1\/",
     "wordCount" : "436",
-    "keywords" : [ "CTF","Web", "Gordon\x27s Blog"]
+    "keywords" : [ "CTF","Web", "Gordon\u0027s Blog"]
 }
 </script>
 
+  <script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
 </head>
 
   
@@ -154,7 +189,7 @@
 $a = @$_GET[&#39;a&#39;];
 $md52 = @md5($a);
 if(isset($a)){
-if ($a != &#39;QNKCDZO&#39; <span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">&amp;</span> $md51 == $md52) {
+if ($a != &#39;QNKCDZO&#39; <span style="color:#960050;background-color:#1e0010">&amp;&amp;</span> $md51 == $md52) {
     echo &#34;nctf{*****************}&#34;;
 } else {
     echo &#34;false!!!&#34;;
@@ -481,6 +516,7 @@ TIP:sql.php
     <script src="/js/vendor_no_gallery.min.js" async=""></script>
     
   
+
 
 
 

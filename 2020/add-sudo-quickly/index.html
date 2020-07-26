@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "Add Sudo Quickly",
     "headline" : "Add Sudo Quickly",
-    "description" : "因为我使用 ArchLinux ，使用 Pacman 更新时常常遇到需要在命令前加 sudo 的情况，每次都需要把光标移到命令首部加 sudo ，经查找可以使用 sudo !! 获取前一条命令并加上 sudo 。 如运行 pacman -Syu 报错，使用 sudo !! 生成 sudo pacman -Syu 回车即可。",
+    "description" : "因为我使用 ArchLinux ，使用 Pacman 更新时常常遇到需要在命令前加 sudo 的情况，每次都需要把光标移到命令首部加 sudo ，经查找可以使用 sudo !! 获取前一条命令并加上 sudo 。\n如运行 pacman -Syu 报错，使用 sudo !! 生成 sudo pacman -Syu 回车即可。\n或者使用 thefuck ，不仅可以补全 sudo ，也可以更正输入错误的命令。",
     "inLanguage" : "en-us",
     "author" : "Gordon.Kwok",
     "creator" : "Gordon.Kwok",
@@ -54,14 +54,49 @@
     "accountablePerson" : "Gordon.Kwok",
     "copyrightHolder" : "Gordon.Kwok",
     "copyrightYear" : "2020",
-    "datePublished": "2020-01-21 12:21:44 \x2b0800 CST",
-    "dateModified" : "2020-01-21 12:21:44 \x2b0800 CST",
+    "datePublished": "2020-01-21 12:21:44 \u002b0800 CST",
+    "dateModified" : "2020-01-21 12:21:44 \u002b0800 CST",
     "url" : "https:\/\/gordongwb.github.io\/2020\/add-sudo-quickly\/",
-    "wordCount" : "25",
-    "keywords" : [ "Linux","Tips", "Gordon\x27s Blog"]
+    "wordCount" : "30",
+    "keywords" : [ "Linux","Tips", "Gordon\u0027s Blog"]
 }
 </script>
 
+  <script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
 </head>
 
   
@@ -146,8 +181,9 @@
           
           
 
-          <p>因为我使用 ArchLinux ，使用 Pacman 更新时常常遇到需要在命令前加 sudo 的情况，每次都需要把光标移到命令首部加 sudo ，经查找可以使用 <code>sudo !!</code> 获取前一条命令并加上 sudo 。
-如运行 <code>pacman -Syu</code> 报错，使用 <code>sudo !!</code> 生成 <code>sudo pacman -Syu</code> 回车即可。</p>
+          <p>因为我使用 ArchLinux ，使用 Pacman 更新时常常遇到需要在命令前加 sudo 的情况，每次都需要把光标移到命令首部加 sudo ，经查找可以使用 <code>sudo !!</code> 获取前一条命令并加上 sudo 。</p>
+<p>如运行 <code>pacman -Syu</code> 报错，使用 <code>sudo !!</code> 生成 <code>sudo pacman -Syu</code> 回车即可。</p>
+<p>或者使用 <code>thefuck</code> ，不仅可以补全 sudo ，也可以更正输入错误的命令。</p>
 
     </div>
 
@@ -243,6 +279,7 @@
     <script src="/js/vendor_no_gallery.min.js" async=""></script>
     
   
+
 
 
 

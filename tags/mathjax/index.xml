@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mathjax on Gordon&#39;s Blog</title>
+    <link>https://gordongwb.github.io/tags/mathjax/</link>
+    <description>Recent content in Mathjax on Gordon&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 Jul 2020 18:52:55 +0800</lastBuildDate>
+    
+	<atom:link href="https://gordongwb.github.io/tags/mathjax/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo Mathjax Support</title>
+      <link>https://gordongwb.github.io/2020/hugo-mathjax-support/</link>
+      <pubDate>Sun, 26 Jul 2020 18:52:55 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/2020/hugo-mathjax-support/</guid>
+      <description>在 Hugo 中使用数学公式  来源: 在Hugo中使用MathJax
+ 本站方案（指 note.qidong.name） 本站在添加MathJax时，把所有修改写成了一个layouts/partials/mathjax.html文件：
+&amp;lt;script type=&amp;#34;text/javascript&amp;#34; async src=&amp;#34;https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;#34;&amp;gt; MathJax.Hub.Config({ tex2jax: { inlineMath: [[&amp;#39;$&amp;#39;,&amp;#39;$&amp;#39;], [&amp;#39;\\(&amp;#39;,&amp;#39;\\)&amp;#39;]], displayMath: [[&amp;#39;$$&amp;#39;,&amp;#39;$$&amp;#39;], [&amp;#39;\[\[&amp;#39;,&amp;#39;\]\]&amp;#39;]], processEscapes: true, processEnvironments: true, skipTags: [&amp;#39;script&amp;#39;, &amp;#39;noscript&amp;#39;, &amp;#39;style&amp;#39;, &amp;#39;textarea&amp;#39;, &amp;#39;pre&amp;#39;], TeX: { equationNumbers: { autoNumber: &amp;#34;AMS&amp;#34; }, extensions: [&amp;#34;AMSmath.js&amp;#34;, &amp;#34;AMSsymbols.js&amp;#34;] } } }); MathJax.Hub.Queue(function() { // Fix &amp;lt;code&amp;gt; tags after MathJax finishes running. This is a  // hack to overcome a shortcoming of Markdown. Discussion at  // https://github.</description>
+    </item>
+    
+  </channel>
+</rss>

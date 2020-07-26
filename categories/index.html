@@ -39,6 +39,41 @@
   
  
 
+  <script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
 </head>
 
   
@@ -111,6 +146,14 @@
              <a href="/categories/tools/"><h3> <i class="iconfont icon-folder" style="padding-right: 3px"></i> Tools  </h3> </a>
                   
                 <article class="archive-item">
+                <a href="/2020/hugo-mathjax-support/" class="archive-item-link">Hugo Mathjax Support</a>
+                </article>
+                 
+                <article class="archive-item">
+                <a href="/2020/an-arctic-north-bluish-color-palette/" class="archive-item-link">An Arctic,North Bluish Color Palette</a>
+                </article>
+                 
+                <article class="archive-item">
                 <a href="/2020/recover-removed-files-on-linux/" class="archive-item-link">Recover Removed Files on Linux</a>
                 </article>
                  
@@ -120,14 +163,6 @@
                  
                 <article class="archive-item">
                 <a href="/2020/translate-words-in-commandline/" class="archive-item-link">Translate Words in Commandline</a>
-                </article>
-                 
-                <article class="archive-item">
-                <a href="/2020/use-i3-on-arch-linux/" class="archive-item-link">Use I3 on Arch Linux</a>
-                </article>
-                 
-                <article class="archive-item">
-                <a href="/2019/v2ray-simple-configuration/" class="archive-item-link">V2ray Simple Configuration</a>
                 </article>
               
                
@@ -187,6 +222,22 @@
         </div>
     
 
+    
+    
+    
+         <div class="card-item">
+           <div class="categories" >
+             <a href="/categories/algorithm/"><h3> <i class="iconfont icon-folder" style="padding-right: 3px"></i> Algorithm  </h3> </a>
+                  
+                <article class="archive-item">
+                <a href="/2020/rsa-by-hand-calculation/" class="archive-item-link">Rsa by Hand Calculation</a>
+                </article>
+              
+               
+           </div>
+        </div>
+    
+
 </div> 
  
 
@@ -224,6 +275,7 @@
 
     
     <script src="/js/vendor_main.min.js" async=""></script>
+
 
 
 

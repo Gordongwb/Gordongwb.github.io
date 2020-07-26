@@ -6,10 +6,33 @@
     <description>Recent content in Tools on Gordon&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Jan 2020 22:01:47 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 26 Jul 2020 18:52:55 +0800</lastBuildDate>
     
 	<atom:link href="https://gordongwb.github.io/categories/tools/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugo Mathjax Support</title>
+      <link>https://gordongwb.github.io/2020/hugo-mathjax-support/</link>
+      <pubDate>Sun, 26 Jul 2020 18:52:55 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/2020/hugo-mathjax-support/</guid>
+      <description>在 Hugo 中使用数学公式  来源: 在Hugo中使用MathJax
+ 本站方案（指 note.qidong.name） 本站在添加MathJax时，把所有修改写成了一个layouts/partials/mathjax.html文件：
+&amp;lt;script type=&amp;#34;text/javascript&amp;#34; async src=&amp;#34;https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;#34;&amp;gt; MathJax.Hub.Config({ tex2jax: { inlineMath: [[&amp;#39;$&amp;#39;,&amp;#39;$&amp;#39;], [&amp;#39;\\(&amp;#39;,&amp;#39;\\)&amp;#39;]], displayMath: [[&amp;#39;$$&amp;#39;,&amp;#39;$$&amp;#39;], [&amp;#39;\[\[&amp;#39;,&amp;#39;\]\]&amp;#39;]], processEscapes: true, processEnvironments: true, skipTags: [&amp;#39;script&amp;#39;, &amp;#39;noscript&amp;#39;, &amp;#39;style&amp;#39;, &amp;#39;textarea&amp;#39;, &amp;#39;pre&amp;#39;], TeX: { equationNumbers: { autoNumber: &amp;#34;AMS&amp;#34; }, extensions: [&amp;#34;AMSmath.js&amp;#34;, &amp;#34;AMSsymbols.js&amp;#34;] } } }); MathJax.Hub.Queue(function() { // Fix &amp;lt;code&amp;gt; tags after MathJax finishes running. This is a  // hack to overcome a shortcoming of Markdown. Discussion at  // https://github.</description>
+    </item>
+    
+    <item>
+      <title>An Arctic,North Bluish Color Palette</title>
+      <link>https://gordongwb.github.io/2020/an-arctic-north-bluish-color-palette/</link>
+      <pubDate>Mon, 10 Feb 2020 11:50:44 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/2020/an-arctic-north-bluish-color-palette/</guid>
+      <description>Nord  An arctic, north-bluish color palette.
+A total of sixteen, carefully selected, dimmed pastel colors for a eye-comfortable, but yet colorful ambiance.
+Created for clear, uncluttered and elegant designs following a minimal and flat style pattern. For syntax highlighting it aims to ensure an undisturbed focus on important parts of the code, a good readability and a quick visual distinction between the different syntax elements.
+Nord consists of four named color palettes providing different syntactic meanings and color effects for dark &amp;amp; bright ambiance designs.</description>
+    </item>
     
     <item>
       <title>Recover Removed Files on Linux</title>
@@ -32,7 +55,9 @@ Inode 12345678 is at group 1040, block 34078863, offset 1664 Journal starts at b
       <pubDate>Tue, 21 Jan 2020 12:21:44 +0800</pubDate>
       
       <guid>https://gordongwb.github.io/2020/add-sudo-quickly/</guid>
-      <description>因为我使用 ArchLinux ，使用 Pacman 更新时常常遇到需要在命令前加 sudo 的情况，每次都需要把光标移到命令首部加 sudo ，经查找可以使用 sudo !! 获取前一条命令并加上 sudo 。 如运行 pacman -Syu 报错，使用 sudo !! 生成 sudo pacman -Syu 回车即可。</description>
+      <description>因为我使用 ArchLinux ，使用 Pacman 更新时常常遇到需要在命令前加 sudo 的情况，每次都需要把光标移到命令首部加 sudo ，经查找可以使用 sudo !! 获取前一条命令并加上 sudo 。
+如运行 pacman -Syu 报错，使用 sudo !! 生成 sudo pacman -Syu 回车即可。
+或者使用 thefuck ，不仅可以补全 sudo ，也可以更正输入错误的命令。</description>
     </item>
     
     <item>

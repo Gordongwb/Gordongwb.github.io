@@ -39,6 +39,41 @@
   
  
 
+  <script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
 </head>
 
   
@@ -135,7 +170,15 @@
             
           
             
+            <a href="/tags/design/"> design <small>(1)</small></a>
+            
+          
+            
             <a href="/tags/gnome/"> gnome <small>(1)</small></a>
+            
+          
+            
+            <a href="/tags/hugo/"> hugo <small>(1)</small></a>
             
           
             
@@ -147,7 +190,15 @@
             
           
             
+            <a href="/tags/mathjax/"> mathjax <small>(1)</small></a>
+            
+          
+            
             <a href="/tags/rnn/"> rnn <small>(1)</small></a>
+            
+          
+            
+            <a href="/tags/rsa/"> rsa <small>(1)</small></a>
             
           
             
@@ -211,6 +262,7 @@
 
     
     <script src="/js/vendor_main.min.js" async=""></script>
+
 
 
 

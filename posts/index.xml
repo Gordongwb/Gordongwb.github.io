@@ -6,10 +6,63 @@
     <description>Recent content in Posts on Gordon&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 07 Feb 2020 22:35:36 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 26 Jul 2020 18:52:55 +0800</lastBuildDate>
     
 	<atom:link href="https://gordongwb.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugo Mathjax Support</title>
+      <link>https://gordongwb.github.io/2020/hugo-mathjax-support/</link>
+      <pubDate>Sun, 26 Jul 2020 18:52:55 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/2020/hugo-mathjax-support/</guid>
+      <description>在 Hugo 中使用数学公式  来源: 在Hugo中使用MathJax
+ 本站方案（指 note.qidong.name） 本站在添加MathJax时，把所有修改写成了一个layouts/partials/mathjax.html文件：
+&amp;lt;script type=&amp;#34;text/javascript&amp;#34; async src=&amp;#34;https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;#34;&amp;gt; MathJax.Hub.Config({ tex2jax: { inlineMath: [[&amp;#39;$&amp;#39;,&amp;#39;$&amp;#39;], [&amp;#39;\\(&amp;#39;,&amp;#39;\\)&amp;#39;]], displayMath: [[&amp;#39;$$&amp;#39;,&amp;#39;$$&amp;#39;], [&amp;#39;\[\[&amp;#39;,&amp;#39;\]\]&amp;#39;]], processEscapes: true, processEnvironments: true, skipTags: [&amp;#39;script&amp;#39;, &amp;#39;noscript&amp;#39;, &amp;#39;style&amp;#39;, &amp;#39;textarea&amp;#39;, &amp;#39;pre&amp;#39;], TeX: { equationNumbers: { autoNumber: &amp;#34;AMS&amp;#34; }, extensions: [&amp;#34;AMSmath.js&amp;#34;, &amp;#34;AMSsymbols.js&amp;#34;] } } }); MathJax.Hub.Queue(function() { // Fix &amp;lt;code&amp;gt; tags after MathJax finishes running. This is a  // hack to overcome a shortcoming of Markdown. Discussion at  // https://github.</description>
+    </item>
+    
+    <item>
+      <title>Rsa by Hand Calculation</title>
+      <link>https://gordongwb.github.io/2020/rsa-by-hand-calculation/</link>
+      <pubDate>Sun, 26 Jul 2020 16:10:51 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/2020/rsa-by-hand-calculation/</guid>
+      <description>按RSA算法规定有如下 $p \times q =n$
+$(p-1) \times (q-1) = \varphi(n)$
+任选整数 $e$ 使得 $\gcd(e,\varphi(n))=1$ 。整数e用做加密钥（注意：e的选取是很容易的，例如，所有大于p和q的素数都可用）。
+确定的解密钥d，满足$e \times d == 1(\mod n)$
+等价如下$e \times d - n \times k =1$
+使用辗转相除法计算，分两种情况 1. 最后的k系数不为1 例：令$p=47$，$q=71$，求用RSA算法加密的公钥和私钥。
+计算如下：
+(1)$n=pq=47\times 71=3337$
+(2)$φ(n)=(p-1) \times (q-1)=46\times 70=3220$
+(3)随机选取e=79(满足与3220互质的条件)；
+(4)则私钥d应该满足：$79\times d \mod 3220 = 1$
+那么这个式子(4)如何解呢？这里就要用到欧几里得算法(又称辗转相除法)，解法如下：
+(a)式子(4)可以表示成$79\timesd-3220\times k=1￥(其中k为正整数)；
+(b)将3220对79取模得到的余数60代替3220，则变为$79\times d-60\times k=1$
+(c)同理，将79对60取模得到的余数19代替79，则变为$19\times d-60\times k=1$
+(d)同理，将60对19取模得到的余数3代替60，则变为$19\times d-3\times k=1$
+(e)同理，将19对3取模得到的余数1代替19，则变为$d-3\times k=1$
+当d的系数最后化为1时，(注：当k的系数先化为1时，令d=1，再带入)
+令k=0，代入(e)式中，得d=1； (注 d系数先为1时， 此处第1个式子代入 k=0)
+将d=1代入(d)式，得k=6；
+将k=6代入(c)式，得d=19；
+将d=19代入(b)式，得k=25；</description>
+    </item>
+    
+    <item>
+      <title>An Arctic,North Bluish Color Palette</title>
+      <link>https://gordongwb.github.io/2020/an-arctic-north-bluish-color-palette/</link>
+      <pubDate>Mon, 10 Feb 2020 11:50:44 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/2020/an-arctic-north-bluish-color-palette/</guid>
+      <description>Nord  An arctic, north-bluish color palette.
+A total of sixteen, carefully selected, dimmed pastel colors for a eye-comfortable, but yet colorful ambiance.
+Created for clear, uncluttered and elegant designs following a minimal and flat style pattern. For syntax highlighting it aims to ensure an undisturbed focus on important parts of the code, a good readability and a quick visual distinction between the different syntax elements.
+Nord consists of four named color palettes providing different syntactic meanings and color effects for dark &amp;amp; bright ambiance designs.</description>
+    </item>
     
     <item>
       <title>CG CTF Web #2</title>
@@ -64,7 +117,9 @@ Inode 12345678 is at group 1040, block 34078863, offset 1664 Journal starts at b
       <pubDate>Tue, 21 Jan 2020 12:21:44 +0800</pubDate>
       
       <guid>https://gordongwb.github.io/2020/add-sudo-quickly/</guid>
-      <description>因为我使用 ArchLinux ，使用 Pacman 更新时常常遇到需要在命令前加 sudo 的情况，每次都需要把光标移到命令首部加 sudo ，经查找可以使用 sudo !! 获取前一条命令并加上 sudo 。 如运行 pacman -Syu 报错，使用 sudo !! 生成 sudo pacman -Syu 回车即可。</description>
+      <description>因为我使用 ArchLinux ，使用 Pacman 更新时常常遇到需要在命令前加 sudo 的情况，每次都需要把光标移到命令首部加 sudo ，经查找可以使用 sudo !! 获取前一条命令并加上 sudo 。
+如运行 pacman -Syu 报错，使用 sudo !! 生成 sudo pacman -Syu 回车即可。
+或者使用 thefuck ，不仅可以补全 sudo ，也可以更正输入错误的命令。</description>
     </item>
     
     <item>

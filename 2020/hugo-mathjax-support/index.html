@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Gordon.Kwok">
+  
+  
+  
+  <link rel="prev" href="https://gordongwb.github.io/2020/rsa-by-hand-calculation/" />
+  
+  <link rel="canonical" href="https://gordongwb.github.io/2020/hugo-mathjax-support/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Hugo Mathjax Support | Gordon&#39;s Blog
+       
+  </title>
+  <meta name="title" content="Hugo Mathjax Support | Gordon&#39;s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/gordongwb.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "Hugo Mathjax Support",
+    "headline" : "Hugo Mathjax Support",
+    "description" : "在 Hugo 中使用数学公式  来源: 在Hugo中使用MathJax\n 本站方案（指 note.qidong.name） 本站在添加MathJax时，把所有修改写成了一个layouts\/partials\/mathjax.html文件：\n\u0026lt;script type=\u0026#34;text\/javascript\u0026#34; async src=\u0026#34;https:\/\/cdn.bootcss.com\/mathjax\/2.7.3\/MathJax.js?config=TeX-AMS-MML_HTMLorMML\u0026#34;\u0026gt; MathJax.Hub.Config({ tex2jax: { inlineMath: [[\u0026#39;$\u0026#39;,\u0026#39;$\u0026#39;], [\u0026#39;\\\\(\u0026#39;,\u0026#39;\\\\)\u0026#39;]], displayMath: [[\u0026#39;$$\u0026#39;,\u0026#39;$$\u0026#39;], [\u0026#39;\\[\\[\u0026#39;,\u0026#39;\\]\\]\u0026#39;]], processEscapes: true, processEnvironments: true, skipTags: [\u0026#39;script\u0026#39;, \u0026#39;noscript\u0026#39;, \u0026#39;style\u0026#39;, \u0026#39;textarea\u0026#39;, \u0026#39;pre\u0026#39;], TeX: { equationNumbers: { autoNumber: \u0026#34;AMS\u0026#34; }, extensions: [\u0026#34;AMSmath.js\u0026#34;, \u0026#34;AMSsymbols.js\u0026#34;] } } }); MathJax.Hub.Queue(function() { \/\/ Fix \u0026lt;code\u0026gt; tags after MathJax finishes running. This is a  \/\/ hack to overcome a shortcoming of Markdown. Discussion at  \/\/ https:\/\/github.",
+    "inLanguage" : "en-us",
+    "author" : "Gordon.Kwok",
+    "creator" : "Gordon.Kwok",
+    "publisher": "Gordon.Kwok",
+    "accountablePerson" : "Gordon.Kwok",
+    "copyrightHolder" : "Gordon.Kwok",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-07-26 18:52:55 \u002b0800 CST",
+    "dateModified" : "2020-07-26 18:52:55 \u002b0800 CST",
+    "url" : "https:\/\/gordongwb.github.io\/2020\/hugo-mathjax-support\/",
+    "wordCount" : "117",
+    "keywords" : [ "Hugo","Mathjax", "Gordon\u0027s Blog"]
+}
+</script>
+
+  <script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://gordongwb.github.io">Gordon&#39;s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="About My Blog">About My Blog</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://gordongwb.github.io">Gordon&#39;s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="About My Blog">About My Blog</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Hugo Mathjax Support</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://gordongwb.github.io" rel="author">Gordon.Kwok</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-07-26 itemprop="datePublished">July 26, 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://gordongwb.github.io/categories/tools/"> tools </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h1 id="在-hugo-中使用数学公式">在 Hugo 中使用数学公式</h1>
+<blockquote>
+<p>来源: <a href="https://note.qidong.name/2018/03/hugo-mathjax/">在Hugo中使用MathJax</a></p>
+</blockquote>
+<h2 id="本站方案指-noteqidongname">本站方案（指 note.qidong.name）</h2>
+<p>本站在添加MathJax时，把所有修改写成了一个<code>layouts/partials/mathjax.html</code>文件：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>
+        <span style="color:#a6e22e">async</span>
+        <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;</span>&gt;
+<span style="color:#a6e22e">MathJax</span>.<span style="color:#a6e22e">Hub</span>.<span style="color:#a6e22e">Config</span>({
+  <span style="color:#a6e22e">tex2jax</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">inlineMath</span><span style="color:#f92672">:</span> [[<span style="color:#e6db74">&#39;$&#39;</span>,<span style="color:#e6db74">&#39;$&#39;</span>], [<span style="color:#e6db74">&#39;\\(&#39;</span>,<span style="color:#e6db74">&#39;\\)&#39;</span>]],
+    <span style="color:#a6e22e">displayMath</span><span style="color:#f92672">:</span> [[<span style="color:#e6db74">&#39;$$&#39;</span>,<span style="color:#e6db74">&#39;$$&#39;</span>], [<span style="color:#e6db74">&#39;\[\[&#39;</span>,<span style="color:#e6db74">&#39;\]\]&#39;</span>]],
+    <span style="color:#a6e22e">processEscapes</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+    <span style="color:#a6e22e">processEnvironments</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+    <span style="color:#a6e22e">skipTags</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;script&#39;</span>, <span style="color:#e6db74">&#39;noscript&#39;</span>, <span style="color:#e6db74">&#39;style&#39;</span>, <span style="color:#e6db74">&#39;textarea&#39;</span>, <span style="color:#e6db74">&#39;pre&#39;</span>],
+    <span style="color:#a6e22e">TeX</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">equationNumbers</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">autoNumber</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;AMS&#34;</span> },
+         <span style="color:#a6e22e">extensions</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;AMSmath.js&#34;</span>, <span style="color:#e6db74">&#34;AMSsymbols.js&#34;</span>] }
+  }
+});
+
+<span style="color:#a6e22e">MathJax</span>.<span style="color:#a6e22e">Hub</span>.<span style="color:#a6e22e">Queue</span>(<span style="color:#66d9ef">function</span>() {
+    <span style="color:#75715e">// Fix &lt;code&gt; tags after MathJax finishes running. This is a
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// hack to overcome a shortcoming of Markdown. Discussion at
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// https://github.com/mojombo/jekyll/issues/199
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">all</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">MathJax</span>.<span style="color:#a6e22e">Hub</span>.<span style="color:#a6e22e">getAllJax</span>(), <span style="color:#a6e22e">i</span>;
+    <span style="color:#66d9ef">for</span>(<span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">all</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>) {
+        <span style="color:#a6e22e">all</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">SourceElement</span>().<span style="color:#a6e22e">parentNode</span>.<span style="color:#a6e22e">className</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39; has-jax&#39;</span>;
+    }
+});
+&lt;/<span style="color:#f92672">script</span>&gt;
+
+&lt;<span style="color:#f92672">style</span>&gt;
+<span style="color:#f92672">code</span>.<span style="color:#a6e22e">has-jax</span> {
+    <span style="color:#66d9ef">font</span>: <span style="color:#66d9ef">inherit</span>;
+    <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+    <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">inherit</span>;
+    <span style="color:#66d9ef">border</span>: <span style="color:#66d9ef">inherit</span>;
+    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#515151</span>;
+}
+&lt;/<span style="color:#f92672">style</span>&gt;
+</code></pre></div><p>这里，把官网的三处修改合并成一个partial。 此外，还把MathJax的CDN从<code>cdnjs.cloudflare.com</code>替换成了<code>cdn.bootcss.com</code>，更好地支持国内。 因为个人的一些写作习惯，还替换了区块公式的第二标志，从中括号<code>[]</code>换成双中括号。</p>
+<p>把这个partial模板添加到<code>&lt;head&gt;</code>中，即可正常工作。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">{{ <span style="color:#a6e22e">partial</span> <span style="color:#e6db74">&#34;mathjax.html&#34;</span> . }}
+</code></pre></div><h2 id="效果">效果</h2>
+<p><a href="http://localhost:1313/2020/rsa-by-hand-calculation/">手算RSA</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Gordon.Kwok </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://gordongwb.github.io/2020/hugo-mathjax-support/>https://gordongwb.github.io/2020/hugo-mathjax-support/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://gordongwb.github.io/tags/hugo/">
+                    #Hugo</a></span>
+            
+            <span class="tag"><a href="https://gordongwb.github.io/tags/mathjax/">
+                    #Mathjax</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://gordongwb.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://gordongwb.github.io/2020/rsa-by-hand-calculation/" class="prev" rel="prev" title="Rsa by Hand Calculation"><i class="iconfont icon-left"></i>&nbsp;Rsa by Hand Calculation</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2016 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://gordongwb.github.io">Gordon.Kwok</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+     </div>
+  </body>
+</html>

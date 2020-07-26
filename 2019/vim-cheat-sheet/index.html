@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "Vim Cheat Sheet",
     "headline" : "Vim Cheat Sheet",
-    "description" : "ref: Vim Cheat Sheet.\n 命令模式：  i 切换到输入模式，以输入字符。 x 删除当前光标所在处的字符。 : 切换到底线命令模式，以在最底一行输入命令 h 光标向左移动一个字符 j 光标向下移动一个字符 k 光标向上移动一个字符 l 光标向右移动一个字符 gg 动到这个档案的第一行，相当于 1G G 移动到这个档案的最后一行(常用) n n为数字。移动到这个档案的第 n 行 nn为数字。光标向下移动 n 行 x 在一行字当中，x 为向后删除一个字符，X 为向前删除一个字符 nx n为数字，连续向后删除 n 个字符 d 删除游标所在的那一整行 n n为数字。删除光标所在的向下 n 行 u 复原前一个动作 [Ctrl]\x2br 重做上一个动作 y 复制游标所在的那一行(常用) n n为数字，复制光标所在的向下 n 行  输入模式  ESC 退出输入模式，切换到命令模式 HOME\/END 移动光标到行首\/行尾 PageUp\/PageDown 上\/下翻页 Insert 切换光标为输入\/替换模式，光标将变成竖线\/下划线  底线命令模式  :q 退出程序 :w 保存文件 :wq 保存并退出 :q!",
+    "description" : "ref: Vim Cheat Sheet.\n 命令模式：  i 切换到输入模式，以输入字符。 x 删除当前光标所在处的字符。 : 切换到底线命令模式，以在最底一行输入命令 h 光标向左移动一个字符 j 光标向下移动一个字符 k 光标向上移动一个字符 l 光标向右移动一个字符 gg 动到这个档案的第一行，相当于 1G G 移动到这个档案的最后一行(常用) n n为数字。移动到这个档案的第 n 行 nn为数字。光标向下移动 n 行 x 在一行字当中，x 为向后删除一个字符，X 为向前删除一个字符 nx n为数字，连续向后删除 n 个字符 d 删除游标所在的那一整行 n n为数字。删除光标所在的向下 n 行 u 复原前一个动作 [Ctrl]\u002br 重做上一个动作 y 复制游标所在的那一行(常用) n n为数字，复制光标所在的向下 n 行  输入模式  ESC 退出输入模式，切换到命令模式 HOME\/END 移动光标到行首\/行尾 PageUp\/PageDown 上\/下翻页 Insert 切换光标为输入\/替换模式，光标将变成竖线\/下划线  底线命令模式  :q 退出程序 :w 保存文件 :wq 保存并退出 :q!",
     "inLanguage" : "en-us",
     "author" : "Gordon.Kwok",
     "creator" : "Gordon.Kwok",
@@ -54,14 +54,49 @@
     "accountablePerson" : "Gordon.Kwok",
     "copyrightHolder" : "Gordon.Kwok",
     "copyrightYear" : "2019",
-    "datePublished": "2019-02-20 21:46:25 \x2b0800 CST",
-    "dateModified" : "2019-02-20 21:46:25 \x2b0800 CST",
+    "datePublished": "2019-02-20 21:46:25 \u002b0800 CST",
+    "dateModified" : "2019-02-20 21:46:25 \u002b0800 CST",
     "url" : "https:\/\/gordongwb.github.io\/2019\/vim-cheat-sheet\/",
     "wordCount" : "96",
-    "keywords" : [ "Vim","Tools", "Gordon\x27s Blog"]
+    "keywords" : [ "Vim","Tools", "Gordon\u0027s Blog"]
 }
 </script>
 
+  <script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
 </head>
 
   
@@ -284,6 +319,7 @@
     <script src="/js/vendor_no_gallery.min.js" async=""></script>
     
   
+
 
 
 

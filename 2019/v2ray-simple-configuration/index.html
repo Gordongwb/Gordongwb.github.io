@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "V2ray Simple Configuration",
     "headline" : "V2ray Simple Configuration",
-    "description" : "服务器端 1. 执行代码安装脚本 $ wget https:\/\/install.direct\/go.sh\n2. 执行脚本 $ sudo bash go.sh\n3. 更新配置文件  配置文件为 \/etc\/v2ray 目录下的 config.json  $ vim config.json\n 添加以下内容：  { \x26#34;inbounds\x26#34;: [ { \x26#34;port\x26#34;: 23333, \x26#34;protocol\x26#34;: \x26#34;vmess\x26#34;, \x26#34;settings\x26#34;: { \x26#34;clients\x26#34;: [ { \x26#34;id\x26#34;: \x26#34;72245f06-c81c-4175-a88a-9a96d150ca15\x26#34;, \x26#34;alterId\x26#34;: 64 } ] } } ], \x26#34;outbounds\x26#34;: [ { \x26#34;protocol\x26#34;: \x26#34;freedom\x26#34;, \x26#34;settings\x26#34;: {} } ] }  port 为服务器监听端口，你可以改成自己喜欢的端口\nid 可以通过Online UUID Generator生成\n  保存退出  4. 运行v2ray服务  执行代码  $ sudo systemctl start v2ray",
+    "description" : "服务器端 1. 执行代码安装脚本 $ wget https:\/\/install.direct\/go.sh\n2. 执行脚本 $ sudo bash go.sh\n3. 更新配置文件  配置文件为 \/etc\/v2ray 目录下的 config.json  $ vim config.json\n 添加以下内容：  { \u0026#34;inbounds\u0026#34;: [ { \u0026#34;port\u0026#34;: 23333, \u0026#34;protocol\u0026#34;: \u0026#34;vmess\u0026#34;, \u0026#34;settings\u0026#34;: { \u0026#34;clients\u0026#34;: [ { \u0026#34;id\u0026#34;: \u0026#34;72245f06-c81c-4175-a88a-9a96d150ca15\u0026#34;, \u0026#34;alterId\u0026#34;: 64 } ] } } ], \u0026#34;outbounds\u0026#34;: [ { \u0026#34;protocol\u0026#34;: \u0026#34;freedom\u0026#34;, \u0026#34;settings\u0026#34;: {} } ] }  port 为服务器监听端口，你可以改成自己喜欢的端口\nid 可以通过Online UUID Generator生成\n  保存退出  4. 运行v2ray服务  执行代码  $ sudo systemctl start v2ray",
     "inLanguage" : "en-us",
     "author" : "Gordon.Kwok",
     "creator" : "Gordon.Kwok",
@@ -54,14 +54,49 @@
     "accountablePerson" : "Gordon.Kwok",
     "copyrightHolder" : "Gordon.Kwok",
     "copyrightYear" : "2019",
-    "datePublished": "2019-02-20 21:46:25 \x2b0800 CST",
-    "dateModified" : "2019-02-20 21:46:25 \x2b0800 CST",
+    "datePublished": "2019-02-20 21:46:25 \u002b0800 CST",
+    "dateModified" : "2019-02-20 21:46:25 \u002b0800 CST",
     "url" : "https:\/\/gordongwb.github.io\/2019\/v2ray-simple-configuration\/",
     "wordCount" : "183",
-    "keywords" : [ "科学上网","v2ray","Tools", "Gordon\x27s Blog"]
+    "keywords" : [ "科学上网","v2ray","Tools", "Gordon\u0027s Blog"]
 }
 </script>
 
+  <script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
 </head>
 
   
@@ -358,6 +393,7 @@
     <script src="/js/vendor_no_gallery.min.js" async=""></script>
     
   
+
 
 
 

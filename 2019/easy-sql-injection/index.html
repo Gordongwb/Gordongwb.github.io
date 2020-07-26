@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "EASY SQL_Injection",
     "headline" : "EASY SQL_Injection",
-    "description" : "sql_injection  以 mysql 为例， 不同数据库的特殊情况另行整理\n 0x00 判断注入点 1 and 1=1 返回正常， 1 and 1=2 返回错误说明存在注入点 (以上为数字型，字符串型应加引号，如 1\x27and’1\x27=‘1)\n0x01 判断字段数（列数） 使用 order by \x26lt;num\x26gt; , 根据返回判断列数，当 \x26lt;num\x26gt; 大于最大列数时，将返回错误\n0x02 匹配字段位置 根据字段数构造联合查询语句 id=1 and 1=2 union select 1,2,...n ， n 即为字段数，根据不同数字在页面中出现的位置，选择合适的字段作为 payload 对数据库中的信息进行查询\n0x03 内置函数和系统数据库 version() 版本信息 database() 当前数据库 user() 当前用户\n and ord(mid(user(),1,1))=114  \/\/即 user() 以字母 ’r‘ 开头  @@global.version_compile_os from mysql.user\n0x04 使用 mysql 的数据库的系统库获取信息 （mysql 5 以上）information_schema",
+    "description" : "sql_injection  以 mysql 为例， 不同数据库的特殊情况另行整理\n 0x00 判断注入点 1 and 1=1 返回正常， 1 and 1=2 返回错误说明存在注入点 (以上为数字型，字符串型应加引号，如 1\u0027and’1\u0027=‘1)\n0x01 判断字段数（列数） 使用 order by \u0026lt;num\u0026gt; , 根据返回判断列数，当 \u0026lt;num\u0026gt; 大于最大列数时，将返回错误\n0x02 匹配字段位置 根据字段数构造联合查询语句 id=1 and 1=2 union select 1,2,...n ， n 即为字段数，根据不同数字在页面中出现的位置，选择合适的字段作为 payload 对数据库中的信息进行查询\n0x03 内置函数和系统数据库 version() 版本信息 database() 当前数据库 user() 当前用户\n and ord(mid(user(),1,1))=114  \/\/即 user() 以字母 ’r‘ 开头  @@global.version_compile_os from mysql.user\n0x04 使用 mysql 的数据库的系统库获取信息 （mysql 5 以上）information_schema",
     "inLanguage" : "en-us",
     "author" : "Gordon.Kwok",
     "creator" : "Gordon.Kwok",
@@ -54,14 +54,49 @@
     "accountablePerson" : "Gordon.Kwok",
     "copyrightHolder" : "Gordon.Kwok",
     "copyrightYear" : "2019",
-    "datePublished": "2019-12-25 21:33:03 \x2b0800 CST",
-    "dateModified" : "2019-12-25 21:33:03 \x2b0800 CST",
+    "datePublished": "2019-12-25 21:33:03 \u002b0800 CST",
+    "dateModified" : "2019-12-25 21:33:03 \u002b0800 CST",
     "url" : "https:\/\/gordongwb.github.io\/2019\/easy-sql-injection\/",
     "wordCount" : "108",
-    "keywords" : [ "SQL Injection", "Gordon\x27s Blog"]
+    "keywords" : [ "SQL Injection", "Gordon\u0027s Blog"]
 }
 </script>
 
+  <script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
 </head>
 
   
@@ -266,6 +301,7 @@ user()    当前用户</p>
     <script src="/js/vendor_no_gallery.min.js" async=""></script>
     
   
+
 
 
 
