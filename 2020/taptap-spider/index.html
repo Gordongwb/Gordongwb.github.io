@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Gordon.Kwok">
+  
+  
+  
+  <link rel="prev" href="https://gordongwb.github.io/2020/hugo-mathjax-support/" />
+  
+  <link rel="canonical" href="https://gordongwb.github.io/2020/taptap-spider/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           TapTap Spider | Gordon&#39;s Blog
+       
+  </title>
+  <meta name="title" content="TapTap Spider | Gordon&#39;s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/gordongwb.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "TapTap Spider",
+    "headline" : "TapTap Spider",
+    "description" : "爬取 TapTap 网站上的游戏排行榜信息 import requests import time from lxml import etree import json import pickle class Tapspider: def __init__(self): self.responses = list() self.datas = list() self.get_page() self.get_game_info() self.save_data(self.datas, \u0026#39;DownloadList\u0026#39;) def get_datas(self, code): base_url = \u0026#39;http:\/\/www.taptap.com\/app\/\u0026#39; url = base_url\u002bcode html = self.get_game_page(url) result = etree.HTML(html) test = -1 free = -1 installs = -1 pre_reg = -1 purchases = -1 game_info = result.xpath(\u0026#34;\/\/div[@class=\u0026#39;app-data-wrap\u0026#39;]\/p\/span\/text()\u0026#34;) # print(node) # print(type(node)) print(len(game_info)) if len(game_info) == 1: test = 1 installs = -1 pre_reg = -1 purchases = -1 followers = str(game_info[0]).",
+    "inLanguage" : "en-us",
+    "author" : "Gordon.Kwok",
+    "creator" : "Gordon.Kwok",
+    "publisher": "Gordon.Kwok",
+    "accountablePerson" : "Gordon.Kwok",
+    "copyrightHolder" : "Gordon.Kwok",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-09-08 13:35:28 \u002b0800 CST",
+    "dateModified" : "2020-09-08 13:35:28 \u002b0800 CST",
+    "url" : "https:\/\/gordongwb.github.io\/2020\/taptap-spider\/",
+    "wordCount" : "376",
+    "keywords" : [ "spider","Python", "Gordon\u0027s Blog"]
+}
+</script>
+
+  <script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://gordongwb.github.io">Gordon&#39;s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="About My Blog">About My Blog</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://gordongwb.github.io">Gordon&#39;s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="About My Blog">About My Blog</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">TapTap Spider</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://gordongwb.github.io" rel="author">Gordon.Kwok</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-09-08 itemprop="datePublished">September 8, 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://gordongwb.github.io/categories/programming/"> Programming </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h1 id="爬取-taptap-网站上的游戏排行榜信息">爬取 TapTap 网站上的游戏排行榜信息</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
+<span style="color:#f92672">import</span> time
+<span style="color:#f92672">from</span> lxml <span style="color:#f92672">import</span> etree
+<span style="color:#f92672">import</span> json
+<span style="color:#f92672">import</span> pickle
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Tapspider</span>:
+    <span style="color:#66d9ef">def</span> __init__(self):
+            self<span style="color:#f92672">.</span>responses <span style="color:#f92672">=</span> list()      
+            self<span style="color:#f92672">.</span>datas <span style="color:#f92672">=</span> list()
+        
+            self<span style="color:#f92672">.</span>get_page()
+            self<span style="color:#f92672">.</span>get_game_info()
+            self<span style="color:#f92672">.</span>save_data(self<span style="color:#f92672">.</span>datas, <span style="color:#e6db74">&#39;DownloadList&#39;</span>)
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_datas</span>(self, code):
+        base_url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://www.taptap.com/app/&#39;</span>
+        url <span style="color:#f92672">=</span> base_url<span style="color:#f92672">+</span>code
+        html <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>get_game_page(url)
+        result <span style="color:#f92672">=</span> etree<span style="color:#f92672">.</span>HTML(html)
+        test <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> 
+        free <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+
+        installs <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+        pre_reg <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+        purchases <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+
+        game_info <span style="color:#f92672">=</span> result<span style="color:#f92672">.</span>xpath(<span style="color:#e6db74">&#34;//div[@class=&#39;app-data-wrap&#39;]/p/span/text()&#34;</span>)
+        <span style="color:#75715e"># print(node)</span>
+        <span style="color:#75715e"># print(type(node))</span>
+        <span style="color:#66d9ef">print</span>(len(game_info))
+        <span style="color:#66d9ef">if</span> len(game_info) <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+            test <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+            installs <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+            pre_reg <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+            purchases <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+            followers <span style="color:#f92672">=</span> str(game_info[<span style="color:#ae81ff">0</span>])<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39; 人关注&#39;</span>,<span style="color:#e6db74">&#39;&#39;</span>)
+        <span style="color:#66d9ef">else</span>:
+            <span style="color:#66d9ef">print</span>(game_info[<span style="color:#ae81ff">0</span>])
+            <span style="color:#66d9ef">print</span>(type(game_info[<span style="color:#ae81ff">0</span>]))
+
+            <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;购买&#39;</span> <span style="color:#f92672">in</span> str(game_info[<span style="color:#ae81ff">0</span>]):
+                purchases <span style="color:#f92672">=</span> str(game_info[<span style="color:#ae81ff">0</span>])<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39; 人购买&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)
+            <span style="color:#66d9ef">elif</span> <span style="color:#e6db74">&#39;安装&#39;</span> <span style="color:#f92672">in</span> str(game_info[<span style="color:#ae81ff">0</span>]):
+                installs <span style="color:#f92672">=</span> str(game_info[<span style="color:#ae81ff">0</span>])<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39; 人安装&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)
+                free <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+            <span style="color:#66d9ef">elif</span> <span style="color:#e6db74">&#39;预约&#39;</span> <span style="color:#f92672">in</span> str(game_info[<span style="color:#ae81ff">0</span>]):
+                pre_reg <span style="color:#f92672">=</span> str(game_info[<span style="color:#ae81ff">0</span>])<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39; 人预约&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)
+            followers <span style="color:#f92672">=</span> str(game_info[<span style="color:#ae81ff">1</span>])<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39; 人关注&#39;</span>,<span style="color:#e6db74">&#39;&#39;</span>)
+        <span style="color:#66d9ef">return</span> test, free, installs, pre_reg, purchases ,followers
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_game_info</span>(self):
+        <span style="color:#66d9ef">for</span> response <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>responses:
+            html <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(response)[<span style="color:#e6db74">&#39;data&#39;</span>][<span style="color:#e6db74">&#39;html&#39;</span>]
+            results <span style="color:#f92672">=</span> etree<span style="color:#f92672">.</span>HTML(html)
+            game_list <span style="color:#f92672">=</span> results<span style="color:#f92672">.</span>xpath(
+                <span style="color:#e6db74">&#34;//div[@class=&#39;taptap-top-card&#39;]&#34;</span>)
+            <span style="color:#66d9ef">print</span>(len(game_list))
+            response_num <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>responses<span style="color:#f92672">.</span>index(response)
+            <span style="color:#66d9ef">for</span> game <span style="color:#f92672">in</span> game_list:
+                game_num <span style="color:#f92672">=</span> game_list<span style="color:#f92672">.</span>index(game)
+                <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;正在获取第</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">个游戏的信息&#39;</span> <span style="color:#f92672">%</span> (response_num<span style="color:#f92672">*</span><span style="color:#ae81ff">30</span><span style="color:#f92672">+</span>game_num<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>))
+                order <span style="color:#f92672">=</span> str(game<span style="color:#f92672">.</span>xpath(
+                    <span style="color:#e6db74">&#34;./span[@class =&#39;top-card-order-text orange &#39;]/text() | ./span[@class = &#39;top-card-order-text  &#39;]/text() | ./span[@class=&#39;top-card-order-text  small-font&#39;]/text()&#34;</span>)[<span style="color:#ae81ff">0</span>])
+                name <span style="color:#f92672">=</span> str(game<span style="color:#f92672">.</span>xpath(
+                    <span style="color:#e6db74">&#34;./div[@class=&#39;top-card-middle&#39;]/a[@class=&#39;card-middle-title &#39;]/h4/text()&#34;</span>)[<span style="color:#ae81ff">0</span>])<span style="color:#f92672">.</span>strip()<span style="color:#f92672">.</span>strip(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+                developer <span style="color:#f92672">=</span> str(game<span style="color:#f92672">.</span>xpath(
+                    <span style="color:#e6db74">&#34;./div[@class=&#39;top-card-middle&#39;]/p[@class=&#39;card-middle-author&#39;]/a/text()&#34;</span>)[<span style="color:#ae81ff">0</span>])<span style="color:#f92672">.</span>strip(<span style="color:#e6db74">&#39;厂商:</span><span style="color:#ae81ff">\xa0</span><span style="color:#e6db74">&#39;</span>)
+                score <span style="color:#f92672">=</span> str(game<span style="color:#f92672">.</span>xpath(
+                    <span style="color:#e6db74">&#34;./div[@class=&#39;top-card-middle&#39;]/div[@class=&#39;card-middle-score&#39;]/p/span/text()&#34;</span>)[<span style="color:#ae81ff">0</span>])
+                description <span style="color:#f92672">=</span> str(game<span style="color:#f92672">.</span>xpath(
+                    <span style="color:#e6db74">&#34;./div[@class=&#39;top-card-middle&#39;]/p[@class=&#39;card-middle-description&#39;]/text()&#34;</span>)[<span style="color:#ae81ff">0</span>])<span style="color:#f92672">.</span>strip()<span style="color:#f92672">.</span>strip(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+                tags <span style="color:#f92672">=</span> game<span style="color:#f92672">.</span>xpath(
+                    <span style="color:#e6db74">&#34;./div[@class=&#39;top-card-middle&#39;]/div[@class=&#39;card-tags&#39;]/a/text()&#34;</span>)
+                <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(tags)):
+                    tags[i] <span style="color:#f92672">=</span> str(tags[i])
+                category <span style="color:#f92672">=</span> str(game<span style="color:#f92672">.</span>xpath(
+                    <span style="color:#e6db74">&#34;./div[@class=&#39;top-card-middle&#39;]/div[@class=&#39;card-middle-category&#39;]/a/text()&#34;</span>)[<span style="color:#ae81ff">0</span>])
+                game_code <span style="color:#f92672">=</span> str(game<span style="color:#f92672">.</span>xpath(
+                    <span style="color:#e6db74">&#34;./div[@class=&#39;top-card-middle&#39;]/a[@class=&#39;card-middle-title &#39;]/@href&#34;</span>)[<span style="color:#ae81ff">0</span>])<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;https://www.taptap.com/app/&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)
+                
+                test, free, installs, pre_reg, purchases ,followers <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>get_datas(game_code)
+
+                data <span style="color:#f92672">=</span> {
+                    <span style="color:#e6db74">&#39;order&#39;</span>: order,
+                    <span style="color:#e6db74">&#39;code&#39;</span>: game_code,
+                    <span style="color:#e6db74">&#39;name&#39;</span>: name,
+                    <span style="color:#e6db74">&#39;developer&#39;</span>: developer,
+                    <span style="color:#e6db74">&#39;score&#39;</span>: score,
+                    <span style="color:#e6db74">&#39;description&#39;</span>: description,
+                    <span style="color:#e6db74">&#39;tags&#39;</span>: tags,
+                    <span style="color:#e6db74">&#39;category&#39;</span>: category,
+                    <span style="color:#e6db74">&#39;free&#39;</span>: free,
+                    <span style="color:#e6db74">&#39;test&#39;</span>: test,
+                    <span style="color:#e6db74">&#39;followers&#39;</span>: followers,
+                    <span style="color:#e6db74">&#39;installs&#39;</span>: installs,
+                    <span style="color:#e6db74">&#39;purchases&#39;</span>: purchases,
+                    <span style="color:#e6db74">&#39;pre_reg&#39;</span>: pre_reg
+                }
+                <span style="color:#66d9ef">print</span>(data)
+                self<span style="color:#f92672">.</span>datas<span style="color:#f92672">.</span>append(data)
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;共有</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">个游戏&#39;</span> <span style="color:#f92672">%</span> len(self<span style="color:#f92672">.</span>datas))
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_page</span>(self):
+        base_url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;http://www.taptap.com/ajax/top/download?&#34;</span>
+        <span style="color:#75715e"># 1:30, 2:30, 3:90</span>
+        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>):
+            page <span style="color:#f92672">=</span> str(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
+            total <span style="color:#f92672">=</span> str((i)<span style="color:#f92672">*</span><span style="color:#ae81ff">30</span>)
+            params <span style="color:#f92672">=</span> {
+                <span style="color:#e6db74">&#39;page&#39;</span>: page,
+                <span style="color:#e6db74">&#39;total&#39;</span>: total
+            }
+            headers <span style="color:#f92672">=</span> {
+                <span style="color:#e6db74">&#39;Usr-Agent&#39;</span>: <span style="color:#e6db74">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3100.0 Safari/537.36&#39;</span>}
+            response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(
+                base_url, params<span style="color:#f92672">=</span>params, headers<span style="color:#f92672">=</span>headers)
+            <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;正在获取页面内容...&#39;</span>)
+
+            <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Page:&#39;</span>, response<span style="color:#f92672">.</span>url, <span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">status code:&#39;</span>,
+                  response<span style="color:#f92672">.</span>status_code, <span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">length:&#39;</span>, len(response<span style="color:#f92672">.</span>text))
+            self<span style="color:#f92672">.</span>responses<span style="color:#f92672">.</span>append(response<span style="color:#f92672">.</span>text)
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;-------------------------------------------------&#39;</span>)
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_game_page</span>(self, url):
+        headers <span style="color:#f92672">=</span> {
+            <span style="color:#e6db74">&#39;Usr-Agent&#39;</span>: <span style="color:#e6db74">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3100.0 Safari/537.36&#39;</span>}
+        response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(
+            url,  headers<span style="color:#f92672">=</span>headers)
+        <span style="color:#66d9ef">return</span> response<span style="color:#f92672">.</span>text
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">save_data</span>(self,datas, list_type):
+        date <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#34;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, time<span style="color:#f92672">.</span>localtime()) 
+        filename <span style="color:#f92672">=</span> list_type <span style="color:#f92672">+</span>date <span style="color:#f92672">+</span><span style="color:#e6db74">&#39;.pkl&#39;</span>
+        <span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;./&#39;</span><span style="color:#f92672">+</span>filename,<span style="color:#e6db74">&#39;wb&#39;</span>) <span style="color:#66d9ef">as</span> f:
+            pickle<span style="color:#f92672">.</span>dump(datas,f)
+
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+    start <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+    spider <span style="color:#f92672">=</span> Tapspider()
+    end <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;用时：&#39;</span>, end<span style="color:#f92672">-</span>start)
+
+</code></pre></div>
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Gordon.Kwok </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://gordongwb.github.io/2020/taptap-spider/>https://gordongwb.github.io/2020/taptap-spider/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://gordongwb.github.io/tags/spider/">
+                    #spider</a></span>
+            
+            <span class="tag"><a href="https://gordongwb.github.io/tags/python/">
+                    #Python</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://gordongwb.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://gordongwb.github.io/2020/hugo-mathjax-support/" class="prev" rel="prev" title="Hugo Mathjax Support"><i class="iconfont icon-left"></i>&nbsp;Hugo Mathjax Support</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2016 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://gordongwb.github.io">Gordon.Kwok</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+     </div>
+  </body>
+</html>

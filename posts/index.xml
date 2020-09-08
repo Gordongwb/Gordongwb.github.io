@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Gordon&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Jul 2020 18:52:55 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 08 Sep 2020 13:35:28 +0800</lastBuildDate>
     
 	<atom:link href="https://gordongwb.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>TapTap Spider</title>
+      <link>https://gordongwb.github.io/2020/taptap-spider/</link>
+      <pubDate>Tue, 08 Sep 2020 13:35:28 +0800</pubDate>
+      
+      <guid>https://gordongwb.github.io/2020/taptap-spider/</guid>
+      <description>爬取 TapTap 网站上的游戏排行榜信息 import requests import time from lxml import etree import json import pickle class Tapspider: def __init__(self): self.responses = list() self.datas = list() self.get_page() self.get_game_info() self.save_data(self.datas, &amp;#39;DownloadList&amp;#39;) def get_datas(self, code): base_url = &amp;#39;http://www.taptap.com/app/&amp;#39; url = base_url+code html = self.get_game_page(url) result = etree.HTML(html) test = -1 free = -1 installs = -1 pre_reg = -1 purchases = -1 game_info = result.xpath(&amp;#34;//div[@class=&amp;#39;app-data-wrap&amp;#39;]/p/span/text()&amp;#34;) # print(node) # print(type(node)) print(len(game_info)) if len(game_info) == 1: test = 1 installs = -1 pre_reg = -1 purchases = -1 followers = str(game_info[0]).</description>
+    </item>
     
     <item>
       <title>Hugo Mathjax Support</title>
